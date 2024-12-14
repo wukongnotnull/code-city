@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>运算符 | 悟空非空也</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="集成计算机编程技术博客、知识库、学习笔记文档、技术网站导航、资源收藏、技术电子书、论坛于一体。涵盖JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github，Java,C,C++,Php,大数据，人工智能，云计算，机器深度学习和算法等技术文章和资源。">
+    <meta name="keywords" content="集成计算机编程技术博客、知识库、学习笔记文档、技术网站导航、资源收藏、技术电子书、论坛于一体。涵盖JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github，Java,C,C++,Php,大数据，人工智能，云计算，机器深度学习和算法等技术文章和资源。">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/assets/css/0.styles.4a9c0c84.css" as="style"><link rel="preload" href="/assets/js/app.0772105c.js" as="script"><link rel="preload" href="/assets/js/2.6497fd29.js" as="script"><link rel="preload" href="/assets/js/211.2db8e6bf.js" as="script"><link rel="prefetch" href="/assets/js/10.0a7a5c2a.js"><link rel="prefetch" href="/assets/js/100.6dd9a587.js"><link rel="prefetch" href="/assets/js/101.b1cb7166.js"><link rel="prefetch" href="/assets/js/102.6a888436.js"><link rel="prefetch" href="/assets/js/103.075294d1.js"><link rel="prefetch" href="/assets/js/104.7f9d5a4c.js"><link rel="prefetch" href="/assets/js/105.bcc3dd3e.js"><link rel="prefetch" href="/assets/js/106.9cadb287.js"><link rel="prefetch" href="/assets/js/107.1d6b3af1.js"><link rel="prefetch" href="/assets/js/108.7377cb7f.js"><link rel="prefetch" href="/assets/js/109.ca3ceab0.js"><link rel="prefetch" href="/assets/js/11.961408a3.js"><link rel="prefetch" href="/assets/js/110.79c5c987.js"><link rel="prefetch" href="/assets/js/111.63b3d196.js"><link rel="prefetch" href="/assets/js/112.ced4f0e9.js"><link rel="prefetch" href="/assets/js/113.657daa4e.js"><link rel="prefetch" href="/assets/js/114.e5d0a86b.js"><link rel="prefetch" href="/assets/js/115.a89005f0.js"><link rel="prefetch" href="/assets/js/116.bcbccecc.js"><link rel="prefetch" href="/assets/js/117.7acf9f16.js"><link rel="prefetch" href="/assets/js/118.75e4e713.js"><link rel="prefetch" href="/assets/js/119.0395ec5d.js"><link rel="prefetch" href="/assets/js/12.aab67183.js"><link rel="prefetch" href="/assets/js/120.93179733.js"><link rel="prefetch" href="/assets/js/121.e80fc142.js"><link rel="prefetch" href="/assets/js/122.41a175f0.js"><link rel="prefetch" href="/assets/js/123.028fd9cd.js"><link rel="prefetch" href="/assets/js/124.100b1fb0.js"><link rel="prefetch" href="/assets/js/125.13d51556.js"><link rel="prefetch" href="/assets/js/126.02c987a2.js"><link rel="prefetch" href="/assets/js/127.f7e115fe.js"><link rel="prefetch" href="/assets/js/128.eb930737.js"><link rel="prefetch" href="/assets/js/129.29fef1d1.js"><link rel="prefetch" href="/assets/js/13.7dd23d29.js"><link rel="prefetch" href="/assets/js/130.7e4c3bbc.js"><link rel="prefetch" href="/assets/js/131.16f04a03.js"><link rel="prefetch" href="/assets/js/132.c811b5cf.js"><link rel="prefetch" href="/assets/js/133.4a0d2ee8.js"><link rel="prefetch" href="/assets/js/134.aa288243.js"><link rel="prefetch" href="/assets/js/135.7d74b67e.js"><link rel="prefetch" href="/assets/js/136.f6a4d7dc.js"><link rel="prefetch" href="/assets/js/137.4a8c94fa.js"><link rel="prefetch" href="/assets/js/138.30103e18.js"><link rel="prefetch" href="/assets/js/139.cb62e822.js"><link rel="prefetch" href="/assets/js/14.7a045a57.js"><link rel="prefetch" href="/assets/js/140.4849d011.js"><link rel="prefetch" href="/assets/js/141.b53f0217.js"><link rel="prefetch" href="/assets/js/142.d2e12f6f.js"><link rel="prefetch" href="/assets/js/143.41effcfd.js"><link rel="prefetch" href="/assets/js/144.5ed3025f.js"><link rel="prefetch" href="/assets/js/145.ec71ac40.js"><link rel="prefetch" href="/assets/js/146.dc482dc8.js"><link rel="prefetch" href="/assets/js/147.f43c3786.js"><link rel="prefetch" href="/assets/js/148.e60884a5.js"><link rel="prefetch" href="/assets/js/149.fd305860.js"><link rel="prefetch" href="/assets/js/15.b07b6e42.js"><link rel="prefetch" href="/assets/js/150.e294561d.js"><link rel="prefetch" href="/assets/js/151.5cda3c43.js"><link rel="prefetch" href="/assets/js/152.ec1bec3f.js"><link rel="prefetch" href="/assets/js/153.411bc769.js"><link rel="prefetch" href="/assets/js/154.d0b70cd8.js"><link rel="prefetch" href="/assets/js/155.8013985e.js"><link rel="prefetch" href="/assets/js/156.9e9c91f4.js"><link rel="prefetch" href="/assets/js/157.0273d672.js"><link rel="prefetch" href="/assets/js/158.2612db04.js"><link rel="prefetch" href="/assets/js/159.9942bd3a.js"><link rel="prefetch" href="/assets/js/16.511be8ae.js"><link rel="prefetch" href="/assets/js/160.69e027a9.js"><link rel="prefetch" href="/assets/js/161.3d0255ab.js"><link rel="prefetch" href="/assets/js/162.4f223488.js"><link rel="prefetch" href="/assets/js/163.aca282a2.js"><link rel="prefetch" href="/assets/js/164.68c99b46.js"><link rel="prefetch" href="/assets/js/165.f455fb7b.js"><link rel="prefetch" href="/assets/js/166.a4d94e8d.js"><link rel="prefetch" href="/assets/js/167.dad8c77e.js"><link rel="prefetch" href="/assets/js/168.cb0717be.js"><link rel="prefetch" href="/assets/js/169.61a9bd6a.js"><link rel="prefetch" href="/assets/js/17.bbcfeede.js"><link rel="prefetch" href="/assets/js/170.f3785783.js"><link rel="prefetch" href="/assets/js/171.238d90d3.js"><link rel="prefetch" href="/assets/js/172.63852414.js"><link rel="prefetch" href="/assets/js/173.613fce9e.js"><link rel="prefetch" href="/assets/js/174.761ee99c.js"><link rel="prefetch" href="/assets/js/175.f2953a9b.js"><link rel="prefetch" href="/assets/js/176.415405fd.js"><link rel="prefetch" href="/assets/js/177.5c3782be.js"><link rel="prefetch" href="/assets/js/178.7c081109.js"><link rel="prefetch" href="/assets/js/179.038faa2b.js"><link rel="prefetch" href="/assets/js/18.c6108eaa.js"><link rel="prefetch" href="/assets/js/180.f498ca2e.js"><link rel="prefetch" href="/assets/js/181.ec14688f.js"><link rel="prefetch" href="/assets/js/182.1279a689.js"><link rel="prefetch" href="/assets/js/183.ced575fe.js"><link rel="prefetch" href="/assets/js/184.34f3c06c.js"><link rel="prefetch" href="/assets/js/185.b3d1acb8.js"><link rel="prefetch" href="/assets/js/186.b6efd99e.js"><link rel="prefetch" href="/assets/js/187.9b3f72f6.js"><link rel="prefetch" href="/assets/js/188.2e66f79c.js"><link rel="prefetch" href="/assets/js/189.4d12400d.js"><link rel="prefetch" href="/assets/js/19.192ec262.js"><link rel="prefetch" href="/assets/js/190.e353d2e5.js"><link rel="prefetch" href="/assets/js/191.7d655069.js"><link rel="prefetch" href="/assets/js/192.c33b286e.js"><link rel="prefetch" href="/assets/js/193.c9f461d3.js"><link rel="prefetch" href="/assets/js/194.32fdc071.js"><link rel="prefetch" href="/assets/js/195.03c708fc.js"><link rel="prefetch" href="/assets/js/196.54c890cf.js"><link rel="prefetch" href="/assets/js/197.68d0761d.js"><link rel="prefetch" href="/assets/js/198.efdf4f70.js"><link rel="prefetch" href="/assets/js/199.abaad0a6.js"><link rel="prefetch" href="/assets/js/20.d04c28bc.js"><link rel="prefetch" href="/assets/js/200.bd80bb59.js"><link rel="prefetch" href="/assets/js/201.4316ce7c.js"><link rel="prefetch" href="/assets/js/202.182fb8ad.js"><link rel="prefetch" href="/assets/js/203.7c514243.js"><link rel="prefetch" href="/assets/js/204.622bbe90.js"><link rel="prefetch" href="/assets/js/205.28f69f06.js"><link rel="prefetch" href="/assets/js/206.0c4c24eb.js"><link rel="prefetch" href="/assets/js/207.ea976c79.js"><link rel="prefetch" href="/assets/js/208.c4f49e55.js"><link rel="prefetch" href="/assets/js/209.4e2dacde.js"><link rel="prefetch" href="/assets/js/21.d8b6c127.js"><link rel="prefetch" href="/assets/js/210.c5ddee43.js"><link rel="prefetch" href="/assets/js/212.9e5c2afe.js"><link rel="prefetch" href="/assets/js/213.9fc56fcc.js"><link rel="prefetch" href="/assets/js/214.b22b8fd0.js"><link rel="prefetch" href="/assets/js/215.b714511d.js"><link rel="prefetch" href="/assets/js/216.4045669d.js"><link rel="prefetch" href="/assets/js/217.b8bfc481.js"><link rel="prefetch" href="/assets/js/218.4cc6231a.js"><link rel="prefetch" href="/assets/js/219.b04f0864.js"><link rel="prefetch" href="/assets/js/22.a21d9c67.js"><link rel="prefetch" href="/assets/js/220.5c5efc16.js"><link rel="prefetch" href="/assets/js/221.b3cc4226.js"><link rel="prefetch" href="/assets/js/222.14568620.js"><link rel="prefetch" href="/assets/js/223.5ad9c326.js"><link rel="prefetch" href="/assets/js/224.bef27670.js"><link rel="prefetch" href="/assets/js/225.7e76ba96.js"><link rel="prefetch" href="/assets/js/226.c892c0a5.js"><link rel="prefetch" href="/assets/js/227.1a5c5dfe.js"><link rel="prefetch" href="/assets/js/228.a83d26e3.js"><link rel="prefetch" href="/assets/js/229.f69558a4.js"><link rel="prefetch" href="/assets/js/23.e6bed599.js"><link rel="prefetch" href="/assets/js/230.975e6807.js"><link rel="prefetch" href="/assets/js/231.3323c121.js"><link rel="prefetch" href="/assets/js/232.69b5135e.js"><link rel="prefetch" href="/assets/js/233.f27782e6.js"><link rel="prefetch" href="/assets/js/234.c1e937f3.js"><link rel="prefetch" href="/assets/js/235.500694bc.js"><link rel="prefetch" href="/assets/js/236.6b6f2f84.js"><link rel="prefetch" href="/assets/js/237.a529e2ba.js"><link rel="prefetch" href="/assets/js/238.d5bca3eb.js"><link rel="prefetch" href="/assets/js/239.0b79bd7b.js"><link rel="prefetch" href="/assets/js/24.1be4b8e9.js"><link rel="prefetch" href="/assets/js/240.baec5139.js"><link rel="prefetch" href="/assets/js/241.eef96f93.js"><link rel="prefetch" href="/assets/js/242.8208455c.js"><link rel="prefetch" href="/assets/js/243.4c8fdc98.js"><link rel="prefetch" href="/assets/js/244.e11ee13c.js"><link rel="prefetch" href="/assets/js/245.b1e7beba.js"><link rel="prefetch" href="/assets/js/246.4c24ee87.js"><link rel="prefetch" href="/assets/js/247.f3958ef5.js"><link rel="prefetch" href="/assets/js/248.3f533151.js"><link rel="prefetch" href="/assets/js/249.6d80f1cd.js"><link rel="prefetch" href="/assets/js/25.7420391b.js"><link rel="prefetch" href="/assets/js/250.2faf865a.js"><link rel="prefetch" href="/assets/js/251.88d81ef7.js"><link rel="prefetch" href="/assets/js/252.04a6a69c.js"><link rel="prefetch" href="/assets/js/253.32528c6e.js"><link rel="prefetch" href="/assets/js/254.312c70ad.js"><link rel="prefetch" href="/assets/js/255.ff88a488.js"><link rel="prefetch" href="/assets/js/256.8b782088.js"><link rel="prefetch" href="/assets/js/257.1e04db72.js"><link rel="prefetch" href="/assets/js/258.6b8e65a8.js"><link rel="prefetch" href="/assets/js/259.c1a78951.js"><link rel="prefetch" href="/assets/js/26.b979a08f.js"><link rel="prefetch" href="/assets/js/260.2910b3b5.js"><link rel="prefetch" href="/assets/js/261.b3c9ff4f.js"><link rel="prefetch" href="/assets/js/262.a4846d38.js"><link rel="prefetch" href="/assets/js/263.2fe51a99.js"><link rel="prefetch" href="/assets/js/264.790ac186.js"><link rel="prefetch" href="/assets/js/265.2da80512.js"><link rel="prefetch" href="/assets/js/266.86531545.js"><link rel="prefetch" href="/assets/js/267.2d8df6ee.js"><link rel="prefetch" href="/assets/js/268.caf4f057.js"><link rel="prefetch" href="/assets/js/269.5cb1755d.js"><link rel="prefetch" href="/assets/js/27.46acb058.js"><link rel="prefetch" href="/assets/js/270.93b039ff.js"><link rel="prefetch" href="/assets/js/271.a83d9432.js"><link rel="prefetch" href="/assets/js/272.f957cb9b.js"><link rel="prefetch" href="/assets/js/273.00fda4c5.js"><link rel="prefetch" href="/assets/js/274.90d11b33.js"><link rel="prefetch" href="/assets/js/275.a5ab6a4b.js"><link rel="prefetch" href="/assets/js/276.e1553171.js"><link rel="prefetch" href="/assets/js/277.fc579c76.js"><link rel="prefetch" href="/assets/js/278.eecaef76.js"><link rel="prefetch" href="/assets/js/279.4ccbe5fd.js"><link rel="prefetch" href="/assets/js/28.d679a88b.js"><link rel="prefetch" href="/assets/js/280.1a2df8d1.js"><link rel="prefetch" href="/assets/js/281.4d879315.js"><link rel="prefetch" href="/assets/js/282.1a638b6e.js"><link rel="prefetch" href="/assets/js/283.35d77274.js"><link rel="prefetch" href="/assets/js/284.236f6c0d.js"><link rel="prefetch" href="/assets/js/285.f911dc9c.js"><link rel="prefetch" href="/assets/js/286.f2032fe0.js"><link rel="prefetch" href="/assets/js/287.47be0dd9.js"><link rel="prefetch" href="/assets/js/288.805d6e1e.js"><link rel="prefetch" href="/assets/js/289.af37d311.js"><link rel="prefetch" href="/assets/js/29.9fb32fde.js"><link rel="prefetch" href="/assets/js/290.cc34cbe3.js"><link rel="prefetch" href="/assets/js/291.887bcdbb.js"><link rel="prefetch" href="/assets/js/292.88848329.js"><link rel="prefetch" href="/assets/js/293.c5e4486a.js"><link rel="prefetch" href="/assets/js/294.4cc2aedf.js"><link rel="prefetch" href="/assets/js/295.1072aab8.js"><link rel="prefetch" href="/assets/js/296.1b0b3008.js"><link rel="prefetch" href="/assets/js/297.0f879887.js"><link rel="prefetch" href="/assets/js/298.516a7d92.js"><link rel="prefetch" href="/assets/js/299.a039e1fa.js"><link rel="prefetch" href="/assets/js/3.8f0b1c2b.js"><link rel="prefetch" href="/assets/js/30.49c708c9.js"><link rel="prefetch" href="/assets/js/300.d7f284d1.js"><link rel="prefetch" href="/assets/js/301.d0b1dd6f.js"><link rel="prefetch" href="/assets/js/302.4b55dd23.js"><link rel="prefetch" href="/assets/js/303.feb01496.js"><link rel="prefetch" href="/assets/js/304.3ab97c4d.js"><link rel="prefetch" href="/assets/js/305.591a1558.js"><link rel="prefetch" href="/assets/js/306.adb43a3c.js"><link rel="prefetch" href="/assets/js/307.b05d288b.js"><link rel="prefetch" href="/assets/js/308.4567d4af.js"><link rel="prefetch" href="/assets/js/309.72c51c16.js"><link rel="prefetch" href="/assets/js/31.11f8cedc.js"><link rel="prefetch" href="/assets/js/310.3962fc11.js"><link rel="prefetch" href="/assets/js/311.75aa7b05.js"><link rel="prefetch" href="/assets/js/312.9ec9fde7.js"><link rel="prefetch" href="/assets/js/313.d6f6baa3.js"><link rel="prefetch" href="/assets/js/314.86cdfa89.js"><link rel="prefetch" href="/assets/js/315.25959c53.js"><link rel="prefetch" href="/assets/js/316.8fa91955.js"><link rel="prefetch" href="/assets/js/317.4248ad4c.js"><link rel="prefetch" href="/assets/js/318.3f9ca0c5.js"><link rel="prefetch" href="/assets/js/319.32be3008.js"><link rel="prefetch" href="/assets/js/32.4e2e98b3.js"><link rel="prefetch" href="/assets/js/320.b8a7b72b.js"><link rel="prefetch" href="/assets/js/321.a3f7c1a6.js"><link rel="prefetch" href="/assets/js/322.d0903e0c.js"><link rel="prefetch" href="/assets/js/323.99520c43.js"><link rel="prefetch" href="/assets/js/324.333a4f10.js"><link rel="prefetch" href="/assets/js/325.e502b8f9.js"><link rel="prefetch" href="/assets/js/326.8e57faf4.js"><link rel="prefetch" href="/assets/js/327.f0473fc3.js"><link rel="prefetch" href="/assets/js/328.eaa4bf5f.js"><link rel="prefetch" href="/assets/js/329.dc0763f7.js"><link rel="prefetch" href="/assets/js/33.90114516.js"><link rel="prefetch" href="/assets/js/330.1f60cb6e.js"><link rel="prefetch" href="/assets/js/331.4af5e363.js"><link rel="prefetch" href="/assets/js/332.2a2023db.js"><link rel="prefetch" href="/assets/js/333.4c5db27a.js"><link rel="prefetch" href="/assets/js/334.f52a66e5.js"><link rel="prefetch" href="/assets/js/335.a6481538.js"><link rel="prefetch" href="/assets/js/336.6bd556c7.js"><link rel="prefetch" href="/assets/js/337.58a4d668.js"><link rel="prefetch" href="/assets/js/338.22095960.js"><link rel="prefetch" href="/assets/js/339.c8da6647.js"><link rel="prefetch" href="/assets/js/34.225b456c.js"><link rel="prefetch" href="/assets/js/340.9f93002f.js"><link rel="prefetch" href="/assets/js/341.721ab41d.js"><link rel="prefetch" href="/assets/js/342.f129aa89.js"><link rel="prefetch" href="/assets/js/343.ea2d2309.js"><link rel="prefetch" href="/assets/js/344.15235001.js"><link rel="prefetch" href="/assets/js/345.eaaae5e5.js"><link rel="prefetch" href="/assets/js/346.73b19ced.js"><link rel="prefetch" href="/assets/js/347.6e11bced.js"><link rel="prefetch" href="/assets/js/348.3b9b7968.js"><link rel="prefetch" href="/assets/js/349.b60a2b56.js"><link rel="prefetch" href="/assets/js/35.e3ec78ba.js"><link rel="prefetch" href="/assets/js/350.e793c7b9.js"><link rel="prefetch" href="/assets/js/351.c86b1ea0.js"><link rel="prefetch" href="/assets/js/352.770038d5.js"><link rel="prefetch" href="/assets/js/353.fe8f38a5.js"><link rel="prefetch" href="/assets/js/354.d3bbf169.js"><link rel="prefetch" href="/assets/js/355.5bb68a7e.js"><link rel="prefetch" href="/assets/js/356.b380aecd.js"><link rel="prefetch" href="/assets/js/357.24fbf1ff.js"><link rel="prefetch" href="/assets/js/358.669b8aba.js"><link rel="prefetch" href="/assets/js/359.04af7f75.js"><link rel="prefetch" href="/assets/js/36.dedb6e42.js"><link rel="prefetch" href="/assets/js/360.73d170d7.js"><link rel="prefetch" href="/assets/js/361.c1f55230.js"><link rel="prefetch" href="/assets/js/362.967bb47e.js"><link rel="prefetch" href="/assets/js/363.7b39c192.js"><link rel="prefetch" href="/assets/js/364.7dbf94dd.js"><link rel="prefetch" href="/assets/js/365.8a1d46d7.js"><link rel="prefetch" href="/assets/js/366.997ec05e.js"><link rel="prefetch" href="/assets/js/367.cda39f93.js"><link rel="prefetch" href="/assets/js/368.1159aebc.js"><link rel="prefetch" href="/assets/js/369.8371cbf0.js"><link rel="prefetch" href="/assets/js/37.129a1339.js"><link rel="prefetch" href="/assets/js/370.b5bda99f.js"><link rel="prefetch" href="/assets/js/371.ca4c4c31.js"><link rel="prefetch" href="/assets/js/372.6ecb7277.js"><link rel="prefetch" href="/assets/js/373.d3d1f018.js"><link rel="prefetch" href="/assets/js/374.4901bb51.js"><link rel="prefetch" href="/assets/js/375.ab11fdff.js"><link rel="prefetch" href="/assets/js/376.f34fed60.js"><link rel="prefetch" href="/assets/js/377.8d8aa0d5.js"><link rel="prefetch" href="/assets/js/378.16a432ff.js"><link rel="prefetch" href="/assets/js/379.68163d64.js"><link rel="prefetch" href="/assets/js/38.e0e2c3b1.js"><link rel="prefetch" href="/assets/js/39.a33bdbc2.js"><link rel="prefetch" href="/assets/js/4.d96ebf17.js"><link rel="prefetch" href="/assets/js/40.d20c1395.js"><link rel="prefetch" href="/assets/js/41.a2d6458f.js"><link rel="prefetch" href="/assets/js/42.48c0ea87.js"><link rel="prefetch" href="/assets/js/43.e2e765f4.js"><link rel="prefetch" href="/assets/js/44.10b67e66.js"><link rel="prefetch" href="/assets/js/45.2cd4b906.js"><link rel="prefetch" href="/assets/js/46.7a02c8ab.js"><link rel="prefetch" href="/assets/js/47.d88632c9.js"><link rel="prefetch" href="/assets/js/48.ade443fe.js"><link rel="prefetch" href="/assets/js/49.4d2ddb3b.js"><link rel="prefetch" href="/assets/js/5.037e08ba.js"><link rel="prefetch" href="/assets/js/50.463230b1.js"><link rel="prefetch" href="/assets/js/51.83c9a564.js"><link rel="prefetch" href="/assets/js/52.56c5a325.js"><link rel="prefetch" href="/assets/js/53.72a3b829.js"><link rel="prefetch" href="/assets/js/54.8f59548e.js"><link rel="prefetch" href="/assets/js/55.0faca6a3.js"><link rel="prefetch" href="/assets/js/56.77474658.js"><link rel="prefetch" href="/assets/js/57.4e4789fa.js"><link rel="prefetch" href="/assets/js/58.9dc82ebc.js"><link rel="prefetch" href="/assets/js/59.2147b861.js"><link rel="prefetch" href="/assets/js/6.8af55c48.js"><link rel="prefetch" href="/assets/js/60.d0ff683a.js"><link rel="prefetch" href="/assets/js/61.331527c3.js"><link rel="prefetch" href="/assets/js/62.a9085bf0.js"><link rel="prefetch" href="/assets/js/63.ecaf766f.js"><link rel="prefetch" href="/assets/js/64.f9a1f00a.js"><link rel="prefetch" href="/assets/js/65.69eef128.js"><link rel="prefetch" href="/assets/js/66.7ce420d5.js"><link rel="prefetch" href="/assets/js/67.059927af.js"><link rel="prefetch" href="/assets/js/68.d1e1fb62.js"><link rel="prefetch" href="/assets/js/69.a98be775.js"><link rel="prefetch" href="/assets/js/7.330a4708.js"><link rel="prefetch" href="/assets/js/70.c773f1fb.js"><link rel="prefetch" href="/assets/js/71.23db970d.js"><link rel="prefetch" href="/assets/js/72.3f45b262.js"><link rel="prefetch" href="/assets/js/73.cc16dadf.js"><link rel="prefetch" href="/assets/js/74.1f05b2b1.js"><link rel="prefetch" href="/assets/js/75.3cd7d993.js"><link rel="prefetch" href="/assets/js/76.1e78e542.js"><link rel="prefetch" href="/assets/js/77.d97d60f9.js"><link rel="prefetch" href="/assets/js/78.6997cb3a.js"><link rel="prefetch" href="/assets/js/79.e8ef607f.js"><link rel="prefetch" href="/assets/js/8.cca0e264.js"><link rel="prefetch" href="/assets/js/80.57d72889.js"><link rel="prefetch" href="/assets/js/81.7aee8496.js"><link rel="prefetch" href="/assets/js/82.0b920de1.js"><link rel="prefetch" href="/assets/js/83.429d7e6f.js"><link rel="prefetch" href="/assets/js/84.c74f1357.js"><link rel="prefetch" href="/assets/js/85.71d21661.js"><link rel="prefetch" href="/assets/js/86.d55ba6f0.js"><link rel="prefetch" href="/assets/js/87.6566a5fc.js"><link rel="prefetch" href="/assets/js/88.6cfa26b6.js"><link rel="prefetch" href="/assets/js/89.0a9ed463.js"><link rel="prefetch" href="/assets/js/9.ef46dc1c.js"><link rel="prefetch" href="/assets/js/90.507b8bb7.js"><link rel="prefetch" href="/assets/js/91.0c374e4a.js"><link rel="prefetch" href="/assets/js/92.1f6e9c9d.js"><link rel="prefetch" href="/assets/js/93.33a64374.js"><link rel="prefetch" href="/assets/js/94.68d20253.js"><link rel="prefetch" href="/assets/js/95.2cf46b84.js"><link rel="prefetch" href="/assets/js/96.9b292e88.js"><link rel="prefetch" href="/assets/js/97.1575dbac.js"><link rel="prefetch" href="/assets/js/98.b8682f4a.js"><link rel="prefetch" href="/assets/js/99.0039b460.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4a9c0c84.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/favicon.ico" alt="悟空非空也" class="logo"> <span class="site-name can-hide">悟空非空也</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><a href="/blogs/" class="link-title">博客</a> <span class="title" style="display:none;">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/WuKongNotNull/awesome-free-vpn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科学上网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E5%A5%BD%E7%89%A9%E6%8E%A8%E8%8D%90%E5%AE%98&amp;.html" class="nav-link">好物推荐官</a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E9%9A%8F%E7%AC%94&amp;.html" class="nav-link">随笔感悟</a></li></ul></div></div><div class="nav-item"><a href="/pages/3ad3de/" class="nav-link">编程导航</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/java/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">JavaSE</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">JavaEE</a></li><li class="dropdown-item"><!----> <a href="/java/spring/" class="nav-link">Spring</a></li><li class="dropdown-item"><!----> <a href="/java/mybatis/" class="nav-link">MyBatis</a></li><li class="dropdown-item"><!----> <a href="/java/springboot/" class="nav-link">SpringBoot</a></li><li class="dropdown-item"><!----> <a href="/java/springcloud/" class="nav-link">SpringCloud</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><a href="/python/" class="link-title">Python</a> <span class="title" style="display:none;">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/tutorial/" class="nav-link">Python教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/fore/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fore/javascript/" class="nav-link">JavaScript基础教程</a></li><li class="dropdown-item"><!----> <a href="/fore/js/" class="nav-link">JavaScript高级程序设计</a></li><li class="dropdown-item"><!----> <a href="/fore/es6/" class="nav-link">ES6 教程</a></li><li class="dropdown-item"><!----> <a href="/fore/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/fore/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/fore/typescript-axios/" class="nav-link">TypeScript 从零实现 axios</a></li><li class="dropdown-item"><!----> <a href="/fore/git/" class="nav-link">Git</a></li><li class="dropdown-item"><!----> <a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-item"><!----> <a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><a href="/interview/" class="link-title">面试</a> <span class="title" style="display:none;">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/c/" class="nav-link">C开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/java/" class="nav-link">Java开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/python/" class="nav-link">Python开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/hr/" class="nav-link">人事爱问</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f4931c/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/norm/alisongshan/" class="nav-link">阿里Java开发手册</a></li><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/wuKongNotNull/images-hosting/wukong-website/wukong-favicon-nobg.png"> <div class="blogger-info"><h3>悟空非空也</h3> <span>精通各语言拼写的野生程序员</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><a href="/blogs/" class="link-title">博客</a> <span class="title" style="display:none;">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/WuKongNotNull/awesome-free-vpn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科学上网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E5%A5%BD%E7%89%A9%E6%8E%A8%E8%8D%90%E5%AE%98&amp;.html" class="nav-link">好物推荐官</a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E9%9A%8F%E7%AC%94&amp;.html" class="nav-link">随笔感悟</a></li></ul></div></div><div class="nav-item"><a href="/pages/3ad3de/" class="nav-link">编程导航</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/java/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">JavaSE</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">JavaEE</a></li><li class="dropdown-item"><!----> <a href="/java/spring/" class="nav-link">Spring</a></li><li class="dropdown-item"><!----> <a href="/java/mybatis/" class="nav-link">MyBatis</a></li><li class="dropdown-item"><!----> <a href="/java/springboot/" class="nav-link">SpringBoot</a></li><li class="dropdown-item"><!----> <a href="/java/springcloud/" class="nav-link">SpringCloud</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><a href="/python/" class="link-title">Python</a> <span class="title" style="display:none;">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/tutorial/" class="nav-link">Python教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/fore/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fore/javascript/" class="nav-link">JavaScript基础教程</a></li><li class="dropdown-item"><!----> <a href="/fore/js/" class="nav-link">JavaScript高级程序设计</a></li><li class="dropdown-item"><!----> <a href="/fore/es6/" class="nav-link">ES6 教程</a></li><li class="dropdown-item"><!----> <a href="/fore/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/fore/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/fore/typescript-axios/" class="nav-link">TypeScript 从零实现 axios</a></li><li class="dropdown-item"><!----> <a href="/fore/git/" class="nav-link">Git</a></li><li class="dropdown-item"><!----> <a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-item"><!----> <a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><a href="/interview/" class="link-title">面试</a> <span class="title" style="display:none;">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/c/" class="nav-link">C开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/java/" class="nav-link">Java开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/python/" class="nav-link">Python开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/hr/" class="nav-link">人事爱问</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f4931c/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/norm/alisongshan/" class="nav-link">阿里Java开发手册</a></li><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>青铜</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>数据类型</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading open"><span>运算符</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/69c69e/" aria-current="page" class="active sidebar-link">运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#算术运算符" class="sidebar-link">算术运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#加法运算符" class="sidebar-link">加法运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#余数运算符" class="sidebar-link">余数运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#自增和自减运算符" class="sidebar-link">自增和自减运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#数值运算符-负数值运算符" class="sidebar-link">数值运算符，负数值运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#指数运算符" class="sidebar-link">指数运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#赋值运算符" class="sidebar-link">赋值运算符</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#比较运算符" class="sidebar-link">比较运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#概述-2" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#非相等运算符-字符串的比较" class="sidebar-link">非相等运算符：字符串的比较</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#非相等运算符-非字符串的比较" class="sidebar-link">非相等运算符：非字符串的比较</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#严格相等运算符" class="sidebar-link">严格相等运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#严格不相等运算符" class="sidebar-link">严格不相等运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#相等运算符" class="sidebar-link">相等运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#不相等运算符" class="sidebar-link">不相等运算符</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#布尔运算符" class="sidebar-link">布尔运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#概述-3" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#取反运算符" class="sidebar-link">取反运算符（!）</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#且运算符" class="sidebar-link">且运算符（&amp;&amp;）</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#或运算符" class="sidebar-link">或运算符（||）</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#三元条件运算符" class="sidebar-link">三元条件运算符（?:）</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#二进制位运算符" class="sidebar-link">二进制位运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#概述-4" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#二进制或运算符" class="sidebar-link">二进制或运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#二进制与运算符" class="sidebar-link">二进制与运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#二进制否运算符" class="sidebar-link">二进制否运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#异或运算符" class="sidebar-link">异或运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#左移运算符" class="sidebar-link">左移运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#右移运算符" class="sidebar-link">右移运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#头部补零的右移运算符" class="sidebar-link">头部补零的右移运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#开关作用" class="sidebar-link">开关作用</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#参考链接" class="sidebar-link">参考链接</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#其他运算符和运算顺序" class="sidebar-link">其他运算符和运算顺序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/69c69e/#void-运算符" class="sidebar-link">void 运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#逗号运算符" class="sidebar-link">逗号运算符</a></li><li class="sidebar-sub-header"><a href="/pages/69c69e/#运算顺序" class="sidebar-link">运算顺序</a></li></ul></li></ul></li></ul></section></li><li><a href="/pages/36f9e8/" class="sidebar-link">语法专题</a></li><li><a href="/pages/3e3990/" class="sidebar-link">标准库</a></li><li><a href="/pages/32c5b1/" class="sidebar-link">面向对象编程</a></li><li><a href="/pages/73df15/" class="sidebar-link">异步操作</a></li><li><a href="/pages/91f216/" class="sidebar-link">DOM</a></li><li><a href="/pages/329076/" class="sidebar-link">事件</a></li><li><a href="/pages/229568/" class="sidebar-link">浏览器模型(一)</a></li><li><a href="/pages/ffb0a1/" class="sidebar-link">浏览器模型(二)</a></li><li><a href="/pages/b7cf03/" class="sidebar-link">浏览器模型(三)</a></li><li><a href="/pages/610238/" class="sidebar-link">浏览器模型(四)</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《ES6 教程》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Vue》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《React》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《TypeScript 从零实现 axios》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Git》学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript文章</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-1"><div class="articleInfo-wrap" data-v-1cd794fe><div class="articleInfo" data-v-1cd794fe><ul class="breadcrumbs" data-v-1cd794fe><li data-v-1cd794fe><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-1cd794fe></a></li> <li data-v-1cd794fe><a href="/fore" title="大前端-目录页" data-v-1cd794fe>大前端</a></li> <li data-v-1cd794fe><a href="/fore/#JavaScript基础教程" title="大前端#JavaScript基础教程" data-v-1cd794fe>JavaScript基础教程</a></li> <li data-v-1cd794fe><a href="/fore/#青铜" title="大前端#青铜" data-v-1cd794fe>青铜</a></li></ul> <div class="info" data-v-1cd794fe><div title="作者" class="author iconfont icon-touxiang" data-v-1cd794fe><a href="https://github.com/wuKongNotNull" target="_blank" title="作者" class="beLink" data-v-1cd794fe>悟空非空也</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1cd794fe><a href="javascript:;" data-v-1cd794fe>2021-12-05</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+          运算符
+        </h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h1 id="运算符"><a href="#运算符" class="header-anchor">#</a> 运算符</h1> <h2 id="算术运算符"><a href="#算术运算符" class="header-anchor">#</a> 算术运算符</h2> <p>运算符是处理数据的基本方法，用来从现有的值得到新的值。JavaScript 提供了多种运算符，覆盖了所有主要的运算。</p> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <p>JavaScript 共提供10个算术运算符，用来完成基本的算术运算。</p> <ul><li><strong>加法运算符</strong>：<code>x + y</code></li> <li><strong>减法运算符</strong>： <code>x - y</code></li> <li><strong>乘法运算符</strong>： <code>x * y</code></li> <li><strong>除法运算符</strong>：<code>x / y</code></li> <li><strong>指数运算符</strong>：<code>x ** y</code></li> <li><strong>余数运算符</strong>：<code>x % y</code></li> <li><strong>自增运算符</strong>：<code>++x</code> 或者 <code>x++</code></li> <li><strong>自减运算符</strong>：<code>--x</code> 或者 <code>x--</code></li> <li><strong>数值运算符</strong>： <code>+x</code></li> <li><strong>负数值运算符</strong>：<code>-x</code></li></ul> <p>减法、乘法、除法运算法比较单纯，就是执行相应的数学运算。下面介绍其他几个算术运算符，重点是加法运算符。</p> <h3 id="加法运算符"><a href="#加法运算符" class="header-anchor">#</a> 加法运算符</h3> <h4 id="基本规则"><a href="#基本规则" class="header-anchor">#</a> 基本规则</h4> <p>加法运算符（<code>+</code>）是最常见的运算符，用来求两个数值的和。</p> <div class="language- extra-class"><pre class="language-text"><code>1 + 1 // 2
+</code></pre></div><p>JavaScript 允许非数值的相加。</p> <div class="language- extra-class"><pre class="language-text"><code>true + true // 2
+1 + true // 2
+</code></pre></div><p>上面代码中，第一行是两个布尔值相加，第二行是数值与布尔值相加。这两种情况，布尔值都会自动转成数值，然后再相加。</p> <p>比较特殊的是，如果是两个字符串相加，这时加法运算符会变成连接运算符，返回一个新的字符串，将两个原字符串连接在一起。</p> <div class="language- extra-class"><pre class="language-text"><code>'a' + 'bc' // &quot;abc&quot;
+</code></pre></div><p>如果一个运算子是字符串，另一个运算子是非字符串，这时非字符串会转成字符串，再连接在一起。</p> <div class="language- extra-class"><pre class="language-text"><code>1 + 'a' // &quot;1a&quot;
+false + 'a' // &quot;falsea&quot;
+</code></pre></div><p>加法运算符是在运行时决定，到底是执行相加，还是执行连接。也就是说，运算子的不同，导致了不同的语法行为，这种现象称为“重载”（overload）。由于加法运算符存在重载，可能执行两种运算，使用的时候必须很小心。</p> <div class="language- extra-class"><pre class="language-text"><code>'3' + 4 + 5 // &quot;345&quot;
+3 + 4 + '5' // &quot;75&quot;
+</code></pre></div><p>上面代码中，由于从左到右的运算次序，字符串的位置不同会导致不同的结果。</p> <p>除了加法运算符，其他算术运算符（比如减法、除法和乘法）都不会发生重载。它们的规则是：所有运算子一律转为数值，再进行相应的数学运算。</p> <div class="language- extra-class"><pre class="language-text"><code>1 - '2' // -1
+1 * '2' // 2
+1 / '2' // 0.5
+</code></pre></div><p>上面代码中，减法、除法和乘法运算符，都是将字符串自动转为数值，然后再运算。</p> <h4 id="对象的相加"><a href="#对象的相加" class="header-anchor">#</a> 对象的相加</h4> <p>如果运算子是对象，必须先转成原始类型的值，然后再相加。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = { p: 1 };
+obj + 2 // &quot;[object Object]2&quot;
+</code></pre></div><p>上面代码中，对象<code>obj</code>转成原始类型的值是<code>[object Object]</code>，再加<code>2</code>就得到了上面的结果。</p> <p>对象转成原始类型的值，规则如下。</p> <p>首先，自动调用对象的<code>valueOf</code>方法。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = { p: 1 };
+obj.valueOf() // { p: 1 }
+</code></pre></div><p>一般来说，对象的<code>valueOf</code>方法总是返回对象自身，这时再自动调用对象的<code>toString</code>方法，将其转为字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = { p: 1 };
+obj.valueOf().toString() // &quot;[object Object]&quot;
+</code></pre></div><p>对象的<code>toString</code>方法默认返回<code>[object Object]</code>，所以就得到了最前面那个例子的结果。</p> <p>知道了这个规则以后，就可以自己定义<code>valueOf</code>方法或<code>toString</code>方法，得到想要的结果。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = {
+  valueOf: function () {
+    return 1;
+  }
+};
+
+obj + 2 // 3
+</code></pre></div><p>上面代码中，我们定义<code>obj</code>对象的<code>valueOf</code>方法返回<code>1</code>，于是<code>obj + 2</code>就得到了<code>3</code>。这个例子中，由于<code>valueOf</code>方法直接返回一个原始类型的值，所以不再调用<code>toString</code>方法。</p> <p>下面是自定义<code>toString</code>方法的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = {
+  toString: function () {
+    return 'hello';
+  }
+};
+
+obj + 2 // &quot;hello2&quot;
+</code></pre></div><p>上面代码中，对象<code>obj</code>的<code>toString</code>方法返回字符串<code>hello</code>。前面说过，只要有一个运算子是字符串，加法运算符就变成连接运算符，返回连接后的字符串。</p> <p>这里有一个特例，如果运算子是一个<code>Date</code>对象的实例，那么会优先执行<code>toString</code>方法。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj = new Date();
+obj.valueOf = function () { return 1 };
+obj.toString = function () { return 'hello' };
+
+obj + 2 // &quot;hello2&quot;
+</code></pre></div><p>上面代码中，对象<code>obj</code>是一个<code>Date</code>对象的实例，并且自定义了<code>valueOf</code>方法和<code>toString</code>方法，结果<code>toString</code>方法优先执行。</p> <h3 id="余数运算符"><a href="#余数运算符" class="header-anchor">#</a> 余数运算符</h3> <p>余数运算符（<code>%</code>）返回前一个运算子被后一个运算子除，所得的余数。</p> <div class="language- extra-class"><pre class="language-text"><code>12 % 5 // 2
+</code></pre></div><p>需要注意的是，运算结果的正负号由第一个运算子的正负号决定。</p> <div class="language- extra-class"><pre class="language-text"><code>-1 % 2 // -1
+1 % -2 // 1
+</code></pre></div><p>所以，为了得到负数的正确余数值，可以先使用绝对值函数。</p> <div class="language- extra-class"><pre class="language-text"><code>// 错误的写法
+function isOdd(n) {
+  return n % 2 === 1;
+}
+isOdd(-5) // false
+isOdd(-4) // false
+
+// 正确的写法
+function isOdd(n) {
+  return Math.abs(n % 2) === 1;
+}
+isOdd(-5) // true
+isOdd(-4) // false
+</code></pre></div><p>余数运算符还可以用于浮点数的运算。但是，由于浮点数不是精确的值，无法得到完全准确的结果。</p> <div class="language- extra-class"><pre class="language-text"><code>6.5 % 2.1
+// 0.19999999999999973
+</code></pre></div><h3 id="自增和自减运算符"><a href="#自增和自减运算符" class="header-anchor">#</a> 自增和自减运算符</h3> <p>自增和自减运算符，是一元运算符，只需要一个运算子。它们的作用是将运算子首先转为数值，然后加上1或者减去1。它们会修改原始变量。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+++x // 2
+x // 2
+
+--x // 1
+x // 1
+</code></pre></div><p>上面代码的变量<code>x</code>自增后，返回<code>2</code>，再进行自减，返回<code>1</code>。这两种情况都会使得，原始变量<code>x</code>的值发生改变。</p> <p>运算之后，变量的值发生变化，这种效应叫做运算的副作用（side effect）。自增和自减运算符是仅有的两个具有副作用的运算符，其他运算符都不会改变变量的值。</p> <p>自增和自减运算符有一个需要注意的地方，就是放在变量之后，会先返回变量操作前的值，再进行自增/自减操作；放在变量之前，会先进行自增/自减操作，再返回变量操作后的值。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+var y = 1;
+
+x++ // 1
+++y // 2
+</code></pre></div><p>上面代码中，<code>x</code>是先返回当前值，然后自增，所以得到<code>1</code>；<code>y</code>是先自增，然后返回新的值，所以得到<code>2</code>。</p> <h3 id="数值运算符-负数值运算符"><a href="#数值运算符-负数值运算符" class="header-anchor">#</a> 数值运算符，负数值运算符</h3> <p>数值运算符（<code>+</code>）同样使用加号，但它是一元运算符（只需要一个操作数），而加法运算符是二元运算符（需要两个操作数）。</p> <p>数值运算符的作用在于可以将任何值转为数值（与<code>Number</code>函数的作用相同）。</p> <div class="language- extra-class"><pre class="language-text"><code>+true // 1
++[] // 0
++{} // NaN
+</code></pre></div><p>上面代码表示，非数值经过数值运算符以后，都变成了数值（最后一行<code>NaN</code>也是数值）。具体的类型转换规则，参见《数据类型转换》一章。</p> <p>负数值运算符（<code>-</code>），也同样具有将一个值转为数值的功能，只不过得到的值正负相反。连用两个负数值运算符，等同于数值运算符。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+-x // -1
+-(-x) // 1
+</code></pre></div><p>上面代码最后一行的圆括号不可少，否则会变成自减运算符。</p> <p>数值运算符号和负数值运算符，都会返回一个新的值，而不会改变原始变量的值。</p> <h3 id="指数运算符"><a href="#指数运算符" class="header-anchor">#</a> 指数运算符</h3> <p>指数运算符（<code>**</code>）完成指数运算，前一个运算子是底数，后一个运算子是指数。</p> <div class="language- extra-class"><pre class="language-text"><code>2 ** 4 // 16
+</code></pre></div><p>注意，指数运算符是右结合，而不是左结合。即多个指数运算符连用时，先进行最右边的计算。</p> <div class="language- extra-class"><pre class="language-text"><code>// 相当于 2 ** (3 ** 2)
+2 ** 3 ** 2
+// 512
+</code></pre></div><p>上面代码中，由于指数运算符是右结合，所以先计算第二个指数运算符，而不是第一个。</p> <h3 id="赋值运算符"><a href="#赋值运算符" class="header-anchor">#</a> 赋值运算符</h3> <p>赋值运算符（Assignment Operators）用于给变量赋值。</p> <p>最常见的赋值运算符，当然就是等号（<code>=</code>）。</p> <div class="language- extra-class"><pre class="language-text"><code>// 将 1 赋值给变量 x
+var x = 1;
+
+// 将变量 y 的值赋值给变量 x
+var x = y;
+</code></pre></div><p>赋值运算符还可以与其他运算符结合，形成变体。下面是与算术运算符的结合。</p> <div class="language- extra-class"><pre class="language-text"><code>// 等同于 x = x + y
+x += y
+
+// 等同于 x = x - y
+x -= y
+
+// 等同于 x = x * y
+x *= y
+
+// 等同于 x = x / y
+x /= y
+
+// 等同于 x = x % y
+x %= y
+
+// 等同于 x = x ** y
+x **= y
+</code></pre></div><p>下面是与位运算符的结合（关于位运算符，请见后文的介绍）。</p> <div class="language- extra-class"><pre class="language-text"><code>// 等同于 x = x &gt;&gt; y
+x &gt;&gt;= y
+
+// 等同于 x = x &lt;&lt; y
+x &lt;&lt;= y
+
+// 等同于 x = x &gt;&gt;&gt; y
+x &gt;&gt;&gt;= y
+
+// 等同于 x = x &amp; y
+x &amp;= y
+
+// 等同于 x = x | y
+x |= y
+
+// 等同于 x = x ^ y
+x ^= y
+</code></pre></div><p>这些复合的赋值运算符，都是先进行指定运算，然后将得到值返回给左边的变量。</p> <h2 id="比较运算符"><a href="#比较运算符" class="header-anchor">#</a> 比较运算符</h2> <h3 id="概述-2"><a href="#概述-2" class="header-anchor">#</a> 概述</h3> <p>比较运算符用于比较两个值的大小，然后返回一个布尔值，表示是否满足指定的条件。</p> <div class="language- extra-class"><pre class="language-text"><code>2 &gt; 1 // true
+</code></pre></div><p>上面代码比较<code>2</code>是否大于<code>1</code>，返回<code>true</code>。</p> <blockquote><p>注意，比较运算符可以比较各种类型的值，不仅仅是数值。</p></blockquote> <p>JavaScript 一共提供了8个比较运算符。</p> <ul><li><code>&gt;</code> 大于运算符</li> <li><code>&lt;</code> 小于运算符</li> <li><code>&lt;=</code> 小于或等于运算符</li> <li><code>&gt;=</code> 大于或等于运算符</li> <li><code>==</code> 相等运算符</li> <li><code>===</code> 严格相等运算符</li> <li><code>!=</code> 不相等运算符</li> <li><code>!==</code> 严格不相等运算符</li></ul> <p>这八个比较运算符分成两类：相等比较和非相等比较。两者的规则是不一样的，对于非相等的比较，算法是先看两个运算子是否都是字符串，如果是的，就按照字典顺序比较（实际上是比较 Unicode 码点）；否则，将两个运算子都转成数值，再比较数值的大小。</p> <h3 id="非相等运算符-字符串的比较"><a href="#非相等运算符-字符串的比较" class="header-anchor">#</a> 非相等运算符：字符串的比较</h3> <p>字符串按照字典顺序进行比较。</p> <div class="language- extra-class"><pre class="language-text"><code>'cat' &gt; 'dog' // false
+'cat' &gt; 'catalog' // false
+</code></pre></div><p>JavaScript 引擎内部首先比较首字符的 Unicode 码点。如果相等，再比较第二个字符的 Unicode 码点，以此类推。</p> <div class="language- extra-class"><pre class="language-text"><code>'cat' &gt; 'Cat' // true'
+</code></pre></div><p>上面代码中，小写的<code>c</code>的 Unicode 码点（<code>99</code>）大于大写的<code>C</code>的 Unicode 码点（<code>67</code>），所以返回<code>true</code>。</p> <p>由于所有字符都有 Unicode 码点，因此汉字也可以比较。</p> <div class="language- extra-class"><pre class="language-text"><code>'大' &gt; '小' // false
+</code></pre></div><p>上面代码中，“大”的 Unicode 码点是22823，“小”是23567，因此返回<code>false</code>。</p> <h3 id="非相等运算符-非字符串的比较"><a href="#非相等运算符-非字符串的比较" class="header-anchor">#</a> 非相等运算符：非字符串的比较</h3> <p>如果两个运算子之中，至少有一个不是字符串，需要分成以下两种情况。</p> <p><strong>（1）原始类型值</strong></p> <p>如果两个运算子都是原始类型的值，则是先转成数值再比较。</p> <div class="language- extra-class"><pre class="language-text"><code>5 &gt; '4' // true
+// 等同于 5 &gt; Number('4')
+// 即 5 &gt; 4
+
+true &gt; false // true
+// 等同于 Number(true) &gt; Number(false)
+// 即 1 &gt; 0
+
+2 &gt; true // true
+// 等同于 2 &gt; Number(true)
+// 即 2 &gt; 1
+</code></pre></div><p>上面代码中，字符串和布尔值都会先转成数值，再进行比较。</p> <p>这里需要注意与<code>NaN</code>的比较。任何值（包括<code>NaN</code>本身）与<code>NaN</code>使用非相等运算符进行比较，返回的都是<code>false</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>1 &gt; NaN // false
+1 &lt;= NaN // false
+'1' &gt; NaN // false
+'1' &lt;= NaN // false
+NaN &gt; NaN // false
+NaN &lt;= NaN // false
+</code></pre></div><p><strong>（2）对象</strong></p> <p>如果运算子是对象，会转为原始类型的值，再进行比较。</p> <p>对象转换成原始类型的值，算法是先调用<code>valueOf</code>方法；如果返回的还是对象，再接着调用<code>toString</code>方法，详细解释参见《数据类型的转换》一章。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = [2];
+x &gt; '11' // true
+// 等同于 [2].valueOf().toString() &gt; '11'
+// 即 '2' &gt; '11'
+
+x.valueOf = function () { return '1' };
+x &gt; '11' // false
+// 等同于 [2].valueOf() &gt; '11'
+// 即 '1' &gt; '11'
+</code></pre></div><p>两个对象之间的比较也是如此。</p> <div class="language- extra-class"><pre class="language-text"><code>[2] &gt; [1] // true
+// 等同于 [2].valueOf().toString() &gt; [1].valueOf().toString()
+// 即 '2' &gt; '1'
+
+[2] &gt; [11] // true
+// 等同于 [2].valueOf().toString() &gt; [11].valueOf().toString()
+// 即 '2' &gt; '11'
+
+{ x: 2 } &gt;= { x: 1 } // true
+// 等同于 { x: 2 }.valueOf().toString() &gt;= { x: 1 }.valueOf().toString()
+// 即 '[object Object]' &gt;= '[object Object]'
+</code></pre></div><h3 id="严格相等运算符"><a href="#严格相等运算符" class="header-anchor">#</a> 严格相等运算符</h3> <p>JavaScript 提供两种相等运算符：<code>==</code>和<code>===</code>。</p> <p>简单说，它们的区别是相等运算符（<code>==</code>）比较两个值是否相等，严格相等运算符（<code>===</code>）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（<code>===</code>）直接返回<code>false</code>，而相等运算符（<code>==</code>）会将它们转换成同一个类型，再用严格相等运算符进行比较。</p> <p>本节介绍严格相等运算符的算法。</p> <p><strong>（1）不同类型的值</strong></p> <p>如果两个值的类型不同，直接返回<code>false</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>1 === &quot;1&quot; // false
+true === &quot;true&quot; // false
+</code></pre></div><p>上面代码比较数值的<code>1</code>与字符串的“1”、布尔值的<code>true</code>与字符串<code>&quot;true&quot;</code>，因为类型不同，结果都是<code>false</code>。</p> <p><strong>（2）同一类的原始类型值</strong></p> <p>同一类型的原始类型的值（数值、字符串、布尔值）比较时，值相同就返回<code>true</code>，值不同就返回<code>false</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>1 === 0x1 // true
+</code></pre></div><p>上面代码比较十进制的<code>1</code>与十六进制的<code>1</code>，因为类型和值都相同，返回<code>true</code>。</p> <p>需要注意的是，<code>NaN</code>与任何值都不相等（包括自身）。另外，正<code>0</code>等于负<code>0</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>NaN === NaN  // false
++0 === -0 // true
+</code></pre></div><p><strong>（3）复合类型值</strong></p> <p>两个复合类型（对象、数组、函数）的数据比较时，不是比较它们的值是否相等，而是比较它们是否指向同一个地址。</p> <div class="language- extra-class"><pre class="language-text"><code>{} === {} // false
+[] === [] // false
+(function () {} === function () {}) // false
+</code></pre></div><p>上面代码分别比较两个空对象、两个空数组、两个空函数，结果都是不相等。原因是对于复合类型的值，严格相等运算比较的是，它们是否引用同一个内存地址，而运算符两边的空对象、空数组、空函数的值，都存放在不同的内存地址，结果当然是<code>false</code>。</p> <p>如果两个变量引用同一个对象，则它们相等。</p> <div class="language- extra-class"><pre class="language-text"><code>var v1 = {};
+var v2 = v1;
+v1 === v2 // true
+</code></pre></div><p>注意，对于两个对象的比较，严格相等运算符比较的是地址，而大于或小于运算符比较的是值。</p> <div class="language- extra-class"><pre class="language-text"><code>var obj1 = {};
+var obj2 = {};
+
+obj1 &gt; obj2 // false
+obj1 &lt; obj2 // false
+obj1 === obj2 // false
+</code></pre></div><p>上面的三个比较，前两个比较的是值，最后一个比较的是地址，所以都返回<code>false</code>。</p> <p><strong>（4）undefined 和 null</strong></p> <p><code>undefined</code>和<code>null</code>与自身严格相等。</p> <div class="language- extra-class"><pre class="language-text"><code>undefined === undefined // true
+null === null // true
+</code></pre></div><p>由于变量声明后默认值是<code>undefined</code>，因此两个只声明未赋值的变量是相等的。</p> <div class="language- extra-class"><pre class="language-text"><code>var v1;
+var v2;
+v1 === v2 // true
+</code></pre></div><h3 id="严格不相等运算符"><a href="#严格不相等运算符" class="header-anchor">#</a> 严格不相等运算符</h3> <p>严格相等运算符有一个对应的“严格不相等运算符”（<code>!==</code>），它的算法就是先求严格相等运算符的结果，然后返回相反值。</p> <div class="language- extra-class"><pre class="language-text"><code>1 !== '1' // true
+// 等同于
+!(1 === '1')
+</code></pre></div><p>上面代码中，感叹号<code>!</code>是求出后面表达式的相反值。</p> <h3 id="相等运算符"><a href="#相等运算符" class="header-anchor">#</a> 相等运算符</h3> <p>相等运算符用来比较相同类型的数据时，与严格相等运算符完全一样。</p> <div class="language- extra-class"><pre class="language-text"><code>1 == 1.0
+// 等同于
+1 === 1.0
+</code></pre></div><p>比较不同类型的数据时，相等运算符会先将数据进行类型转换，然后再用严格相等运算符比较。下面分成几种情况，讨论不同类型的值互相比较的规则。</p> <p><strong>（1）原始类型值</strong></p> <p>原始类型的值会转换成数值再进行比较。</p> <div class="language- extra-class"><pre class="language-text"><code>1 == true // true
+// 等同于 1 === Number(true)
+
+0 == false // true
+// 等同于 0 === Number(false)
+
+2 == true // false
+// 等同于 2 === Number(true)
+
+2 == false // false
+// 等同于 2 === Number(false)
+
+'true' == true // false
+// 等同于 Number('true') === Number(true)
+// 等同于 NaN === 1
+
+'' == 0 // true
+// 等同于 Number('') === 0
+// 等同于 0 === 0
+
+'' == false  // true
+// 等同于 Number('') === Number(false)
+// 等同于 0 === 0
+
+'1' == true  // true
+// 等同于 Number('1') === Number(true)
+// 等同于 1 === 1
+
+'\n  123  \t' == 123 // true
+// 因为字符串转为数字时，省略前置和后置的空格
+</code></pre></div><p>上面代码将字符串和布尔值都转为数值，然后再进行比较。具体的字符串与布尔值的类型转换规则，参见《数据类型转换》一章。</p> <p><strong>（2）对象与原始类型值比较</strong></p> <p>对象（这里指广义的对象，包括数组和函数）与原始类型的值比较时，对象转换成原始类型的值，再进行比较。</p> <p>具体来说，先调用对象的<code>valueOf()</code>方法，如果得到原始类型的值，就按照上一小节的规则，互相比较；如果得到的还是对象，则再调用<code>toString()</code>方法，得到字符串形式，再进行比较。</p> <p>下面是数组与原始类型值比较的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>// 数组与数值的比较
+[1] == 1 // true
+
+// 数组与字符串的比较
+[1] == '1' // true
+[1, 2] == '1,2' // true
+
+// 对象与布尔值的比较
+[1] == true // true
+[2] == true // false
+</code></pre></div><p>上面例子中，JavaScript 引擎会先对数组<code>[1]</code>调用数组的<code>valueOf()</code>方法，由于返回的还是一个数组，所以会接着调用数组的<code>toString()</code>方法，得到字符串形式，再按照上一小节的规则进行比较。</p> <p>下面是一个更直接的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>const obj = {
+  valueOf: function () {
+    console.log('执行 valueOf()');
+    return obj;
+  },
+  toString: function () {
+    console.log('执行 toString()');
+    return 'foo';
+  }
+};
+
+obj == 'foo'
+// 执行 valueOf()
+// 执行 toString()
+// true
+</code></pre></div><p>上面例子中，<code>obj</code>是一个自定义了<code>valueOf()</code>和<code>toString()</code>方法的对象。这个对象与字符串<code>'foo'</code>进行比较时，会依次调用<code>valueOf()</code>和<code>toString()</code>方法，最后返回<code>'foo'</code>，所以比较结果是<code>true</code>。</p> <p><strong>（3）undefined 和 null</strong></p> <p><code>undefined</code>和<code>null</code>只有与自身比较，或者互相比较时，才会返回<code>true</code>；与其他类型的值比较时，结果都为<code>false</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>undefined == undefined // true
+null == null // true
+undefined == null // true
+
+false == null // false
+false == undefined // false
+
+0 == null // false
+0 == undefined // false
+</code></pre></div><p><strong>（4）相等运算符的缺点</strong></p> <p>相等运算符隐藏的类型转换，会带来一些违反直觉的结果。</p> <div class="language- extra-class"><pre class="language-text"><code>0 == ''             // true
+0 == '0'            // true
+
+2 == true           // false
+2 == false          // false
+
+false == 'false'    // false
+false == '0'        // true
+
+false == undefined  // false
+false == null       // false
+null == undefined   // true
+
+' \t\r\n ' == 0     // true
+</code></pre></div><p>上面这些表达式都不同于直觉，很容易出错。因此建议不要使用相等运算符（<code>==</code>），最好只使用严格相等运算符（<code>===</code>）。</p> <h3 id="不相等运算符"><a href="#不相等运算符" class="header-anchor">#</a> 不相等运算符</h3> <p>相等运算符有一个对应的“不相等运算符”（<code>!=</code>），它的算法就是先求相等运算符的结果，然后返回相反值。</p> <div class="language- extra-class"><pre class="language-text"><code>1 != '1' // false
+
+// 等同于
+!(1 == '1')
+</code></pre></div><h2 id="布尔运算符"><a href="#布尔运算符" class="header-anchor">#</a> 布尔运算符</h2> <h3 id="概述-3"><a href="#概述-3" class="header-anchor">#</a> 概述</h3> <p>布尔运算符用于将表达式转为布尔值，一共包含四个运算符。</p> <ul><li>取反运算符：<code>!</code></li> <li>且运算符：<code>&amp;&amp;</code></li> <li>或运算符：<code>||</code></li> <li>三元运算符：<code>?:</code></li></ul> <h3 id="取反运算符"><a href="#取反运算符" class="header-anchor">#</a> 取反运算符（!）</h3> <p>取反运算符是一个感叹号，用于将布尔值变为相反值，即<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>!true // false
+!false // true
+</code></pre></div><p>对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为<code>true</code>，其他值都为<code>false</code>。</p> <ul><li><code>undefined</code></li> <li><code>null</code></li> <li><code>false</code></li> <li><code>0</code></li> <li><code>NaN</code></li> <li>空字符串（<code>''</code>）</li></ul> <div class="language- extra-class"><pre class="language-text"><code>!undefined // true
+!null // true
+!0 // true
+!NaN // true
+!&quot;&quot; // true
+
+!54 // false
+!'hello' // false
+![] // false
+!{} // false
+</code></pre></div><p>上面代码中，不管什么类型的值，经过取反运算后，都变成了布尔值。</p> <p>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与<code>Boolean</code>函数的作用相同。这是一种常用的类型转换的写法。</p> <div class="language- extra-class"><pre class="language-text"><code>!!x
+// 等同于
+Boolean(x)
+</code></pre></div><p>上面代码中，不管<code>x</code>是什么类型的值，经过两次取反运算后，变成了与<code>Boolean</code>函数结果相同的布尔值。所以，两次取反就是将一个值转为布尔值的简便写法。</p> <h3 id="且运算符"><a href="#且运算符" class="header-anchor">#</a> 且运算符（&amp;&amp;）</h3> <p>且运算符（<code>&amp;&amp;</code>）往往用于多个表达式的求值。</p> <p>它的运算规则是：如果第一个运算子的布尔值为<code>true</code>，则返回第二个运算子的值（注意是值，不是布尔值）；如果第一个运算子的布尔值为<code>false</code>，则直接返回第一个运算子的值，且不再对第二个运算子求值。</p> <div class="language- extra-class"><pre class="language-text"><code>'t' &amp;&amp; '' // &quot;&quot;
+'t' &amp;&amp; 'f' // &quot;f&quot;
+'t' &amp;&amp; (1 + 2) // 3
+'' &amp;&amp; 'f' // &quot;&quot;
+'' &amp;&amp; '' // &quot;&quot;
+
+var x = 1;
+(1 - 1) &amp;&amp; ( x += 1) // 0
+x // 1
+</code></pre></div><p>上面代码的最后一个例子，由于且运算符的第一个运算子的布尔值为<code>false</code>，则直接返回它的值<code>0</code>，而不再对第二个运算子求值，所以变量<code>x</code>的值没变。</p> <p>这种跳过第二个运算子的机制，被称为“短路”。有些程序员喜欢用它取代<code>if</code>结构，比如下面是一段<code>if</code>结构的代码，就可以用且运算符改写。</p> <div class="language- extra-class"><pre class="language-text"><code>if (i) {
+  doSomething();
+}
+
+// 等价于
+
+i &amp;&amp; doSomething();
+</code></pre></div><p>上面代码的两种写法是等价的，但是后一种不容易看出目的，也不容易除错，建议谨慎使用。</p> <p>且运算符可以多个连用，这时返回第一个布尔值为<code>false</code>的表达式的值。如果所有表达式的布尔值都为<code>true</code>，则返回最后一个表达式的值。</p> <div class="language- extra-class"><pre class="language-text"><code>true &amp;&amp; 'foo' &amp;&amp; '' &amp;&amp; 4 &amp;&amp; 'foo' &amp;&amp; true
+// ''
+
+1 &amp;&amp; 2 &amp;&amp; 3
+// 3
+</code></pre></div><p>上面代码中，例一里面，第一个布尔值为<code>false</code>的表达式为第三个表达式，所以得到一个空字符串。例二里面，所有表达式的布尔值都是<code>true</code>，所以返回最后一个表达式的值<code>3</code>。</p> <h3 id="或运算符"><a href="#或运算符" class="header-anchor">#</a> 或运算符（||）</h3> <p>或运算符（<code>||</code>）也用于多个表达式的求值。它的运算规则是：如果第一个运算子的布尔值为<code>true</code>，则返回第一个运算子的值，且不再对第二个运算子求值；如果第一个运算子的布尔值为<code>false</code>，则返回第二个运算子的值。</p> <div class="language- extra-class"><pre class="language-text"><code>'t' || '' // &quot;t&quot;
+'t' || 'f' // &quot;t&quot;
+'' || 'f' // &quot;f&quot;
+'' || '' // &quot;&quot;
+</code></pre></div><p>短路规则对这个运算符也适用。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+true || (x = 2) // true
+x // 1
+</code></pre></div><p>上面代码中，或运算符的第一个运算子为<code>true</code>，所以直接返回<code>true</code>，不再运行第二个运算子。所以，<code>x</code>的值没有改变。这种只通过第一个表达式的值，控制是否运行第二个表达式的机制，就称为“短路”（short-cut）。</p> <p>或运算符可以多个连用，这时返回第一个布尔值为<code>true</code>的表达式的值。如果所有表达式都为<code>false</code>，则返回最后一个表达式的值。</p> <div class="language- extra-class"><pre class="language-text"><code>false || 0 || '' || 4 || 'foo' || true
+// 4
+
+false || 0 || ''
+// ''
+</code></pre></div><p>上面代码中，例一里面，第一个布尔值为<code>true</code>的表达式是第四个表达式，所以得到数值4。例二里面，所有表达式的布尔值都为<code>false</code>，所以返回最后一个表达式的值。</p> <p>或运算符常用于为一个变量设置默认值。</p> <div class="language- extra-class"><pre class="language-text"><code>function saveText(text) {
+  text = text || '';
+  // ...
+}
+
+// 或者写成
+saveText(this.text || '')
+</code></pre></div><p>上面代码表示，如果函数调用时，没有提供参数，则该参数默认设置为空字符串。</p> <h3 id="三元条件运算符"><a href="#三元条件运算符" class="header-anchor">#</a> 三元条件运算符（?:）</h3> <p>三元条件运算符由问号（?）和冒号（:）组成，分隔三个表达式。它是 JavaScript 语言唯一一个需要三个运算子的运算符。如果第一个表达式的布尔值为<code>true</code>，则返回第二个表达式的值，否则返回第三个表达式的值。</p> <div class="language- extra-class"><pre class="language-text"><code>'t' ? 'hello' : 'world' // &quot;hello&quot;
+0 ? 'hello' : 'world' // &quot;world&quot;
+</code></pre></div><p>上面代码的<code>t</code>和<code>0</code>的布尔值分别为<code>true</code>和<code>false</code>，所以分别返回第二个和第三个表达式的值。</p> <p>通常来说，三元条件表达式与<code>if...else</code>语句具有同样表达效果，前者可以表达的，后者也能表达。但是两者具有一个重大差别，<code>if...else</code>是语句，没有返回值；三元条件表达式是表达式，具有返回值。所以，在需要返回值的场合，只能使用三元条件表达式，而不能使用<code>if..else</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(true ? 'T' : 'F');
+</code></pre></div><p>上面代码中，<code>console.log</code>方法的参数必须是一个表达式，这时就只能使用三元条件表达式。如果要用<code>if...else</code>语句，就必须改变整个代码写法了。</p> <h2 id="二进制位运算符"><a href="#二进制位运算符" class="header-anchor">#</a> 二进制位运算符</h2> <h3 id="概述-4"><a href="#概述-4" class="header-anchor">#</a> 概述</h3> <p>二进制位运算符用于直接对二进制位进行计算，一共有7个。</p> <ul><li><strong>二进制或运算符</strong>（or）：符号为<code>|</code>，表示若两个二进制位都为<code>0</code>，则结果为<code>0</code>，否则为<code>1</code>。</li> <li><strong>二进制与运算符</strong>（and）：符号为<code>&amp;</code>，表示若两个二进制位都为1，则结果为1，否则为0。</li> <li><strong>二进制否运算符</strong>（not）：符号为<code>~</code>，表示对一个二进制位取反。</li> <li><strong>异或运算符</strong>（xor）：符号为<code>^</code>，表示若两个二进制位不相同，则结果为1，否则为0。</li> <li><strong>左移运算符</strong>（left shift）：符号为<code>&lt;&lt;</code>，详见下文解释。</li> <li><strong>右移运算符</strong>（right shift）：符号为<code>&gt;&gt;</code>，详见下文解释。</li> <li><strong>头部补零的右移运算符</strong>（zero filled right shift）：符号为<code>&gt;&gt;&gt;</code>，详见下文解释。</li></ul> <p>这些位运算符直接处理每一个比特位（bit），所以是非常底层的运算，好处是速度极快，缺点是很不直观，许多场合不能使用它们，否则会使代码难以理解和查错。</p> <p>有一点需要特别注意，位运算符只对整数起作用，如果一个运算子不是整数，会自动转为整数后再执行。另外，虽然在 JavaScript 内部，数值都是以64位浮点数的形式储存，但是做位运算的时候，是以32位带符号的整数进行运算的，并且返回值也是一个32位带符号的整数。</p> <div class="language- extra-class"><pre class="language-text"><code>i = i | 0;
+</code></pre></div><p>上面这行代码的意思，就是将<code>i</code>（不管是整数或小数）转为32位整数。</p> <p>利用这个特性，可以写出一个函数，将任意数值转为32位整数。</p> <div class="language- extra-class"><pre class="language-text"><code>function toInt32(x) {
+  return x | 0;
+}
+</code></pre></div><p>上面这个函数将任意值与<code>0</code>进行一次或运算，这个位运算会自动将一个值转为32位整数。下面是这个函数的用法。</p> <div class="language- extra-class"><pre class="language-text"><code>toInt32(1.001) // 1
+toInt32(1.999) // 1
+toInt32(1) // 1
+toInt32(-1) // -1
+toInt32(Math.pow(2, 32) + 1) // 1
+toInt32(Math.pow(2, 32) - 1) // -1
+</code></pre></div><p>上面代码中，<code>toInt32</code>可以将小数转为整数。对于一般的整数，返回值不会有任何变化。对于大于或等于2的32次方的整数，大于32位的数位都会被舍去。</p> <h3 id="二进制或运算符"><a href="#二进制或运算符" class="header-anchor">#</a> 二进制或运算符</h3> <p>二进制或运算符（<code>|</code>）逐位比较两个运算子，两个二进制位之中只要有一个为<code>1</code>，就返回<code>1</code>，否则返回<code>0</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>0 | 3 // 3
+</code></pre></div><p>上面代码中，<code>0</code>和<code>3</code>的二进制形式分别是<code>00</code>和<code>11</code>，所以进行二进制或运算会得到<code>11</code>（即<code>3</code>）。</p> <p>位运算只对整数有效，遇到小数时，会将小数部分舍去，只保留整数部分。所以，将一个小数与<code>0</code>进行二进制或运算，等同于对该数去除小数部分，即取整数位。</p> <div class="language- extra-class"><pre class="language-text"><code>2.9 | 0 // 2
+-2.9 | 0 // -2
+</code></pre></div><p>需要注意的是，这种取整方法不适用超过32位整数最大值<code>2147483647</code>的数。</p> <div class="language- extra-class"><pre class="language-text"><code>2147483649.4 | 0;
+// -2147483647
+</code></pre></div><h3 id="二进制与运算符"><a href="#二进制与运算符" class="header-anchor">#</a> 二进制与运算符</h3> <p>二进制与运算符（<code>&amp;</code>）的规则是逐位比较两个运算子，两个二进制位之中只要有一个位为<code>0</code>，就返回<code>0</code>，否则返回<code>1</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>0 &amp; 3 // 0
+</code></pre></div><p>上面代码中，0（二进制<code>00</code>）和3（二进制<code>11</code>）进行二进制与运算会得到<code>00</code>（即<code>0</code>）。</p> <h3 id="二进制否运算符"><a href="#二进制否运算符" class="header-anchor">#</a> 二进制否运算符</h3> <p>二进制否运算符（<code>~</code>）将每个二进制位都变为相反值（<code>0</code>变为<code>1</code>，<code>1</code>变为<code>0</code>）。它的返回结果有时比较难理解，因为涉及到计算机内部的数值表示机制。</p> <div class="language- extra-class"><pre class="language-text"><code>~ 3 // -4
+</code></pre></div><p>上面表达式对<code>3</code>进行二进制否运算，得到<code>-4</code>。之所以会有这样的结果，是因为位运算时，JavaScript 内部将所有的运算子都转为32位的二进制整数再进行运算。</p> <p><code>3</code>的32位整数形式是<code>00000000000000000000000000000011</code>，二进制否运算以后得到<code>11111111111111111111111111111100</code>。由于第一位（符号位）是1，所以这个数是一个负数。JavaScript 内部采用补码形式表示负数，即需要将这个数减去1，再取一次反，然后加上负号，才能得到这个负数对应的10进制值。这个数减去1等于<code>11111111111111111111111111111011</code>，再取一次反得到<code>00000000000000000000000000000100</code>，再加上负号就是<code>-4</code>。考虑到这样的过程比较麻烦，可以简单记忆成，一个数与自身的取反值相加，等于-1。</p> <div class="language- extra-class"><pre class="language-text"><code>~ -3 // 2
+</code></pre></div><p>上面表达式可以这样算，<code>-3</code>的取反值等于<code>-1</code>减去<code>-3</code>，结果为<code>2</code>。</p> <p>对一个整数连续两次二进制否运算，得到它自身。</p> <div class="language- extra-class"><pre class="language-text"><code>~~3 // 3
+</code></pre></div><p>所有的位运算都只对整数有效。二进制否运算遇到小数时，也会将小数部分舍去，只保留整数部分。所以，对一个小数连续进行两次二进制否运算，能达到取整效果。</p> <div class="language- extra-class"><pre class="language-text"><code>~~2.9 // 2
+~~47.11 // 47
+~~1.9999 // 1
+~~3 // 3
+</code></pre></div><p>使用二进制否运算取整，是所有取整方法中最快的一种。</p> <p>对字符串进行二进制否运算，JavaScript 引擎会先调用<code>Number</code>函数，将字符串转为数值。</p> <div class="language- extra-class"><pre class="language-text"><code>// 相当于~Number('011')
+~'011'  // -12
+
+// 相当于~Number('42 cats')
+~'42 cats' // -1
+
+// 相当于~Number('0xcafebabe')
+~'0xcafebabe' // 889275713
+
+// 相当于~Number('deadbeef')
+~'deadbeef' // -1
+</code></pre></div><p><code>Number</code>函数将字符串转为数值的规则，参见《数据的类型转换》一章。</p> <p>对于其他类型的值，二进制否运算也是先用<code>Number</code>转为数值，然后再进行处理。</p> <div class="language- extra-class"><pre class="language-text"><code>// 相当于 ~Number([])
+~[] // -1
+
+// 相当于 ~Number(NaN)
+~NaN // -1
+
+// 相当于 ~Number(null)
+~null // -1
+</code></pre></div><h3 id="异或运算符"><a href="#异或运算符" class="header-anchor">#</a> 异或运算符</h3> <p>异或运算（<code>^</code>）在两个二进制位不同时返回<code>1</code>，相同时返回<code>0</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>0 ^ 3 // 3
+</code></pre></div><p>上面表达式中，<code>0</code>（二进制<code>00</code>）与<code>3</code>（二进制<code>11</code>）进行异或运算，它们每一个二进制位都不同，所以得到<code>11</code>（即<code>3</code>）。</p> <p>“异或运算”有一个特殊运用，连续对两个数<code>a</code>和<code>b</code>进行三次异或运算，<code>a^=b; b^=a; a^=b;</code>，可以<a href="https://en.wikipedia.org/wiki/XOR_swap_algorithm" target="_blank" rel="noopener noreferrer">互换<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>它们的值。这意味着，使用“异或运算”可以在不引入临时变量的前提下，互换两个变量的值。</p> <div class="language- extra-class"><pre class="language-text"><code>var a = 10;
+var b = 99;
+
+a ^= b, b ^= a, a ^= b;
+
+a // 99
+b // 10
+</code></pre></div><p>这是互换两个变量的值的最快方法。</p> <p>异或运算也可以用来取整。</p> <div class="language- extra-class"><pre class="language-text"><code>12.9 ^ 0 // 12
+</code></pre></div><h3 id="左移运算符"><a href="#左移运算符" class="header-anchor">#</a> 左移运算符</h3> <p>左移运算符（<code>&lt;&lt;</code>）表示将一个数的二进制值向左移动指定的位数，尾部补<code>0</code>，即乘以<code>2</code>的指定次方。向左移动的时候，最高位的符号位是一起移动的。</p> <div class="language- extra-class"><pre class="language-text"><code>// 4 的二进制形式为100，
+// 左移一位为1000（即十进制的8）
+// 相当于乘以2的1次方
+4 &lt;&lt; 1
+// 8
+
+-4 &lt;&lt; 1
+// -8
+</code></pre></div><p>上面代码中，<code>-4</code>左移一位得到<code>-8</code>，是因为<code>-4</code>的二进制形式是<code>11111111111111111111111111111100</code>，左移一位后得到<code>11111111111111111111111111111000</code>，该数转为十进制（减去1后取反，再加上负号）即为<code>-8</code>。</p> <p>如果左移0位，就相当于将该数值转为32位整数，等同于取整，对于正数和负数都有效。</p> <div class="language- extra-class"><pre class="language-text"><code>13.5 &lt;&lt; 0
+// 13
+
+-13.5 &lt;&lt; 0
+// -13
+</code></pre></div><p>左移运算符用于二进制数值非常方便。</p> <div class="language- extra-class"><pre class="language-text"><code>var color = {r: 186, g: 218, b: 85};
+
+// RGB to HEX
+// (1 &lt;&lt; 24)的作用为保证结果是6位数
+var rgb2hex = function(r, g, b) {
+  return '#' + ((1 &lt;&lt; 24) + (r &lt;&lt; 16) + (g &lt;&lt; 8) + b)
+    .toString(16) // 先转成十六进制，然后返回字符串
+    .substr(1);   // 去除字符串的最高位，返回后面六个字符串
+}
+
+rgb2hex(color.r, color.g, color.b)
+// &quot;#bada55&quot;
+</code></pre></div><p>上面代码使用左移运算符，将颜色的 RGB 值转为 HEX 值。</p> <h3 id="右移运算符"><a href="#右移运算符" class="header-anchor">#</a> 右移运算符</h3> <p>右移运算符（<code>&gt;&gt;</code>）表示将一个数的二进制值向右移动指定的位数。如果是正数，头部全部补<code>0</code>；如果是负数，头部全部补<code>1</code>。右移运算符基本上相当于除以<code>2</code>的指定次方（最高位即符号位参与移动）。</p> <div class="language- extra-class"><pre class="language-text"><code>4 &gt;&gt; 1
+// 2
+/*
+// 因为4的二进制形式为 00000000000000000000000000000100，
+// 右移一位得到 00000000000000000000000000000010，
+// 即为十进制的2
+*/
+
+-4 &gt;&gt; 1
+// -2
+/*
+// 因为-4的二进制形式为 11111111111111111111111111111100，
+// 右移一位，头部补1，得到 11111111111111111111111111111110,
+// 即为十进制的-2
+*/
+</code></pre></div><p>右移运算可以模拟 2 的整除运算。</p> <div class="language- extra-class"><pre class="language-text"><code>5 &gt;&gt; 1
+// 2
+// 相当于 5 / 2 = 2
+
+21 &gt;&gt; 2
+// 5
+// 相当于 21 / 4 = 5
+
+21 &gt;&gt; 3
+// 2
+// 相当于 21 / 8 = 2
+
+21 &gt;&gt; 4
+// 1
+// 相当于 21 / 16 = 1
+</code></pre></div><h3 id="头部补零的右移运算符"><a href="#头部补零的右移运算符" class="header-anchor">#</a> 头部补零的右移运算符</h3> <p>头部补零的右移运算符（<code>&gt;&gt;&gt;</code>）与右移运算符（<code>&gt;&gt;</code>）只有一个差别，就是一个数的二进制形式向右移动时，头部一律补零，而不考虑符号位。所以，该运算总是得到正值。对于正数，该运算的结果与右移运算符（<code>&gt;&gt;</code>）完全一致，区别主要在于负数。</p> <div class="language- extra-class"><pre class="language-text"><code>4 &gt;&gt;&gt; 1
+// 2
+
+-4 &gt;&gt;&gt; 1
+// 2147483646
+/*
+// 因为-4的二进制形式为11111111111111111111111111111100，
+// 带符号位的右移一位，得到01111111111111111111111111111110，
+// 即为十进制的2147483646。
+*/
+</code></pre></div><p>这个运算实际上将一个值转为32位无符号整数。</p> <p>查看一个负整数在计算机内部的储存形式，最快的方法就是使用这个运算符。</p> <div class="language- extra-class"><pre class="language-text"><code>-1 &gt;&gt;&gt; 0 // 4294967295
+</code></pre></div><p>上面代码表示，<code>-1</code>作为32位整数时，内部的储存形式使用无符号整数格式解读，值为 4294967295（即<code>(2^32)-1</code>，等于<code>11111111111111111111111111111111</code>）。</p> <h3 id="开关作用"><a href="#开关作用" class="header-anchor">#</a> 开关作用</h3> <p>位运算符可以用作设置对象属性的开关。</p> <p>假定某个对象有四个开关，每个开关都是一个变量。那么，可以设置一个四位的二进制数，它的每个位对应一个开关。</p> <div class="language- extra-class"><pre class="language-text"><code>var FLAG_A = 1; // 0001
+var FLAG_B = 2; // 0010
+var FLAG_C = 4; // 0100
+var FLAG_D = 8; // 1000
+</code></pre></div><p>上面代码设置 A、B、C、D 四个开关，每个开关分别占有一个二进制位。</p> <p>然后，就可以用二进制与运算，检查当前设置是否打开了指定开关。</p> <div class="language- extra-class"><pre class="language-text"><code>var flags = 5; // 二进制的0101
+
+if (flags &amp; FLAG_C) {
+  // ...
+}
+// 0101 &amp; 0100 =&gt; 0100 =&gt; true
+</code></pre></div><p>上面代码检验是否打开了开关<code>C</code>。如果打开，会返回<code>true</code>，否则返回<code>false</code>。</p> <p>现在假设需要打开<code>A</code>、<code>B</code>、<code>D</code>三个开关，我们可以构造一个掩码变量。</p> <div class="language- extra-class"><pre class="language-text"><code>var mask = FLAG_A | FLAG_B | FLAG_D;
+// 0001 | 0010 | 1000 =&gt; 1011
+</code></pre></div><p>上面代码对<code>A</code>、<code>B</code>、<code>D</code>三个变量进行二进制或运算，得到掩码值为二进制的<code>1011</code>。</p> <p>有了掩码，二进制或运算可以确保打开指定的开关。</p> <div class="language- extra-class"><pre class="language-text"><code>flags = flags | mask;
+</code></pre></div><p>上面代码中，计算后得到的<code>flags</code>变量，代表三个开关的二进制位都打开了。</p> <p>二进制与运算可以将当前设置中凡是与开关设置不一样的项，全部关闭。</p> <div class="language- extra-class"><pre class="language-text"><code>flags = flags &amp; mask;
+</code></pre></div><p>异或运算可以切换（toggle）当前设置，即第一次执行可以得到当前设置的相反值，再执行一次又得到原来的值。</p> <div class="language- extra-class"><pre class="language-text"><code>flags = flags ^ mask;
+</code></pre></div><p>二进制否运算可以翻转当前设置，即原设置为<code>0</code>，运算后变为<code>1</code>；原设置为<code>1</code>，运算后变为<code>0</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>flags = ~flags;
+</code></pre></div><h3 id="参考链接"><a href="#参考链接" class="header-anchor">#</a> 参考链接</h3> <ul><li>Michal Budzynski, <a href="https://michalbe.blogspot.co.uk/2013/03/javascript-less-known-parts-bitwise.html" target="_blank" rel="noopener noreferrer">JavaScript: The less known parts. Bitwise Operators<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Axel Rauschmayer, <a href="http://www.2ality.com/2013/06/basic-javascript.html" target="_blank" rel="noopener noreferrer">Basic JavaScript for the impatient programmer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Mozilla Developer Network, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank" rel="noopener noreferrer">Bitwise Operators<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="其他运算符和运算顺序"><a href="#其他运算符和运算顺序" class="header-anchor">#</a> 其他运算符和运算顺序</h2> <h3 id="void-运算符"><a href="#void-运算符" class="header-anchor">#</a> void 运算符</h3> <p><code>void</code>运算符的作用是执行一个表达式，然后不返回任何值，或者说返回<code>undefined</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>void 0 // undefined
+void(0) // undefined
+</code></pre></div><p>上面是<code>void</code>运算符的两种写法，都正确。建议采用后一种形式，即总是使用圆括号。因为<code>void</code>运算符的优先性很高，如果不使用括号，容易造成错误的结果。比如，<code>void 4 + 7</code>实际上等同于<code>(void 4) + 7</code>。</p> <p>下面是<code>void</code>运算符的一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 3;
+void (x = 5) //undefined
+x // 5
+</code></pre></div><p>这个运算符的主要用途是浏览器的书签工具（Bookmarklet），以及在超级链接中插入代码防止网页跳转。</p> <p>请看下面的代码。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+function f() {
+  console.log('Hello World');
+}
+&lt;/script&gt;
+&lt;a href=&quot;http://example.com&quot; onclick=&quot;f(); return false;&quot;&gt;点击&lt;/a&gt;
+</code></pre></div><p>上面代码中，点击链接后，会先执行<code>onclick</code>的代码，由于<code>onclick</code>返回<code>false</code>，所以浏览器不会跳转到 example.com。</p> <p><code>void</code>运算符可以取代上面的写法。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;a href=&quot;javascript: void(f())&quot;&gt;文字&lt;/a&gt;
+</code></pre></div><p>下面是一个更实际的例子，用户点击链接提交表单，但是不产生页面跳转。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;a href=&quot;javascript: void(document.form.submit())&quot;&gt;
+  提交
+&lt;/a&gt;
+</code></pre></div><h3 id="逗号运算符"><a href="#逗号运算符" class="header-anchor">#</a> 逗号运算符</h3> <p>逗号运算符用于对两个表达式求值，并返回后一个表达式的值。</p> <div class="language- extra-class"><pre class="language-text"><code>'a', 'b' // &quot;b&quot;
+
+var x = 0;
+var y = (x++, 10);
+x // 1
+y // 10
+</code></pre></div><p>上面代码中，逗号运算符返回后一个表达式的值。</p> <p>逗号运算符的一个用途是，在返回一个值之前，进行一些辅助操作。</p> <div class="language- extra-class"><pre class="language-text"><code>var value = (console.log('Hi!'), true);
+// Hi!
+
+value // true
+</code></pre></div><p>上面代码中，先执行逗号之前的操作，然后返回逗号后面的值。</p> <h3 id="运算顺序"><a href="#运算顺序" class="header-anchor">#</a> 运算顺序</h3> <h4 id="优先级"><a href="#优先级" class="header-anchor">#</a> 优先级</h4> <p>JavaScript 各种运算符的优先级别（Operator Precedence）是不一样的。优先级高的运算符先执行，优先级低的运算符后执行。</p> <div class="language- extra-class"><pre class="language-text"><code>4 + 5 * 6 // 34
+</code></pre></div><p>上面的代码中，乘法运算符（<code>*</code>）的优先性高于加法运算符（<code>+</code>），所以先执行乘法，再执行加法，相当于下面这样。</p> <div class="language- extra-class"><pre class="language-text"><code>4 + (5 * 6) // 34
+</code></pre></div><p>如果多个运算符混写在一起，常常会导致令人困惑的代码。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+var arr = [];
+
+var y = arr.length &lt;= 0 || arr[0] === undefined ? x : arr[0];
+</code></pre></div><p>上面代码中，变量<code>y</code>的值就很难看出来，因为这个表达式涉及5个运算符，到底谁的优先级最高，实在不容易记住。</p> <p>根据语言规格，这五个运算符的优先级从高到低依次为：小于等于（<code>&lt;=</code>)、严格相等（<code>===</code>）、或（<code>||</code>）、三元（<code>?:</code>）、等号（<code>=</code>）。因此上面的表达式，实际的运算顺序如下。</p> <div class="language- extra-class"><pre class="language-text"><code>var y = ((arr.length &lt;= 0) || (arr[0] === undefined)) ? x : arr[0];
+</code></pre></div><p>记住所有运算符的优先级，是非常难的，也是没有必要的。</p> <h4 id="圆括号的作用"><a href="#圆括号的作用" class="header-anchor">#</a> 圆括号的作用</h4> <p>圆括号（<code>()</code>）可以用来提高运算的优先级，因为它的优先级是最高的，即圆括号中的表达式会第一个运算。</p> <div class="language- extra-class"><pre class="language-text"><code>(4 + 5) * 6 // 54
+</code></pre></div><p>上面代码中，由于使用了圆括号，加法会先于乘法执行。</p> <p>运算符的优先级别十分繁杂，且都是硬性规定，因此建议总是使用圆括号，保证运算顺序清晰可读，这对代码的维护和除错至关重要。</p> <p>顺便说一下，圆括号不是运算符，而是一种语法结构。它一共有两种用法：一种是把表达式放在圆括号之中，提升运算的优先级；另一种是跟在函数的后面，作用是调用函数。</p> <p>注意，因为圆括号不是运算符，所以不具有求值作用，只改变运算的优先级。</p> <div class="language- extra-class"><pre class="language-text"><code>var x = 1;
+(x) = 2;
+</code></pre></div><p>上面代码的第二行，如果圆括号具有求值作用，那么就会变成<code>1 = 2</code>，这是会报错了。但是，上面的代码可以运行，这验证了圆括号只改变优先级，不会求值。</p> <p>这也意味着，如果整个表达式都放在圆括号之中，那么不会有任何效果。</p> <div class="language- extra-class"><pre class="language-text"><code>(expression)
+// 等同于
+expression
+</code></pre></div><p>函数放在圆括号中，会返回函数本身。如果圆括号紧跟在函数的后面，就表示调用函数。</p> <div class="language- extra-class"><pre class="language-text"><code>function f() {
+  return 1;
+}
+
+(f) // function f(){return 1;}
+f() // 1
+</code></pre></div><p>上面代码中，函数放在圆括号之中会返回函数本身，圆括号跟在函数后面则是调用函数。</p> <p>圆括号之中，只能放置表达式，如果将语句放在圆括号之中，就会报错。</p> <div class="language- extra-class"><pre class="language-text"><code>(var a = 1)
+// SyntaxError: Unexpected token var
+</code></pre></div><h4 id="左结合与右结合"><a href="#左结合与右结合" class="header-anchor">#</a> 左结合与右结合</h4> <p>对于优先级别相同的运算符，同时出现的时候，就会有计算顺序的问题。</p> <div class="language- extra-class"><pre class="language-text"><code>a OP b OP c
+</code></pre></div><p>上面代码中，<code>OP</code>表示运算符。它可以有两种解释方式。</p> <div class="language- extra-class"><pre class="language-text"><code>// 方式一
+(a OP b) OP c
+
+// 方式二
+a OP (b OP c)
+</code></pre></div><p>上面的两种方式，得到的计算结果往往是不一样的。方式一是将左侧两个运算数结合在一起，采用这种解释方式的运算符，称为“左结合”（left-to-right associativity）运算符；方式二是将右侧两个运算数结合在一起，这样的运算符称为“右结合”运算符（right-to-left associativity）。</p> <p>JavaScript 语言的大多数运算符是“左结合”，请看下面加法运算符的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>x + y + z
+
+// 引擎解释如下
+(x + y) + z
+</code></pre></div><p>上面代码中，<code>x</code>与<code>y</code>结合在一起，它们的预算结果再与<code>z</code>进行运算。</p> <p>少数运算符是“右结合”，其中最主要的是赋值运算符（<code>=</code>）和三元条件运算符（<code>?:</code>）。</p> <div class="language- extra-class"><pre class="language-text"><code>w = x = y = z;
+q = a ? b : c ? d : e ? f : g;
+</code></pre></div><p>上面代码的解释方式如下。</p> <div class="language- extra-class"><pre class="language-text"><code>w = (x = (y = z));
+q = a ? b : (c ? d : (e ? f : g));
+</code></pre></div><p>上面的两行代码，都是右侧的运算数结合在一起。</p> <p>另外，指数运算符（<code>**</code>）也是右结合。</p> <div class="language- extra-class"><pre class="language-text"><code>2 ** 3 ** 2
+// 相当于 2 ** (3 ** 2)
+// 512
+</code></pre></div></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/01/15, 11:11:38</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/21674c/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">数据类型</div></a> <a href="/pages/36f9e8/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">语法专题</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/21674c/" class="prev">数据类型</a></span> <span class="next"><a href="/pages/36f9e8/">语法专题</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/610238/"><div>浏览器模型(四)</div></a> <span>12-12</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/229568/"><div>浏览器模型(一)</div></a> <span>12-11</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/ffb0a1/"><div>浏览器模型(二)</div></a> <span>12-11</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1390128154@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wuKongNotNull" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2022
+    <span>悟空非空也 | <a href="https://github.com/WuKongNotNull/wukong-post/blob/main/LICENSE" target="_blank">Apache License 2.0</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><i class="close-but">×</i> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0772105c.js" defer></script><script src="/assets/js/2.6497fd29.js" defer></script><script src="/assets/js/211.2db8e6bf.js" defer></script>
+  </body>
+</html>

